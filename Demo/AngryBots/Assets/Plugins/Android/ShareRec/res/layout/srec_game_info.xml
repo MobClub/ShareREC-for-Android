@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="#ff3d4a4e" >
+
+        <cn.sharerec.gui.components.AsyncImageView
+            android:id="@+id/aivLogo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="#ff3d4a4e" />
+
+        <TextView
+            android:id="@+id/tvDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/srec_edit_profile_back"
+            android:gravity="center"
+            android:minHeight="31dp"
+            android:minWidth="140dp"
+            android:text="@string/srec_download_game"
+            android:textColor="#ff539dcb"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tvGameName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tvDownload"
+            android:layout_below="@id/aivLogo"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text=" "
+            android:textColor="#ffffffff"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+</LinearLayout>

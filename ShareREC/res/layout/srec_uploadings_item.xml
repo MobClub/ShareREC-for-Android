@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <cn.sharerec.gui.components.AsyncImageView
+            android:id="@+id/aivAvatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginTop="5dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="13dp"
+            android:layout_toRightOf="@id/aivAvatar"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvNickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textColor="#ff63b997"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tvPublishTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textColor="#ffbac0c3"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlFollow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="13dp"
+            android:background="@drawable/srec_comment_back"
+            android:paddingBottom="6dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="6dp"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" >
+
+                <View
+                    android:layout_width="11dp"
+                    android:layout_height="11dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/srec_follow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="7dp"
+                    android:text="@string/srec_follow"
+                    android:textColor="#ffbac0c3"
+                    android:textSize="12dp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="202dp"
+        android:background="#fff5f5f5" >
+
+        <cn.sharerec.gui.components.AsyncImageView
+            android:id="@+id/aivUploadingThumb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/srec_play_video_icon" />
+
+        <TextView
+            android:id="@+id/tvDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="9dp"
+            android:background="#ff2b7aca"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:paddingTop="5dp"
+            android:text="00:00"
+            android:textColor="#ffffffff"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:gravity="center_vertical"
+        android:minHeight="41dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:text=" "
+        android:textColor="#ff000000"
+        android:textSize="15dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginBottom="11dp" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="6dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="13dp"
+            android:layout_weight="1"
+            android:background="@drawable/srec_signin_btn_back" >
+
+            <View
+                android:id="@+id/vUploadProgress"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/srec_main_share_progress" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvRetry"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="6dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:text="@string/srec_retry"
+            android:textColor="#ff919191"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/tvDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="6dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:text="@string/srec_delete"
+            android:textColor="#ff919191"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+</LinearLayout>

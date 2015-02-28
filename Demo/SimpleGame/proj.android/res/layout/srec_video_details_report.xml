@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llReport"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/srec_report_dim"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/vReportDim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffe8e8e8"
+        android:orientation="vertical"
+        android:paddingBottom="23dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="23dp" >
+
+        <TextView
+            android:id="@+id/tvReportVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="23dp"
+            android:background="@drawable/srec_report_back"
+            android:gravity="center"
+            android:padding="14dp"
+            android:text="@string/srec_report_this_video"
+            android:textColor="#ff000000"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tvReportCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/srec_report_cancel_back"
+            android:gravity="center"
+            android:padding="14dp"
+            android:text="@string/srec_cancel"
+            android:textColor="#ffffffff"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ff3d4a4e"
+                android:gravity="center"
+                android:text="@string/srec_edit_profile"
+                android:textColor="#ffffffff"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/llBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="〈"
+                    android:textColor="#ff539dcb"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/srec_back"
+                    android:textColor="#ff539dcb"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffffff"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <cn.sharerec.gui.components.AsyncImageView
+                            android:id="@+id/aivAvatar"
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="14dp"
+                            android:layout_marginTop="14dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical" >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="52dp"
+                                android:layout_marginRight="14dp"
+                                android:layout_marginTop="14dp" >
+
+                                <EditText
+                                    android:id="@+id/etNickname"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:gravity="center_vertical|left"
+                                    android:singleLine="true"
+                                    android:textColor="#ff000000"
+                                    android:textSize="18dp" />
+
+                                <TextView
+                                    android:id="@+id/tvSave"
+                                    android:layout_width="69dp"
+                                    android:layout_height="34dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="14dp"
+                                    android:background="@drawable/srec_signin_btn_back"
+                                    android:gravity="center"
+                                    android:text="@string/srec_save"
+                                    android:textColor="#ffffffff"
+                                    android:textSize="16dp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1px"
+                                android:background="#ffe7e7e7" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1px"
+                                android:background="#ffe3e3e3" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvChangePsw"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginBottom="14dp"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="14dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/srec_signin_btn_back"
+                        android:gravity="center"
+                        android:text="@string/srec_change_psw"
+                        android:textColor="#ffffffff"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvBinePhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/srec_bine_phone"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/srec_bine_phone"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+
+                <LinearLayout
+                    android:id="@+id/llBitRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="14dp"
+                    android:background="@drawable/srec_bine_phone" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="14dp"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:text="@string/srec_video_quality"
+                        android:textColor="#ff000000"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tvBitRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="14dp"
+                        android:gravity="right|center_vertical"
+                        android:text="@string/srec_default"
+                        android:textColor="#ff7f7f7f"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvSignout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="14dp"
+                    android:background="@drawable/srec_bine_phone"
+                    android:gravity="center"
+                    android:text="@string/srec_signout"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llProfileTakePic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/srec_report_dim"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <View
+            android:id="@+id/vProfileTakPicDim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffe8e8e8"
+            android:orientation="vertical"
+            android:paddingBottom="23dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="23dp" >
+
+            <TextView
+                android:id="@+id/tvProfileTakePicFromCam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="23dp"
+                android:background="@drawable/srec_report_back"
+                android:gravity="center"
+                android:padding="14dp"
+                android:text="@string/srec_take_pic_from_cam"
+                android:textColor="#ff000000"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tvProfileTakePicFromAlb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="23dp"
+                android:background="@drawable/srec_report_back"
+                android:gravity="center"
+                android:padding="14dp"
+                android:text="@string/srec_take_pic_from_alb"
+                android:textColor="#ff000000"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tvProfileTakePicCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/srec_report_cancel_back"
+                android:gravity="center"
+                android:padding="14dp"
+                android:text="@string/srec_cancel"
+                android:textColor="#ffffffff"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llChangeBitRate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/srec_report_dim"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <View
+            android:id="@+id/vChangeBitRateDim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffe8e8e8"
+                android:orientation="vertical"
+                android:paddingBottom="23dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:paddingTop="23dp" >
+
+                <TextView
+                    android:id="@+id/tvBitRateHD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="23dp"
+                    android:background="@drawable/srec_report_back"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:text="@string/srec_hd"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tvBitRateSD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="23dp"
+                    android:background="@drawable/srec_report_back"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:text="@string/srec_sd"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tvBitRateFluent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="23dp"
+                    android:background="@drawable/srec_report_back"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:text="@string/srec_fluent"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tvBitRateDefault"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="23dp"
+                    android:background="@drawable/srec_report_back"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:text="@string/srec_default"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tvBitRateCancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/srec_report_cancel_back"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:text="@string/srec_cancel"
+                    android:textColor="#ffffffff"
+                    android:textSize="18dp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

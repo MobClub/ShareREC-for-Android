@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="#ff3d4a4e" >
+
+        <cn.sharerec.gui.components.AsyncImageView
+            android:id="@+id/aivProfileAvatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="#ff3d4a4e" />
+
+        <TextView
+            android:id="@+id/tvProfileEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/srec_edit_profile_back"
+            android:gravity="center"
+            android:minHeight="31dp"
+            android:minWidth="140dp"
+            android:text="@string/srec_edit_profile"
+            android:textColor="#ff539dcb"
+            android:textSize="14dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tvProfileNick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tvProfileEdit"
+            android:layout_below="@id/aivProfileAvatar"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text=" "
+            android:textColor="#ffffffff"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone" >
+
+            <RelativeLayout
+                android:id="@+id/rlProfileVideo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tvProfileVideoName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:singleLine="true"
+                    android:text="@string/srec_video"
+                    android:textColor="#ffffffff"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/tvProfileVideoCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/tvProfileVideoName"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text=" "
+                    android:textColor="#ff539dcb"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlProfileFans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tvProfileFansName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:singleLine="true"
+                    android:text="@string/srec_fans"
+                    android:textColor="#ffffffff"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/tvProfileFansCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/tvProfileFansName"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text=" "
+                    android:textColor="#ff539dcb"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlProfileFollowing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tvProfileFollowingName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:singleLine="true"
+                    android:text="@string/srec_following"
+                    android:textColor="#ffffffff"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/tvProfileFollowingCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/tvProfileFollowingName"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text=" "
+                    android:textColor="#ff539dcb"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

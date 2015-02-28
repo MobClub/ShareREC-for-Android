@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">GLESDemo</string>
+    <string name="start">Start Recorder</string>
+    <string name="stop">Stop Recorder</string>
+    <string name="profile">Show Profile</string>
+	<string name="not_availiable">ShareRec is not availiable to the device</string>
+	<string name="drag_the_seekbar">Drag the SeekBar</string>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="smssdk_error_desc_server_busy">Server is busy</string>
+	<string name="smssdk_error_desc_511">Invalid request</string>
+	<string name="smssdk_error_desc_512">Forbidden</string>
+	<string name="smssdk_error_desc_513">Invalid Appkey</string>
+	<string name="smssdk_error_desc_514">Permission denied</string>
+	<string name="smssdk_error_desc_515">Server Error</string>
+	<string name="smssdk_error_desc_516">Illegal request</string>
+	<string name="smssdk_error_desc_517">Missing Params</string>
+	<string name="smssdk_error_desc_518">Invalid phone number</string>
+	<string name="smssdk_error_desc_519">Request validation exceed the limit</string>
+	<string name="smssdk_error_desc_520">Verification code error</string>
+	<string name="smssdk_error_desc_521">Invalid token</string>
+	<string name="smssdk_error_desc_522">Invalid duid</string>
+	<string name="smssdk_error_desc_523">Verified</string>
+	<string name="smssdk_error_desc_524">Request verification code messages too frequently</string>
+	<string name="smssdk_error_desc_525">Invalid signature</string>
+	<string name="smssdk_error_desc_526">Insufficient balance</string>
+	
+	<string name="smssdk_error_detail_511">The request cannot be identified</string>
+	<string name="smssdk_error_detail_512">Server access denied, or refused to operate</string>
+	<string name="smssdk_error_detail_513">Request Appkey does not exist or is disabled</string>
+	<string name="smssdk_error_detail_514">No permission to execute the request</string>
+	<string name="smssdk_error_detail_515">Server Error</string>
+	<string name="smssdk_error_detail_516">Server does not support the function of the client request</string>
+	<string name="smssdk_error_detail_517">The request necessary params are missing or damaged</string>
+	<string name="smssdk_error_detail_518">Request of the user mobile phone number format is not correct (including cell phone area code)</string>
+	<string name="smssdk_error_detail_519">Request to send verification code beyond the limit (daily, APP, there are all sorts of sent single machine and operator limit of verification code)</string>
+	<string name="smssdk_error_detail_520">Verification code error</string>
+	<string name="smssdk_error_detail_521">The token of request is invalid or illegal</string>
+	<string name="smssdk_error_detail_522">The requested duid illegal or invalid</string>
+	<string name="smssdk_error_detail_523">Request to verify phone number has been verified</string>
+	<string name="smssdk_error_detail_524">The client request verification code messages too frequently</string>
+	<string name="smssdk_error_detail_525">Need signature verification</string>
+	<string name="smssdk_error_detail_526">Insufficient balance</string>
+</resources>

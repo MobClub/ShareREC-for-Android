@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bcPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/llSignupLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ff3d4a4e"
+                android:gravity="center"
+                android:text="@string/srec_signup"
+                android:textColor="#ffffffff"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/llGoSignin"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="〈"
+                    android:textColor="#ff539dcb"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/srec_signin"
+                    android:textColor="#ff539dcb"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffbbbbbb" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/srec_signin_account_back"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp" >
+
+                <View
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/srec_login_input_nick" />
+
+                <EditText
+                    android:id="@+id/etSignupNick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/srec_signin_nick_hint"
+                    android:singleLine="true"
+                    android:textColor="#ff000000"
+                    android:textColorHint="#ffdddddd"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffdddddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp" >
+
+                <View
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/srec_login_input_password" />
+
+                <EditText
+                    android:id="@+id/etSignupPsw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/srec_signin_psw_hint"
+                    android:password="true"
+                    android:singleLine="true"
+                    android:textColor="#ff000000"
+                    android:textColorHint="#ffdddddd"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffdddddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp" >
+
+                <View
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/srec_login_input_password" />
+
+                <EditText
+                    android:id="@+id/etSignupPswConf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/srec_signin_psw_conf_hint"
+                    android:password="true"
+                    android:singleLine="true"
+                    android:textColor="#ff000000"
+                    android:textColorHint="#ffdddddd"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvSignup"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/srec_signin_btn_back"
+            android:gravity="center"
+            android:text="@string/srec_create_account"
+            android:textColor="#ffffffff"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSigninLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="#ff3d4a4e"
+            android:gravity="center"
+            android:text="@string/srec_signin"
+            android:textColor="#ffffffff"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffbbbbbb" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/srec_signin_account_back"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp" >
+
+                <View
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/srec_login_input_nick" />
+
+                <EditText
+                    android:id="@+id/etSigninNick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/srec_signin_nick_hint"
+                    android:singleLine="true"
+                    android:textColor="#ff000000"
+                    android:textColorHint="#ffdddddd"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffdddddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp" >
+
+                <View
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/srec_login_input_password" />
+
+                <EditText
+                    android:id="@+id/etSigninPsw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/srec_signin_psw_hint"
+                    android:password="true"
+                    android:singleLine="true"
+                    android:textColor="#ff000000"
+                    android:textColorHint="#ffdddddd"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp" >
+
+            <TextView
+                android:id="@+id/tvGoSignup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/srec_go_signup"
+                android:textColor="#ff444444"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tvSignin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/srec_signin_btn_back"
+                android:gravity="center"
+                android:text="@string/srec_signin"
+                android:textColor="#ffffffff"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

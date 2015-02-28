@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="101dp"
+        android:layout_height="match_parent"
+        android:background="#c0000000"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/flShare"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/srec_sb_item_back" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawablePadding="5.0dip"
+                android:drawableTop="@drawable/srec_sb_share"
+                android:text="@string/srec_share"
+                android:textColor="#ffffffff"
+                android:textSize="16.0dip" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+
+        <FrameLayout
+            android:id="@+id/flPlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/srec_sb_item_back" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawablePadding="5.0dip"
+                android:drawableTop="@drawable/srec_sb_play"
+                android:text="@string/srec_play"
+                android:textColor="#ffffffff"
+                android:textSize="16.0dip" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+
+        <FrameLayout
+            android:id="@+id/flInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/srec_sb_item_back" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawablePadding="5.0dip"
+                android:drawableTop="@drawable/srec_sb_info"
+                android:text="@string/srec_info"
+                android:textColor="#ffffffff"
+                android:textSize="16.0dip" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:background="@drawable/srec_sb_item_back"
+            android:scaleType="centerInside"
+            android:src="@drawable/srec_sb_close" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="101dp"
+        android:orientation="vertical" >
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            layout="@layout/srec_main_share" />
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            layout="@layout/srec_main_video_center"
+            android:visibility="gone" />
+
+        <cn.sharerec.gui.components.SrecMyProfileView
+            android:id="@+id/lvProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>

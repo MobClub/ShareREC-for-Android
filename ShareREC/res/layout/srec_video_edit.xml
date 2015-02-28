@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <SurfaceView
+        android:id="@+id/svPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff000000" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="39dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/srec_crop_sb_item_back"
+            android:paddingBottom="16dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="12dp"
+            android:paddingTop="15dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/srec_sb_close" />
+
+		<include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ivClose"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/ivClose"
+            layout="@layout/srec_video_edit_seekbar" />
+
+        <LinearLayout
+            android:id="@+id/llActions"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/ivClose"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:id="@+id/flPlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/srec_sb_item_back" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="5.0dip"
+                    android:drawableTop="@drawable/srec_sb_play"
+                    android:text="@string/srec_play"
+                    android:textColor="#ffffffff"
+                    android:textSize="16.0dip" />
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#ff3d3d3d" />
+
+            <FrameLayout
+                android:id="@+id/flNarration"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/srec_sb_item_back" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="5.0dip"
+                    android:drawableTop="@drawable/srec_ve_add_narration"
+                    android:text="@string/srec_narration"
+                    android:textColor="#ffffffff"
+                    android:textSize="16.0dip" />
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#ff3d3d3d" />
+
+            <FrameLayout
+                android:id="@+id/flShare"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/srec_sb_item_back" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="5.0dip"
+                    android:drawableTop="@drawable/srec_ve_share"
+                    android:text="@string/srec_share"
+                    android:textColor="#ffffffff"
+                    android:textSize="16.0dip" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llNarration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/ivClose"
+            android:layout_toLeftOf="@id/llActions"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:id="@+id/flAudioNarration"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/srec_sb_item_back" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawablePadding="5.0dip"
+                        android:drawableTop="@drawable/srec_ve_add_an"
+                        android:text="@string/srec_audio_narration"
+                        android:textColor="#ffffffff"
+                        android:textSize="16.0dip" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#ff3d3d3d" />
+
+                <FrameLayout
+                    android:id="@+id/flVideoNarration"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/srec_sb_item_back" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawablePadding="5.0dip"
+                        android:drawableTop="@drawable/srec_ve_add_vn"
+                        android:text="@string/srec_video_narration"
+                        android:textColor="#ffffffff"
+                        android:textSize="16.0dip" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/ivClose"
+            android:layout_toLeftOf="@id/llActions"
+            android:scaleType="centerInside"
+            android:src="@drawable/srec_play_video_icon" />
+    </RelativeLayout>
+
+</RelativeLayout>

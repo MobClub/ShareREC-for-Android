@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:background="#ffffffff"
+    android:paddingBottom="4dp"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp"
+    android:paddingTop="4dp" >
+
+    <cn.sharerec.gui.components.AsyncImageView
+        android:id="@+id/aivOwnerAvatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvOwnerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textColor="#ff63b997"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tvOwnerVideoCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textColor="#ffbac0c3"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlFollow"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/srec_comment_back"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" >
+
+            <View
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/srec_follow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="7dp"
+                android:text="@string/srec_follow"
+                android:textColor="#ffbac0c3"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

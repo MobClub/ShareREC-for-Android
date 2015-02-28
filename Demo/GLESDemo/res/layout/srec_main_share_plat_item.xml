@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/ivPlatLogo"
+        android:layout_width="29dp"
+        android:layout_height="29dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="6dp"
+        android:scaleType="centerInside" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#ffe5e5e7" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="14dp" >
+
+            <TextView
+                android:id="@+id/ivPlatName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:textColor="#ff000000"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/srec_share"
+                android:textColor="#ffc7c7cc"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="4dp"
+                android:text="〉"
+                android:textColor="#ffc7c7cc"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

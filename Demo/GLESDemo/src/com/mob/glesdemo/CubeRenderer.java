@@ -1,0 +1,384 @@
+package com.mob.glesdemo;
+
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.opengles.GL10;
+import android.opengl.GLES20;
+import android.opengl.GLSurfaceView.Renderer;
+import android.opengl.Matrix;
+
+public class CubeRenderer implements Renderer {
+	private static final int MAX_HEIGHT = 1080;
+	private static final int MAX_WIDTH = 1920;
+	
+	private FloatBuffer mCubePositions;
+	private FloatBuffer mCubeColors;
+	private float[] mViewMatrix;
+	private float[] mProjectionMatrix;
+	private float[] mModelMatrix;
+	private float[] mMVPMatrix;
+	private int mProgramHandle;
+	private int mMVPMatrixHandle;
+	private int mPositionHandle;
+	private int mColorHandle;
+	private float angleInDegrees;
+	private FBO fbo;
+	private int width;
+	private int height;
+	
+	public void onSurfaceCreated(GL10 glUnused, EGLConfig config) {
+		fbo = new FBO();
+		initPositions();
+		initColors();
+		initMatrix();
+		initProgram();
+	}
+	
+	private void initPositions() {
+		float cubePosition[] = {
+		        // Front face
+		        -1.0f, 1.0f, 1.0f,                
+		        -1.0f, -1.0f, 1.0f,
+		        1.0f, 1.0f, 1.0f, 
+		        -1.0f, -1.0f, 1.0f,                 
+		        1.0f, -1.0f, 1.0f,
+		        1.0f, 1.0f, 1.0f,
+		        
+		        // Right face
+		        1.0f, 1.0f, 1.0f,                
+		        1.0f, -1.0f, 1.0f,
+		        1.0f, 1.0f, -1.0f,
+		        1.0f, -1.0f, 1.0f,                
+		        1.0f, -1.0f, -1.0f,
+		        1.0f, 1.0f, -1.0f,
+		        
+		        // Back face
+		        1.0f, 1.0f, -1.0f,                
+		        1.0f, -1.0f, -1.0f,
+		        -1.0f, 1.0f, -1.0f,
+		        1.0f, -1.0f, -1.0f,                
+		        -1.0f, -1.0f, -1.0f,
+		        -1.0f, 1.0f, -1.0f,
+		        
+		        // Left face
+		        -1.0f, 1.0f, -1.0f,                
+		        -1.0f, -1.0f, -1.0f,
+		        -1.0f, 1.0f, 1.0f, 
+		        -1.0f, -1.0f, -1.0f,                
+		        -1.0f, -1.0f, 1.0f, 
+		        -1.0f, 1.0f, 1.0f, 
+		        
+		        // Top face
+		        -1.0f, 1.0f, -1.0f,                
+		        -1.0f, 1.0f, 1.0f, 
+		        1.0f, 1.0f, -1.0f, 
+		        -1.0f, 1.0f, 1.0f,                 
+		        1.0f, 1.0f, 1.0f, 
+		        1.0f, 1.0f, -1.0f,
+		        
+		        // Bottom face
+		        1.0f, -1.0f, -1.0f,                
+		        1.0f, -1.0f, 1.0f, 
+		        -1.0f, -1.0f, -1.0f,
+		        1.0f, -1.0f, 1.0f,                 
+		        -1.0f, -1.0f, 1.0f,
+		        -1.0f, -1.0f, -1.0f,    
+		};
+		ByteBuffer bb = ByteBuffer.allocateDirect(cubePosition.length * 4);
+		bb.order(ByteOrder.nativeOrder());
+		mCubePositions = bb.asFloatBuffer();
+	    mCubePositions.put(cubePosition);
+	    mCubePositions.position(0);
+	}
+
+	private void initColors() {
+		float[] cubeColor = {
+		        // Front face (red)
+		        1.0f, 0.0f, 0.0f, 1.0f,                
+		        1.0f, 0.0f, 0.0f, 1.0f,
+		        1.0f, 0.0f, 0.0f, 1.0f,
+		        1.0f, 0.0f, 0.0f, 1.0f,                
+		        1.0f, 0.0f, 0.0f, 1.0f,
+		        1.0f, 0.0f, 0.0f, 1.0f,
+		        
+		        // Right face (green)
+		        0.0f, 1.0f, 0.0f, 1.0f,                
+		        0.0f, 1.0f, 0.0f, 1.0f,
+		        0.0f, 1.0f, 0.0f, 1.0f,
+		        0.0f, 1.0f, 0.0f, 1.0f,                
+		        0.0f, 1.0f, 0.0f, 1.0f,
+		        0.0f, 1.0f, 0.0f, 1.0f,
+		        
+		        // Back face (blue)
+		        0.0f, 0.0f, 1.0f, 1.0f,                
+		        0.0f, 0.0f, 1.0f, 1.0f,
+		        0.0f, 0.0f, 1.0f, 1.0f,
+		        0.0f, 0.0f, 1.0f, 1.0f,                
+		        0.0f, 0.0f, 1.0f, 1.0f,
+		        0.0f, 0.0f, 1.0f, 1.0f,
+		        
+		        // Left face (yellow)
+		        1.0f, 1.0f, 0.0f, 1.0f,                
+		        1.0f, 1.0f, 0.0f, 1.0f,
+		        1.0f, 1.0f, 0.0f, 1.0f,
+		        1.0f, 1.0f, 0.0f, 1.0f,                
+		        1.0f, 1.0f, 0.0f, 1.0f,
+		        1.0f, 1.0f, 0.0f, 1.0f,
+		        
+		        // Top face (cyan)
+		        0.0f, 1.0f, 1.0f, 1.0f,                
+		        0.0f, 1.0f, 1.0f, 1.0f,
+		        0.0f, 1.0f, 1.0f, 1.0f,
+		        0.0f, 1.0f, 1.0f, 1.0f,                
+		        0.0f, 1.0f, 1.0f, 1.0f,
+		        0.0f, 1.0f, 1.0f, 1.0f,
+		        
+		        // Bottom face (magenta)
+		        1.0f, 0.0f, 1.0f, 1.0f,                
+		        1.0f, 0.0f, 1.0f, 1.0f,
+		        1.0f, 0.0f, 1.0f, 1.0f,
+		        1.0f, 0.0f, 1.0f, 1.0f,                
+		        1.0f, 0.0f, 1.0f, 1.0f,
+		        1.0f, 0.0f, 1.0f, 1.0f    
+		};
+		ByteBuffer bb = ByteBuffer.allocateDirect(cubeColor.length * 4);
+		bb.order(ByteOrder.nativeOrder());
+        mCubeColors = bb.asFloatBuffer();
+        mCubeColors.put(cubeColor);
+        mCubeColors.position(0);
+	}
+
+	private void initMatrix() {
+		mViewMatrix = new float[16];
+		mProjectionMatrix = new float[16];
+		mModelMatrix = new float[16];
+		mMVPMatrix = new float[16];
+		
+        GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+        GLES20.glEnable(GLES20.GL_CULL_FACE);
+        // Position the eye behind the origin.
+        final float eyeX = 0.0f;
+        final float eyeY = 0.0f;
+        final float eyeZ = -1.0f;
+
+        // We are looking toward the distance
+        final float lookX = 0.0f;
+        final float lookY = 0.0f;
+        final float lookZ = -5.0f;
+
+        // Set our up vector. This is where our head would be pointing were we holding the camera.
+        final float upX = 0.0f;
+        final float upY = 1.0f;
+        final float upZ = 0.0f;
+
+        // Set the view matrix. This matrix can be said to represent the camera position.
+        // NOTE: In OpenGL 1, a ModelView matrix is used, which is a combination of a model and
+        // view matrix. In OpenGL 2, we can keep track of these matrices separately if we choose.
+        Matrix.setLookAtM(mViewMatrix, 0, eyeX, eyeY, eyeZ, lookX, lookY, lookZ, upX, upY, upZ);
+	}
+	
+	private void initProgram() {
+		int vertexShaderHandle = initVertexShader();
+		int fragmentShaderHandle = initFragmentShader();
+        mProgramHandle = GLES20.glCreateProgram();
+        if(mProgramHandle != 0) {
+            GLES20.glAttachShader(mProgramHandle, vertexShaderHandle);
+            GLES20.glAttachShader(mProgramHandle, fragmentShaderHandle);
+            GLES20.glBindAttribLocation(mProgramHandle, 0, "a_Position");
+            GLES20.glBindAttribLocation(mProgramHandle, 1, "a_Color");
+            GLES20.glLinkProgram(mProgramHandle);
+            
+            int[] linkStatus = new int[1];
+            GLES20.glGetProgramiv(mProgramHandle, GLES20.GL_LINK_STATUS, linkStatus, 0);
+            if(linkStatus[0] == 0) {
+                GLES20.glDeleteProgram(mProgramHandle);
+                mProgramHandle = 0;
+            }
+        }
+        
+        if(mProgramHandle == 0) {
+            throw new RuntimeException("failed to create program");
+        }
+        
+        mMVPMatrixHandle = GLES20.glGetUniformLocation(mProgramHandle, "u_MVPMatrix");
+        mPositionHandle = GLES20.glGetAttribLocation(mProgramHandle, "a_Position");
+        mColorHandle = GLES20.glGetAttribLocation(mProgramHandle, "a_Color");
+	}
+	
+	private int initVertexShader() {
+        String vertexShader =
+                "uniform mat4 u_MVPMatrix;                    \n"        // A constant representing the combined model/view/projection matrix.
+              + "attribute vec4 a_Position;                   \n"        // Per-vertex position information we will pass in.
+              + "attribute vec4 a_Color;                      \n"        // Per-vertex color information we will pass in.              
+              + "varying vec4 v_Color;                        \n"        // This will be passed into the fragment shader.
+              + "void main() {                                \n"        // The entry point for our vertex shader.
+              + "   v_Color = a_Color;                        \n"        // Pass the color through to the fragment shader. 
+              + "   gl_Position = u_MVPMatrix * a_Position;   \n"        // Multiply the vertex by the matrix to get the final point in                                                                      
+              + "}                                            \n";       // normalized screen coordinates.
+            
+        int vertexShaderHandle = GLES20.glCreateShader(GLES20.GL_VERTEX_SHADER);
+        if(vertexShaderHandle != 0) {
+            GLES20.glShaderSource(vertexShaderHandle, vertexShader);
+            GLES20.glCompileShader(vertexShaderHandle);
+            int[] compileStatus = new int[1];
+            GLES20.glGetShaderiv(vertexShaderHandle, GLES20.GL_COMPILE_STATUS, compileStatus, 0);
+            if(compileStatus[0] == 0) {
+                GLES20.glDeleteShader(vertexShaderHandle);
+                vertexShaderHandle = 0;
+            }
+        }
+        
+        if(vertexShaderHandle == 0) {
+            throw new RuntimeException("failed to creating vertex shader");
+        }
+        return vertexShaderHandle;
+	}
+	
+	private int initFragmentShader() {
+		String fragmentShader =
+                "precision mediump float;       \n"        // Set the default precision to medium. We don't need as high of a precision in the fragment shader.                
+              + "varying vec4 v_Color;          \n"        // This is the color from the vertex shader interpolated across the triangle per fragment.              
+              + "void main() {                  \n"        // The entry point for our fragment shader.
+              + "   gl_FragColor = v_Color;     \n"        // Pass the color directly through the pipeline.          
+              + "}                              \n";    
+        int fragmentShaderHandle = GLES20.glCreateShader(GLES20.GL_FRAGMENT_SHADER);
+        if(fragmentShaderHandle != 0) {
+            GLES20.glShaderSource(fragmentShaderHandle, fragmentShader);
+            GLES20.glCompileShader(fragmentShaderHandle);
+            int[] compileStatus = new int[1];
+            GLES20.glGetShaderiv(fragmentShaderHandle, GLES20.GL_COMPILE_STATUS, compileStatus, 0);
+            if(compileStatus[0] == 0) {
+                GLES20.glDeleteShader(fragmentShaderHandle);
+                fragmentShaderHandle = 0;
+            }
+        }
+        
+        if(fragmentShaderHandle == 0) {
+            throw new RuntimeException("failed to create fragment shader");
+        }
+        return fragmentShaderHandle;
+	}
+	
+	public void onSurfaceChanged(GL10 glUnused, int width, int height) {
+		setFBOSize(width, height);
+        GLES20.glViewport(0, 0, width, height);
+        
+        final float ratio = (float) width / height;
+        final float left = -ratio;
+        final float right = ratio;
+        final float bottom = -1.0f;
+        final float top = 1.0f;
+        final float near = 1.0f;
+        final float far = 10.0f;
+        
+        Matrix.frustumM(mProjectionMatrix, 0, left, right, bottom, top, near, far);
+	}
+
+	/*
+	 * no mater how large the screen of the device is, the size of 
+	 * ShareRec recording texture won't be larger than 1920x1088, 
+	 * so we have to scale down the size of the FBO texture, to 
+	 * make sure that the cube is placed at the center of the 
+	 * texture.
+	 */
+	private void setFBOSize(int width, int height) {
+		int iWidth = width;
+		int iHeight = height;
+		boolean flag = false;
+		if (iWidth < iHeight) { // exchange width and height
+			int tmp = iWidth;
+			iWidth = iHeight;
+			iHeight = tmp;
+			flag = true;
+		}
+		
+		int[] src = new int[] {iWidth, iHeight};
+		int[] target = new int[] {MAX_WIDTH, MAX_HEIGHT};
+		if (src[0] > target[0] || src[1] > target[1]) {
+			int[] dst = fixRect(src, target);
+			iWidth = dst[0];
+			iHeight = dst[1];
+		}
+		
+		if (flag) {
+			int tmp = iWidth;
+			iWidth = iHeight;
+			iHeight = tmp;
+		}
+		int dpyWidth = iWidth;
+		if (iWidth % 16 > 0) {
+			dpyWidth = iWidth - (iWidth % 16) + 16;
+		}
+		int dpyHeight = iHeight;
+		if (iHeight % 16 > 0) {
+			dpyHeight = iHeight - (iHeight % 16) + 16;
+		}
+		
+		this.width = dpyWidth;
+		this.height = dpyHeight;
+	}
+	
+    private int[] fixRect(int[] src, int[] target) {
+    	int[] dst = new int[2];
+    	float rs = ((float) src[0]) / src[1];
+    	float rt = ((float) target[0]) / target[1];
+    	if (rs > rt) { // modify height
+    		dst[0] = target[0];
+    		dst[1] = (int) (((float) src[1]) * target[0] / src[0] + 0.5f);
+    	} else { // modify width
+    		dst[1] = target[1];
+    		dst[0] = (int) (((float) src[0]) * target[1] / src[1] + 0.5f);
+    	}
+
+    	return dst;
+    }
+	
+	public void onDrawFrame(GL10 glUnused) {
+		if (!fbo.isReady()) {
+			fbo.prepareFBO(width, height);
+		}
+		
+		if (fbo.isReady()) {
+			fbo.bineFBO();
+			drawFrame();
+			fbo.unbineFBO();
+		}
+	}
+	
+	private void drawFrame() {
+		int[] id = new int[1];
+		GLES20.glGetIntegerv(GLES20.GL_CURRENT_PROGRAM, id, 0);
+		GLES20.glUseProgram(mProgramHandle);
+		
+		GLES20.glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
+		GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
+		Matrix.setIdentityM(mModelMatrix, 0);
+		Matrix.translateM(mModelMatrix, 0, 0.0f, 0.0f, -5.0f);
+		Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 1.0f, 1.0f, 0.0f);   
+		drawCube(mCubePositions, mCubeColors);
+		
+		GLES20.glUseProgram(id[0]);
+	}
+	
+    private void drawCube(FloatBuffer cubePositionsBuffer, FloatBuffer cubeColorsBuffer) {
+        cubePositionsBuffer.position(0);
+        GLES20.glVertexAttribPointer(mPositionHandle, 3, GLES20.GL_FLOAT, false, 0, cubePositionsBuffer);
+        GLES20.glEnableVertexAttribArray(mPositionHandle);
+        
+        cubeColorsBuffer.position(0);
+        GLES20.glVertexAttribPointer(mColorHandle, 4, GLES20.GL_FLOAT, false, 0, cubeColorsBuffer);
+        GLES20.glEnableVertexAttribArray(mColorHandle);
+        Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mModelMatrix, 0);   
+        Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);
+        
+        GLES20.glUniformMatrix4fv(mMVPMatrixHandle, 1, false, mMVPMatrix, 0);
+        GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, 36);
+    }
+
+	public void setAngleInDegrees(float angleInDegrees) {
+		this.angleInDegrees = angleInDegrees;
+	}
+	
+}

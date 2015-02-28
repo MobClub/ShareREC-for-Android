@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp" >
+
+    <RelativeLayout
+        android:id="@+id/rlThumb"
+        android:layout_width="188dp"
+        android:layout_height="113dp"
+        android:background="@drawable/srec_video_item_left_bg_land" >
+
+        <cn.sharerec.gui.components.AsyncImageView
+            android:id="@+id/aivThumb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/srec_play_video_icon" />
+
+        <TextView
+            android:id="@+id/tvDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="9dp"
+            android:background="#ff2b7aca"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:paddingTop="5dp"
+            android:text="00:00"
+            android:textColor="#ffffffff"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="79dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/rlThumb"
+        android:background="@drawable/srec_video_item_right_top_bg_land"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:gravity="center_vertical"
+            android:minHeight="41dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text=" "
+            android:textColor="#ff000000"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tvPublishTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:text=" "
+            android:textColor="#ff919191"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/rlThumb"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/llTitle"
+        android:layout_toRightOf="@id/rlThumb"
+        android:background="@drawable/srec_video_item_right_bottom_bg_land" />
+
+    <cn.sharerec.gui.components.AsyncImageView
+        android:id="@+id/aivAvatar"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignBottom="@id/rlThumb"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="9dp"
+        android:layout_marginRight="9dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/rlThumb"
+        android:layout_below="@id/llTitle"
+        android:layout_toLeftOf="@id/aivAvatar"
+        android:layout_toRightOf="@id/rlThumb"
+        android:background="@drawable/srec_video_item_right_bottom_bg_land" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="13dp"
+            android:text="@string/srec_play_title"
+            android:textColor="#ff919191"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/tvPlayCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="0"
+            android:textColor="#ff919191"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="13dp"
+            android:text="@string/srec_like_title"
+            android:textColor="#ff919191"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/tvLikeCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="13dp"
+            android:text="0"
+            android:textColor="#ff919191"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/srec_comments_title"
+            android:textColor="#ff919191"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/tvCommentsCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="13dp"
+            android:text="0"
+            android:textColor="#ff919191"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+</RelativeLayout>

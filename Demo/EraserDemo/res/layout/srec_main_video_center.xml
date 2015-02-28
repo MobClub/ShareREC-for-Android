@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlVideoCenter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/llVideoLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ff3d4a4e"
+                android:gravity="center"
+                android:text="@string/srec_play"
+                android:textColor="#ffffffff"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/vVideoCenterSetting"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/srec_video_center_setting" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffbbbbbb" />
+
+        <cn.sharerec.gui.components.GameVideoList
+            android:id="@+id/lvVideoCenterList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llFilterLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/srec_report_dim"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <View
+            android:id="@+id/vFilterLayerDim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffe8e8e8"
+                android:orientation="vertical"
+                android:paddingBottom="23dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:paddingTop="23dp" >
+
+                <TextView
+                    android:id="@+id/tvFilterNewest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="23dp"
+                    android:background="@drawable/srec_report_back"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:text="@string/srec_order_newest"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tvFilterPlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="23dp"
+                    android:background="@drawable/srec_report_back"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:text="@string/srec_order_play_most"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tvFilterLike"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="23dp"
+                    android:background="@drawable/srec_report_back"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:text="@string/srec_order_like_most"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tvFilterAll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="23dp"
+                    android:background="@drawable/srec_report_back"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:text="@string/srec_order_all_condition"
+                    android:textColor="#ff000000"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/ivCloseFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/srec_report_cancel_back"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:text="@string/srec_cancel"
+                    android:textColor="#ffffffff"
+                    android:textSize="18dp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

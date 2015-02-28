@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffffff"
+    android:paddingBottom="10dp"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp"
+    android:paddingTop="10dp" >
+
+    <EditText
+        android:id="@+id/etComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/srec_like_back"
+        android:gravity="center_vertical"
+        android:hint="@string/srec_add_comment"
+        android:padding="8dp"
+        android:textColor="#ff000000"
+        android:textColorHint="#ffbac0c3"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tvAddComment"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="8dp"
+        android:text="@string/srec_comment"
+        android:textColor="#ffb3b3b3"
+        android:textSize="16dp" />
+
+</LinearLayout>

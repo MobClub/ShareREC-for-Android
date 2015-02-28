@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llShare"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:background="#ff3d4a4e"
+        android:gravity="center"
+        android:text="@string/srec_share_video"
+        android:textColor="#ffffffff"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffbbbbbb" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <RelativeLayout
+                    android:layout_width="135dp"
+                    android:layout_height="100dp" >
+
+                    <ImageView
+                        android:id="@+id/ivShareThumb"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/srec_share_thumb_back" />
+
+                    <View
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/srec_play_video_icon" />
+
+                    <TextView
+                        android:id="@+id/tvShareDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="9dp"
+                        android:background="#ff2b7aca"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:paddingTop="5dp"
+                        android:text="00:00"
+                        android:textColor="#ffffffff"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/etShareContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/srec_share_edit_back"
+                    android:gravity="left|top"
+                    android:padding="7dp"
+                    android:textColor="#ff131313"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="12dp" >
+
+                <FrameLayout
+                    android:id="@+id/flShareToSinaWeibo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/srec_share_share_back_left_top" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" >
+
+                        <ImageView
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="5dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/srec_plat_sina_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="@string/srec_sinaweibo"
+                            android:textColor="#ffffffff"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/flShareToWechat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/srec_share_share_back_right_top" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" >
+
+                        <ImageView
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="5dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/srec_plat_wechat_session_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="@string/srec_wechat"
+                            android:textColor="#ffffffff"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="3dp" >
+
+                <FrameLayout
+                    android:id="@+id/flShareToFacebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/srec_share_share_back_left_bottom" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" >
+
+                        <ImageView
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="5dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/srec_plat_facebook_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="@string/srec_facebook"
+                            android:textColor="#ffffffff"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/flShareToWechatMom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/srec_share_share_back_right_bottom" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" >
+
+                        <ImageView
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="5dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/srec_plat_wechat_timeline_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="@string/srec_wechatmoments"
+                            android:textColor="#ffffffff"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/srec_signin_btn_back" >
+
+                <View
+                    android:id="@+id/vShareUploadProgress"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/srec_main_share_progress" />
+				
+                <TextView
+                    android:id="@+id/tvShareUpload"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/srec_upload_video"
+                    android:textColor="#ffffffff"
+                    android:textSize="18dp" />
+                
+				<TextView
+                    android:id="@+id/tvShareFileSize"
+                    android:layout_marginBottom="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="1 KB"
+                    android:textColor="#ffffffff"
+                    android:textSize="10dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

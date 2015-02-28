@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llShare"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/srec_report_dim"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/vShareDim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/srec_share_panel_back"
+        android:padding="13dp" >
+
+        <RelativeLayout
+            android:id="@+id/rlShareThumb"
+            android:layout_width="181dp"
+            android:layout_height="103dp"
+            android:background="#ffe3e2e8" >
+
+            <cn.sharerec.gui.components.AsyncImageView
+                android:id="@+id/aivShareThumb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tvShareVideoDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="9dp"
+                android:background="#ff2b7aca"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+                android:paddingTop="5dp"
+                android:text="00:00"
+                android:textColor="#ffffffff"
+                android:textSize="12dp" />
+
+            <View
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/srec_play_video_icon" />
+        </RelativeLayout>
+
+        <EditText
+            android:imeOptions="actionNone"
+            android:id="@+id/etShareContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/rlShareThumb"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/rlShareThumb"
+            android:layout_marginLeft="7dp"
+            android:layout_toRightOf="@id/rlShareThumb"
+            android:background="#ffffffff"
+            android:gravity="left|top"
+            android:textColor="#ff000000"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tvShareVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="53dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/rlShareThumb"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/srec_share_btn_back"
+            android:gravity="center"
+            android:text="@string/srec_share"
+            android:textColor="#ffffffff"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tvShareClose"
+            android:layout_width="wrap_content"
+            android:layout_height="53dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tvShareVideo"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/srec_share_close_btn_back"
+            android:gravity="center"
+            android:text="@string/srec_close"
+            android:textColor="#ff000000"
+            android:textSize="18dp" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:background="#ffffffff"
+    android:padding="14dp" >
+
+    <TextView
+        android:id="@+id/tvReport"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="7dp"
+        android:background="@drawable/srec_gray_circle"
+        android:gravity="center"
+        android:paddingBottom="4dp"
+        android:text="i"
+        android:textColor="#ffffffff"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/tvReport"
+        android:text=" "
+        android:textColor="#ff539dcb"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tvOwnerAndAttrs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/tvText"
+        android:text=" "
+        android:textColor="#ff99a3a8"
+        android:textSize="14dp" />
+
+    <RelativeLayout
+        android:id="@+id/rlLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvOwnerAndAttrs"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/srec_like_back"
+        android:paddingBottom="5dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:paddingTop="5dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" >
+
+            <View
+                android:id="@+id/vLike"
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/srec_dislike" />
+
+            <TextView
+                android:id="@+id/tvLikeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="7dp"
+                android:text="0"
+                android:textColor="#ffbac0c3"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rlLike"
+        android:layout_marginLeft="7dp"
+        android:layout_toRightOf="@+id/rlLike"
+        android:background="@drawable/srec_comment_back"
+        android:paddingBottom="5dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:paddingTop="5dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" >
+
+            <View
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/srec_comments" />
+
+            <TextView
+                android:id="@+id/tvCommentsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="7dp"
+                android:text="0"
+                android:textColor="#ffbac0c3"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/rlLike"
+        android:background="@drawable/srec_comment_back"
+        android:paddingBottom="5dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:paddingTop="5dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" >
+
+            <View
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/srec_vp_play" />
+
+            <TextView
+                android:id="@+id/tvPlayCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="7dp"
+                android:text="0"
+                android:textColor="#ffbac0c3"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

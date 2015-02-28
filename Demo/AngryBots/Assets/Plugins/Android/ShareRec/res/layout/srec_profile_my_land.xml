@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="5dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="@drawable/srec_profile_nick_bg_land" >
+
+        <cn.sharerec.gui.components.AsyncImageView
+            android:id="@+id/aivProfileAvatar"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="9dp" />
+
+        <TextView
+            android:id="@+id/tvProfileNick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text=" "
+            android:textColor="#ff5f6261"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffd8d8d8" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="@drawable/srec_profile_conf_bg_land" >
+
+        <LinearLayout
+            android:id="@+id/rlProfileVideo"
+            android:layout_width="176dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvProfileVideoCount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|bottom"
+                android:singleLine="true"
+                android:text="0"
+                android:textColor="#ff464646"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tvProfileVideoName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|top"
+                android:singleLine="true"
+                android:text="@string/srec_video"
+                android:textColor="#ffbebebe"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#ffd8d8d8" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <View
+            android:id="@+id/tvProfileEdit"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="23dp"
+            android:background="@drawable/srec_profile_conf"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+</LinearLayout>
