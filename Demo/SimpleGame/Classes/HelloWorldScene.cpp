@@ -6,6 +6,18 @@
 using namespace cocos2d;
 using namespace cn::sharerec;
 
+bool isWithRECBar() {
+	JniMethodInfo mi;
+	const char* className = "org/cocos2dx/simplegame/DemoSelector";
+	const char* sig = "()Z";
+	bool res = JniHelper::getStaticMethodInfo(mi, className, "isWithRECBar", sig);
+	if (res) {
+		jboolean jRes = mi.env->CallStaticBooleanMethod(mi.classID, mi.methodID);
+		return (JNI_TRUE == jRes);
+	}
+	return false;
+}
+
 HelloWorld::~HelloWorld()
 {
 	if (_targets)
@@ -69,7 +81,9 @@ bool HelloWorld::init()
 		//////////////////////////////////////////////////////////////////////////
 
 		// add some menu items to show ShareRec operations
-		initShareRecMenuItems();
+		if (!isWithRECBar()) {
+			initShareRecMenuItems();
+		}
 
 		// 1. Add a menu item with "X" image, which is clicked to quit the program.
 
@@ -126,16 +140,7 @@ bool HelloWorld::init()
 void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
 	// "close" menu item clicked, stop recording
-	if (CCDirector::sharedDirector()->isPaused()) {
-		CocosDenshion::SimpleAudioEngine::sharedEngine()->resumeAllEffects();
-		CocosDenshion::SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
-		CCDirector::sharedDirector()->resume();
-
-		// resume ShareRec
-		ShareRec::resumeRecorder();
-	} else {
-		CCDirector::sharedDirector()->end();
-	}
+	CCDirector::sharedDirector()->end();
 }
 
 // cpp with cocos2d-x
@@ -357,11 +362,6 @@ void HelloWorld::initShareRecMenuItems() {
 void onStateChange(int state) {
 	CCLOG("ShareRec chages state to: %d", state);
 	if (state == STATE_STOPPED) {
-		// pause the game
-		CCDirector::sharedDirector()->pause();
-		CocosDenshion::SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
-		CocosDenshion::SimpleAudioEngine::sharedEngine()->pauseAllEffects();
-
 		// show share page
 		ShareRec::setText("C2d Cpp Demo");
 		ShareRec::addCustomAttr("score", "5000");
@@ -385,11 +385,6 @@ void HelloWorld::onStopRec(CCObject * pSender) {
 
 // show user profile page of ShareRec
 void HelloWorld::onShowProfile(CCObject * pSender) {
-	// pause the game
-	CCDirector::sharedDirector()->pause();
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->pauseAllEffects();
-
 	// pause ShareRec
 	ShareRec::pauseRecorder();
 

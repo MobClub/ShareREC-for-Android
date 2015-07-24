@@ -14,7 +14,7 @@
                 SortId="1"
                 AppKey="568898243"
                 AppSecret="38a4f8204cc784f81f9f0daaf31e02e3"
-                RedirectUrl="http://www.mob.com"
+                RedirectUrl="http://www.sharesdk.cn"
                 Enable="true" />
     	其中的SortId是此平台在分享列表中的位置，由开发者自行定义，可以是任何整型数字，数值越大
     	越靠后AppKey、AppSecret和RedirectUrl是您在新浪微博上注册开发者信息和应用后得到的信息
@@ -23,33 +23,28 @@
     	已经添加到应用中，平台实例依然不可获取。
     	
     	各个平台注册应用信息的地址如下：
-			新浪微博        http://open.weibo.com
-			腾讯微博        http://dev.t.qq.com
-			QQ空间          http://connect.qq.com/intro/login/
-			微信好友        http://open.weixin.qq.com
-			Facebook       https://developers.facebook.com
-			Twitter        https://dev.twitter.com
-			人人网          http://dev.renren.com
-			开心网          http://open.kaixin001.com
-			搜狐微博        http://open.t.sohu.com
-			网易微博        http://open.t.163.com
-			豆瓣           http://developers.douban.com
-			
-			有道云笔记      http://note.youdao.com/open/developguide.html#app
-			印象笔记        https://dev.evernote.com/
-			Linkedin       https://developer.linkedin.com
-			FourSquare     https://developer.foursquare.com/
-			搜狐随身看      https://open.sohu.com/
-			Flickr         http://www.flickr.com/services/
-			Pinterest      http://developers.pinterest.com/
-			Tumblr         http://www.tumblr.com/developers
-			Dropbox        https://www.dropbox.com/developers
-			Instagram      http://instagram.com/developer#
-			VKontakte      http://vk.com/dev
-			易信好友        http://open.yixin.im/
-			明道	           http://open.mingdao.com/
-			Line           http://media.line.me/zh-hant/
-			Pocket         http://getpocket.com/developer/apps/new
+			新浪微博                 http://open.weibo.com
+			腾讯微博                 http://dev.t.qq.com
+			QQ空间                      http://connect.qq.com/intro/login/
+			微信好友                 http://open.weixin.qq.com
+			Facebook      https://developers.facebook.com
+			Twitter       https://dev.twitter.com
+			人人网                      http://dev.renren.com
+			开心网                      http://open.kaixin001.com
+			搜狐微博                 http://open.t.sohu.com
+			网易微博                 http://open.t.163.com
+			豆瓣                           http://developers.douban.com
+			有道云笔记            http://note.youdao.com/open/developguide.html#app
+			印象笔记                 https://dev.evernote.com/
+			Linkedin      https://www.linkedin.com/secure/developer?newapp=
+			FourSquare    https://developer.foursquare.com/
+			搜狐随身看            https://open.sohu.com/
+			Flickr        http://www.flickr.com/services/
+			Pinterest     http://developers.pinterest.com/
+			Tumblr        http://www.tumblr.com/developers
+			Dropbox       https://www.dropbox.com/developers
+			Instagram     http://instagram.com/developer#
+			VKontakte     http://vk.com/dev
     -->
     
     <ShareSDK 
@@ -98,7 +93,6 @@
         Id="4"
         SortId="4"
         AppId="wx4868b35061f87885"
-        AppSecret="64020361b8ec4c99936c0e3999a9f249"
         BypassApproval="true"
         Enable="true" />
     
@@ -106,7 +100,6 @@
         Id="5"
         SortId="5"
         AppId="wx4868b35061f87885"
-        AppSecret="64020361b8ec4c99936c0e3999a9f249"
         BypassApproval="true"
         Enable="true" />
         
@@ -114,7 +107,6 @@
         Id="6"
         SortId="6"
         AppId="wx4868b35061f87885"
-        AppSecret="64020361b8ec4c99936c0e3999a9f249"
         Enable="true" />
     
 	<!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
@@ -131,7 +123,6 @@
         SortId="8"
         ConsumerKey="107704292745179"
         ConsumerSecret="38053202e1a5fe26c80c753071f0b573"
-        RedirectUrl="http://mob.com"
         Enable="true" />
 
     <Twitter
@@ -168,6 +159,23 @@
         SortId="13"
         Enable="true" />
     
+    <SohuMicroBlog
+        Id="14"
+        SortId="14"
+        ApiKey="q70QBQM9T0COxzYpGLj9"
+        ConsumerKey="q70QBQM9T0COxzYpGLj9"
+        ConsumerSecret="XXYrx%QXbS!uA^m2$8TaD4T1HQoRPUH0gaG2BgBd"
+        CallbackUrl="http://www.sharesdk.cn"
+        Enable="true" />
+	
+    <NetEaseMicroBlog
+        Id="15"
+        SortId="15"
+        ConsumerKey="T5EI7BXe13vfyDuy"
+        ConsumerSecret="gZxwyNOvjFYpxwwlnuizHRRtBRZ2lV1j"
+        RedirectUri="http://www.shareSDK.cn"
+        Enable="true" />
+    
     <Douban
         Id="16"
         SortId="16"
@@ -182,7 +190,7 @@
         HostType="product"
         ConsumerKey="dcde25dca105bcc36884ed4534dab940"
         ConsumerSecret="d98217b4020e7f1874263795f44838fe"
-        RedirectUri="http://www.sharesdk.cn/"
+        RedirectUri="http://www.sharesdk.cn"
         Enable="true" />
         
 	<SohuSuishenkan
@@ -315,45 +323,4 @@
         SortId="32"
         Enable="true" />
 	
-	<KakaoTalk
-	    Id="33"
-        SortId="33"
-        Enable="true" />
-	
-	<KakaoStory
-	    Id="34"
-        SortId="34"
-        Enable="true" />
-
-    <WhatsApp
-        Id="35"
-        SortId="35"
-        Enable="true" />
-    
-    <Bluetooth
-        Id="36"
-        SortId="36"
-        Enable="true" />
-
-    <Pocket
-        Id="37"
-        SortId="37"
-        ConsumerKey="32741-389c565043c49947ba7edf05"
-        Enable="true" />
-    
-    <Instapaper
-        Id="38"
-        SortId="38"
-        ConsumerKey="4rDJORmcOcSAZL1YpqGHRI605xUvrLbOhkJ07yO0wWrYrc61FA"
-        ConsumerSecret="GNr1GespOQbrm8nvd7rlUsyRQsIo3boIbMguAl9gfpdL0aKZWe"
-        Enable="true" />
-    
-    <FacebookMessenger
-        Id="39"
-        SortId="39"
-        ConsumerKey="107704292745179"
-        ConsumerSecret="38053202e1a5fe26c80c753071f0b573"
-        RedirectUrl="http://mob.com"
-        Enable="true" />
-    
 </DevInfor>

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Runtime.InteropServices;
 
 namespace cn.sharerec {
 #if UNITY_ANDROID
@@ -19,7 +20,9 @@ namespace cn.sharerec {
 		private static ShareRec instance;
 		public string AppKey = "76684bc49b3";
 		private JavaInterface javaInter;
-		
+		private OnFrameBeginHandler beginHanlder;
+		private OnFrameEndHandler endHanlder;
+
 		private int curAction;
 		public static OnRecorderStarting OnRecorderStartingHandler;
 		public static OnRecorderStarted OnRecorderStartedHandler;
@@ -30,6 +33,14 @@ namespace cn.sharerec {
 		public static OnRecorderStopping OnRecorderStoppingHandler;
 		public static OnRecorderStopped OnRecorderStoppedHandler;
 
+		#if (!(UNITY_2_6 || UNITY_3_0 || UNITY_3_1 || UNITY_3_2 || UNITY_3_3 || UNITY_3_4 || UNITY_3_5 || UNITY_4_0 || UNITY_4_1 || UNITY_4_3_4 || UNITY_5_1_2))
+		[DllImport("ShareRecUnity")]
+		private static extern void setFBOInfo( int screenfbo );
+
+		[DllImport("ShareRecUnity")]
+		public static extern int getScreenFbo();
+		#endif
+
 		void Awake() {
 			if (instance != null) {
 				Destroy(gameObject);
@@ -39,13 +50,46 @@ namespace cn.sharerec {
 			DontDestroyOnLoad(this);
 			instance = this;
 
-			javaInter = new JavaInterface(AppKey);
+			javaInter = new JavaInterface(AppKey, gameObject.name);
 			javaInter.setOnRecorderStateListener(gameObject.name, "onStateChange");
 			javaInter.setSampleRate(AudioSettings.outputSampleRate);
 			int channelCount = AudioSettings.speakerMode == AudioSpeakerMode.Mono ? 1 : 2;
 			javaInter.setChannelCount(channelCount > 0 ? channelCount : 2);
 			javaInter.setFrameRate(25);
-			javaInter.setFrameSize(Screen.width, Screen.height);
+			InitializeFrontMostCamera();
+			InitializeBackMostCamera();
+		}
+		
+		private void InitializeFrontMostCamera() {
+			if (GameObject.Find("FrontMostCamera") == null) {
+				GameObject cameraObject = new GameObject();
+				Camera camera = cameraObject.AddComponent<Camera>();
+				camera.name = "FrontMostCamera";
+				camera.clearFlags = CameraClearFlags.Nothing;
+				camera.cullingMask = 0;
+				camera.depth = Single.MinValue;
+				beginHanlder = camera.gameObject.AddComponent<OnFrameBeginHandler>();
+				beginHanlder.SetJavaInterface(javaInter);
+				beginHanlder.enabled = false;
+				cameraObject.SetActive(true);
+				UnityEngine.Object.DontDestroyOnLoad(cameraObject);
+			}
+		}
+		
+		private void InitializeBackMostCamera() {
+			if (GameObject.Find("BackMostCamera") == null) {
+				GameObject cameraObject = new GameObject();
+				Camera camera = cameraObject.AddComponent<Camera>();
+				camera.name = "BackMostCamera";
+				camera.clearFlags = CameraClearFlags.Nothing;
+				camera.cullingMask = 0;
+				camera.depth = Single.MaxValue;
+				endHanlder = camera.gameObject.AddComponent<OnFrameEndHandler>();
+				endHanlder.SetJavaInterface(javaInter);
+				endHanlder.enabled = false;
+				cameraObject.SetActive(true);
+				UnityEngine.Object.DontDestroyOnLoad(cameraObject);
+			}
 		}
 
 		// =======================================
@@ -61,6 +105,8 @@ namespace cn.sharerec {
 		/// 启动录制模块 (Start the recorder module)
 		/// </summary>
 		public static void StartRecorder() {
+			instance.beginHanlder.enabled = true;
+			instance.endHanlder.enabled = true;
 			instance.javaInter.start();
 		}
 
@@ -82,6 +128,8 @@ namespace cn.sharerec {
 		/// 停止录制模块 (Stop the recorder module)
 		/// </summary>
 		public static void StopRecorder() {
+			instance.beginHanlder.enabled = false;
+			instance.endHanlder.enabled = false;
 			instance.javaInter.stop();
 		}
 
@@ -136,6 +184,22 @@ namespace cn.sharerec {
 		}
 
 		// =======================================
+
+		private void setUnityRenderEvent(string eventID){
+			#if (!(UNITY_2_6 || UNITY_3_0 || UNITY_3_1 || UNITY_3_2 || UNITY_3_3 || UNITY_3_4 || UNITY_3_5 || UNITY_4_0 || UNITY_4_1 || UNITY_4_3_4 || UNITY_5_1_2))
+			int[] iparameters = new int[1]{0};
+			string[] parameters = eventID.Split('|');
+			int i = 0; 
+
+			foreach (string parameter in parameters){
+				if (!Int32.TryParse(parameter, out iparameters[i] )) {
+					return;
+				}
+				i++;
+			}
+			setFBOInfo( iparameters[0] );
+			#endif
+		}
 
 		private void onStateChange(string action) {
 			int iAction = -1;

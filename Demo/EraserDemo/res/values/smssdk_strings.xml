@@ -40,7 +40,7 @@
     <string name="smssdk_add_contact">添加</string>
     <string name="smssdk_get_verifycode_frequentlly">发送验证码太频繁，请稍后再发！</string>
     <string name="smssdk_get_phone_verifycode_today_frequentlly">很抱歉，该手机号申请验证码次数过多，请明天重试！</string>
-    <string name="smssdk_send_sounds_identify_code">是否确认发送语音验证码</string>
+    <string name="smssdk_send_sounds_identify_code">确定后将致电您的手机号，语音播报验证码.如不希望被来电打扰请使用短信验证码。</string>
     <string name="smssdk_make_sure_send_sounds">确认发送？</string>
     <string name="smssdk_send_sounds_success">语音验证码发送成功</string>
 </resources>

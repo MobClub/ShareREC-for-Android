@@ -1,5 +1,7 @@
 package com.mob.glesdemo;
 
+import java.util.Random;
+
 import cn.sharerec.recorder.GLRecorder;
 import cn.sharerec.recorder.OnRecorderStateListener;
 import cn.sharerec.recorder.Recorder;
@@ -29,7 +31,7 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 		setContentView(R.layout.main_activity);
 		findViewById(R.id.btnStart).setOnClickListener(this);
 		findViewById(R.id.btnStop).setOnClickListener(this);
-		findViewById(R.id.btnProfile).setOnClickListener(this);
+		findViewById(R.id.btnVideosCenter).setOnClickListener(this);
 		final SeekBar sbSpeed = (SeekBar) findViewById(R.id.sbSpeed);
 		maxProgress = sbSpeed.getMax() / 2;
 		sbSpeed.setProgress(maxProgress);
@@ -48,8 +50,16 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 	
 	private void playMusic() {
 		try {
+			String[] songs = new String[] {
+					"http://git.oschina.net/alexyu.yxj/MyTmpFiles/raw/master/Pianoboy%20-%20The%20Truth%20That%20You%20Leave.mp3",
+					"http://git.oschina.net/alexyu.yxj/MyTmpFiles/raw/master/Run%20Away%20with%20Me.mp3",
+					"http://git.oschina.net/alexyu.yxj/MyTmpFiles/raw/master/%E5%A4%9C%E7%9A%84%E9%92%A2%E7%90%B4%E6%9B%B2%20-%205.mp3"
+			};
+			Random rnd = new Random(System.currentTimeMillis());
+			String song = songs[rnd.nextInt(songs.length)];
+			
 			mp = new MediaPlayer();
-			Uri uri = Uri.parse("http://git.oschina.net/alexyu.yxj/MyTmpFiles/raw/master/Twinkle%20Tiwnkle.mp3");
+			Uri uri = Uri.parse(song);
 			mp.setDataSource(this, uri);
 			mp.setLooping(true);
 			mp.setOnPreparedListener(this);
@@ -69,7 +79,7 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 		switch (v.getId()) {
 			case R.id.btnStart: startRecorder(); break;
 			case R.id.btnStop: stopRecorder(); break;
-			case R.id.btnProfile: showProfile(); break;
+			case R.id.btnVideosCenter: showVideoCenter(); break;
 		}
 	}
 	
@@ -115,9 +125,9 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 		recorder.stopRecorder();
 	}
 
-	// 显示用户资料 (show user profile)
-	private void showProfile() {
-		recorder.showProfile();
+	// 显示视频中心 (show video center)
+	private void showVideoCenter() {
+		recorder.showVideoCenter();
 	}
 	
 	public void onStateChange(Recorder recorder, int state) {

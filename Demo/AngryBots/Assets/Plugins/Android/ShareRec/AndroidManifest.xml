@@ -2,8 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.sharerec"
     android:versionCode="1"
-    android:versionName="1.0.0" >
+    android:versionName="1.0" >
 
+    <application>
+		<activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+    </application>
+
+    <uses-sdk android:minSdkVersion="16"/>
+    
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -11,48 +21,6 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-	
-    <uses-sdk
-        android:minSdkVersion="16"
-        android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
-	<application android:debuggable="true"
-		android:icon="@drawable/app_icon"
-        android:label="@string/app_name">
-        <activity
-            android:name="cn.sharerec.recorder.SrecUnityPlayerActivity"
-            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
-            android:label="@string/app_name"
-            android:launchMode="singleTask"
-            android:screenOrientation="landscape" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-            <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
-            <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" />
-        </activity>
-		
-		<activity
-            android:name="cn.sharerec.ShareRecUIShell"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-		
-		<activity
-            android:name="cn.sharesdk.framework.ShareSDKUIShell"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-			
-		<activity
-            android:name="cn.smssdk.SMSSDKUIShell"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-	</application>
-		
 </manifest>

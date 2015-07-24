@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="srec_x_videos">
+        <item quantity="one">%s video</item>
+        <item quantity="other">%s videos</item>
+    </plurals>
+    
+<!--     <plurals name="srec_x_folowers_x_videos">
+        <item quantity="one">%1$s follower, %2$s video</item>
+        <item quantity="other">%1$s followers, %2$s videos</item>
+    </plurals> -->
+    
+    <plurals name="srec_before_x_minutes">
+        <item quantity="one">%s minute ago</item>
+        <item quantity="other">%s minutes ago</item>
+    </plurals>
+    
+    <plurals name="srec_before_x_hour">
+        <item quantity="one">%s hour ago</item>
+        <item quantity="other">%s hours ago</item>
+    </plurals>
+    
+    <plurals name="srec_before_x_days">
+        <item quantity="one">%s day agao</item>
+        <item quantity="other">%s days agao</item>
+    </plurals>
+    
+    <plurals name="srec_before_x_monthes">
+        <item quantity="one">%s month ago</item>
+        <item quantity="other">%s months ago</item>
+    </plurals>
+    
+    <plurals name="srec_before_x_years">
+        <item quantity="one">%s year ago</item>
+        <item quantity="other">%s years ago</item>
+    </plurals>
+    
+    <plurals name="srec_there_are_x_local_videos">
+        <item quantity="one">%s local video</item>
+        <item quantity="other">%s local videos</item>
+    </plurals>
+    
+	<plurals name="srec_view_x_times">
+        <item quantity="one">%s viewer</item>
+        <item quantity="other">%s viewers</item>
+    </plurals>
+</resources>

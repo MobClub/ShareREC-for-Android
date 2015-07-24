@@ -14,7 +14,7 @@
 	<string name="smssdk_error_desc_521">token无效</string>
 	<string name="smssdk_error_desc_522">duid无效</string>
 	<string name="smssdk_error_desc_523">已验证</string>
-	<string name="smssdk_error_desc_524">请求频于繁</string>
+	<string name="smssdk_error_desc_524">请求过于频繁</string>
 	<string name="smssdk_error_desc_525">签名无效</string>
 	<string name="smssdk_error_desc_526">余额不足</string>
 	

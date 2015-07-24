@@ -40,7 +40,7 @@
     <string name="smssdk_add_contact">Add</string>
     <string name="smssdk_get_verifycode_frequentlly">Send verification code too frequently, please try later!</string>
     <string name="smssdk_get_phone_verifycode_today_frequentlly">I am sorry, the phone number for verification code number too much, please try again tomorrow!</string>
-    <string name="smssdk_send_sounds_identify_code">Whether confirm send voice verification code</string>
+    <string name="smssdk_send_sounds_identify_code">We will call you after your comfirmation. Vocie verification code. Please use message verification code service if you don\'t want to be called.</string>
     <string name="smssdk_make_sure_send_sounds">Delivery confirmation?</string>
     <string name="smssdk_send_sounds_success">Voice verification code sent successfully</string>
 </resources>

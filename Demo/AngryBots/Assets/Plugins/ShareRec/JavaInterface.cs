@@ -7,13 +7,20 @@ namespace cn.sharerec {
 	public class JavaInterface {
 		private AndroidJavaObject javaRecorder;
 
-		public JavaInterface(string appkey) {
+		public JavaInterface(string appkey, string gameObject) {
 			try {
-				AndroidJavaClass clz = new AndroidJavaClass("cn.sharerec.recorder.UnityRecorder");
-				javaRecorder = clz.CallStatic<AndroidJavaObject>("getInstance", appkey);
+				AndroidJavaClass clz = null;
+				clz = new AndroidJavaClass("cn.sharerec.recorder.UnityRecorder");
+				javaRecorder = clz.CallStatic<AndroidJavaObject>("getInstance", appkey, gameObject);
 			} catch(Exception e) {
 				javaRecorder = null;
 			}
+
+			try {
+				AndroidJavaClass UnityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+				AndroidJavaObject currentActivity = UnityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+				currentActivity.Call("setRecorder", javaRecorder);
+			} catch(Exception e) {}
 		}
 
 		public void setOnRecorderStateListener(String go, String cb) {
@@ -37,12 +44,6 @@ namespace cn.sharerec {
 		public void setFrameRate(int frameRate) {
 			if (javaRecorder != null) {
 				javaRecorder.Call("setFrameRate", frameRate);
-			}
-		}
-
-		public void setFrameSize(int width, int height) {
-			if (javaRecorder != null) {
-				javaRecorder.Call("setFrameSize", width, height);
 			}
 		}
 
@@ -128,6 +129,18 @@ namespace cn.sharerec {
 		public void setBitRate(int bitRate) {
 			if (javaRecorder != null) {
 				javaRecorder.Call("setBitRate", bitRate);
+			}
+		}
+
+		public void onPreRender() {
+			if (javaRecorder != null) {
+				javaRecorder.Call("onPreRender");
+			}
+		}
+		
+		public void onPostRender(int screenfbo) {
+			if (javaRecorder != null) {
+				javaRecorder.Call("onPostRender",screenfbo);
 			}
 		}
 

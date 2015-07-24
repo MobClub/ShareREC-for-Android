@@ -38,21 +38,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-       	<activity
-            android:name="cn.sharerec.ShareRecUIShell"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
 		
 		<activity
-            android:name="cn.sharesdk.framework.ShareSDKUIShell"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-		
-		<activity
-            android:name="cn.smssdk.SMSSDKUIShell"
+            android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />

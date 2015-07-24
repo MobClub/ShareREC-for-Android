@@ -6,6 +6,13 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
+#if 1
+#define  LOG_TAG    "sharerec"
+#define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
+#else
+#define  LOGD(...) 
+#endif
+
 namespace cn {
 	namespace sharerec {
 

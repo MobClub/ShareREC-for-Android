@@ -25,13 +25,11 @@ package org.cocos2dx.simplegame;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
-
 import android.os.Bundle;
 import cn.sharerec.recorder.Cocos2DRecorder;
-
-public class SimpleGame extends Cocos2dxActivity{
-
-	protected void onCreate(Bundle savedInstanceState){
+public class SimpleGame extends Cocos2dxActivity {
+	
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 	}
 	
@@ -42,4 +40,5 @@ public class SimpleGame extends Cocos2dxActivity{
     static {
         System.loadLibrary("game");
     }
+
 }
