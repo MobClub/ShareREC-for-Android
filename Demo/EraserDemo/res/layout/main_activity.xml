@@ -41,14 +41,6 @@
             android:alpha="0.75"
             android:minEms="8"
             android:text="@string/profile" />
-
-        <TextView
-            android:id="@+id/tvTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="bottom|center_horizontal"
-            android:minEms="8"/>
     </LinearLayout>
 
 </FrameLayout>

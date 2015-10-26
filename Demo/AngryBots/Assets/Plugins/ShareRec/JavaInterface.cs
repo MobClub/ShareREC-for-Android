@@ -7,25 +7,25 @@ namespace cn.sharerec {
 	public class JavaInterface {
 		private AndroidJavaObject javaRecorder;
 
-		public JavaInterface(string appkey, string gameObject) {
+		public JavaInterface(string appkey) {
 			try {
 				AndroidJavaClass clz = null;
-				clz = new AndroidJavaClass("cn.sharerec.recorder.UnityRecorder");
-				javaRecorder = clz.CallStatic<AndroidJavaObject>("getInstance", appkey, gameObject);
+				clz = new AndroidJavaClass("cn.sharerec.recorder.impl.UnityRecorder");
+				javaRecorder = clz.CallStatic<AndroidJavaObject>("getInstance", appkey);
 			} catch(Exception e) {
 				javaRecorder = null;
 			}
-
-			try {
-				AndroidJavaClass UnityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-				AndroidJavaObject currentActivity = UnityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
-				currentActivity.Call("setRecorder", javaRecorder);
-			} catch(Exception e) {}
 		}
 
-		public void setOnRecorderStateListener(String go, String cb) {
+		public void setGameObject(string gameObject) {
 			if (javaRecorder != null) {
-				javaRecorder.Call("setOnRecorderStateListener", go, cb);
+				javaRecorder.Call("setGameObject", gameObject);
+			}
+		}
+
+		public void setOnRecorderStateListener(string callback) {
+			if (javaRecorder != null) {
+				javaRecorder.Call("setOnRecorderStateListener", callback);
 			}
 		}
 
@@ -44,6 +44,12 @@ namespace cn.sharerec {
 		public void setFrameRate(int frameRate) {
 			if (javaRecorder != null) {
 				javaRecorder.Call("setFrameRate", frameRate);
+			}
+		}
+
+		public void setRecordAudioFromMic(bool yes) {
+			if (javaRecorder != null) {
+				javaRecorder.Call("setRecordAudioFromMic", yes);
 			}
 		}
 
@@ -89,7 +95,7 @@ namespace cn.sharerec {
 			}
 		}
 
-		public void addAttrData(String key, String value) {
+		public void addAttrData(string key, string value) {
 			if (javaRecorder != null) {
 				javaRecorder.Call("addAttrData", key, value);
 			}
@@ -102,21 +108,21 @@ namespace cn.sharerec {
 			return false;
 		}
 
-		public void showShare() {
+		public void showShare(string callback) {
 			if (javaRecorder != null) {
-				javaRecorder.Call("showShare");
+				javaRecorder.Call("showShare", callback);
 			}
 		}
 
-		public void showVideoCenter() {
+		public void showVideoCenter(string callback) {
 			if (javaRecorder != null) {
-				javaRecorder.Call("showVideoCenter");
+				javaRecorder.Call("showVideoCenter", callback);
 			}
 		}
 
-		public void showProfile() {
+		public void showProfile(string callback) {
 			if (javaRecorder != null) {
-				javaRecorder.Call("showProfile");
+				javaRecorder.Call("showProfile", callback);
 			}
 		}
 
@@ -132,9 +138,9 @@ namespace cn.sharerec {
 			}
 		}
 
-		public void onPreRender() {
+		public void onPreRender(int isPlugin) {
 			if (javaRecorder != null) {
-				javaRecorder.Call("onPreRender");
+				javaRecorder.Call("onPreRender",isPlugin);
 			}
 		}
 		
@@ -142,6 +148,51 @@ namespace cn.sharerec {
 			if (javaRecorder != null) {
 				javaRecorder.Call("onPostRender",screenfbo);
 			}
+		}
+
+		public void OnRenderImage(int texture) {
+			if (javaRecorder != null) {
+				javaRecorder.Call("OnRenderImage",texture);
+			}
+		}
+
+		public void setMaxFrameSize(int level, string callback) {
+			if (javaRecorder != null) {
+				javaRecorder.Call("setMaxFrameSize", level, callback);
+			}
+		}
+
+		public long[] listLocalVideos() {
+			if (javaRecorder != null) {
+				return javaRecorder.Call<long[]>("listLocalVideos");
+			}
+			return new long[0];
+		}
+
+		public string getLocalVideoPath(long videoId) {
+			if (javaRecorder != null) {
+				return javaRecorder.Call<string>("getLocalVideoPath", videoId);
+			}
+			return null;
+		}
+
+		public void deleteLocalVideo(long videoId) {
+			if (javaRecorder != null) {
+				javaRecorder.Call<string>("deleteLocalVideo", videoId);
+			}
+		}
+		
+		public void setUseES3( bool bES3 ){
+			if (javaRecorder != null) {
+				javaRecorder.Call("setUseES3",bES3);
+			}
+		}
+
+		public RECBar getRECBar(string gameObjet, string callback) {
+			if (javaRecorder != null) {
+				return new RECBar(javaRecorder, gameObjet, callback);
+			}
+			return null;
 		}
 
 	}

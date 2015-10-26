@@ -39,7 +39,7 @@ public:
 	// the following methods are callbacks for ShareRec menu items
     virtual void onStartRec(CCObject* pSender);
 	virtual void onStopRec(CCObject* pSender);
-	virtual void onShowProfile(CCObject* pSender);
+	virtual void onShowVideoCenter(CCObject* pSender);
 	// ==========================================
 	
 protected:

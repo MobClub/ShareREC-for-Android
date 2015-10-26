@@ -18,6 +18,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     CCDirector *pDirector = CCDirector::sharedDirector();
     
     pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
+	// ShareRec::setDesignResolution();
     
     CCSize screenSize = CCEGLView::sharedOpenGLView()->getFrameSize();
     CCSize designSize = CCSizeMake(480, 320);
@@ -48,6 +49,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	// init  ShareRec after the design resolution has been set and before the game is started
 	ShareRec::setDebuggable();
 	ShareRec::setDesignResolution();
+	ShareRec::setMaxFrameSize(ShareRec::LEVEL_3840_2160);
+	ShareRec::setUseES3(false);
 
     // create a scene. it's an autorelease object
     CCScene *pScene = HelloWorld::scene();

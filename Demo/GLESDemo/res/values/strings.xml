@@ -1,6 +1,7 @@
 <resources>
-
     <string name="app_name">GLESDemo</string>
+    <string name="en_fbo">Enable FBO</string>
+    <string name="dis_fbo">Disable FBO</string>
     <string name="start">Start Recorder</string>
     <string name="stop">Stop Recorder</string>
     <string name="video_center">Video Center</string>

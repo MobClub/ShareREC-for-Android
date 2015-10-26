@@ -30,7 +30,7 @@ namespace cn {
 		extern "C" {	
 		#endif
 
-			JNIEXPORT void JNICALL Java_cn_sharerec_recorder_Cocos2DRecorder_onStateChange
+			JNIEXPORT void JNICALL Java_cn_sharerec_recorder_impl_Cocos2DRecorder_onStateChange
 					(JNIEnv* env, jobject thiz, jint listener, jint state);
 
 		#ifdef __cplusplus
@@ -39,6 +39,14 @@ namespace cn {
 
 		class ShareRec {
 		public:
+			
+			 enum LevelMaxFrameSize{
+				LEVEL_480_360 = 0,
+				LEVEL_1280_720 = 1,
+				LEVEL_1920_1080 = 2,
+				LEVEL_2048_1152 = 3,
+				LEVEL_3840_2160 = 4
+			 };
 			
 			typedef void(*OnRecorderStateListener) (int state);
 
@@ -111,6 +119,31 @@ namespace cn {
 			  * 显示异常日志(Show exception loggs)
 			  */
 			static void setDebuggable();
+			
+			/**
+			  * 设置最大录屏分辨率（0--（480*360）1--（1280*720）2--（1920*1080）
+			  */
+			static void setMaxFrameSize(LevelMaxFrameSize level);
+
+			/**
+			  * 列出本地已经缓存的视频(Lists the local videos.)
+			  */
+			static void listLocalVideos(jlong** list, int* len);
+
+			/**
+			  * 通过缓存的视频ID获取本地路径(Gets the local video path by its ID.)
+			  */
+			static bool getLocalVideoPath(jlong videoId, char** path);
+
+			/**
+			  * 删除缓存视频(Deletes the local video by its ID.)
+			  */
+			static void deleteLocalVideo(jlong videoId);
+
+			/**
+			  * 设置是否使用opengl3.0 的方式录屏.
+			  */
+			static void setUseES3( jboolean bES3 );
 
 		private:
 
@@ -119,6 +152,7 @@ namespace cn {
 			static bool getMethod(JniMethodInfo& mi, const char* name, const char* sig);
 
 			static void releaseMethod(JniMethodInfo& mi);
+
 		};
 	}
 }

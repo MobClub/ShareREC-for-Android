@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
-using System.Runtime.InteropServices;
 
 namespace cn.sharerec {
 #if UNITY_ANDROID
 
-	public class ShareRec : MonoBehaviour {
+	public class ShareREC : MonoBehaviour {
 		private const int STATE_IDLE = 0;
 		private const int STATE_STARTING = 1;
 		private const int STATE_STARTED = 2;
@@ -17,13 +16,24 @@ namespace cn.sharerec {
 		private const int STATE_STOPPING = 7;
 		private const int STATE_STOPPED = STATE_IDLE;
 
-		private static ShareRec instance;
-		public string AppKey = "76684bc49b3";
-		private JavaInterface javaInter;
-		private OnFrameBeginHandler beginHanlder;
-		private OnFrameEndHandler endHanlder;
+		private const int RETURN_FROM_SHARE = -100;
+		private const int RETURN_FROM_VIDEO_CENTER = -101;
+		private const int RETURN_FROM_PROFILE = -102;
 
+		private const int RECBAR_PROFILE = 1;
+		private const int RECBAR_START = 2;
+		private const int RECBAR_STOP = 3;
+		private const int RECBAR_VIDEOCENTER = 4;
+
+		public string AppKey = "76684bc49b3";
+		public LevelMaxFrameSize MaxFrameSize = LevelMaxFrameSize.LEVEL_1920_1080;
+		public int BitRate = 1572864; // default is 1572864;
+		public bool RecordAudioFromMic = false;
+
+		private static OnFrameBeginHandler beginHanlder;
+		private static OnFrameEndHandler endHanlder;
 		private int curAction;
+
 		public static OnRecorderStarting OnRecorderStartingHandler;
 		public static OnRecorderStarted OnRecorderStartedHandler;
 		public static OnRecorderPausing OnRecorderPausingHandler;
@@ -32,34 +42,23 @@ namespace cn.sharerec {
 		public static OnRecorderResumed OnRecorderResumedHandler;
 		public static OnRecorderStopping OnRecorderStoppingHandler;
 		public static OnRecorderStopped OnRecorderStoppedHandler;
-
-		#if (!(UNITY_2_6 || UNITY_3_0 || UNITY_3_1 || UNITY_3_2 || UNITY_3_3 || UNITY_3_4 || UNITY_3_5 || UNITY_4_0 || UNITY_4_1 || UNITY_4_3_4 || UNITY_5_1_2))
-		[DllImport("ShareRecUnity")]
-		private static extern void setFBOInfo( int screenfbo );
-
-		[DllImport("ShareRecUnity")]
-		public static extern int getScreenFbo();
-		#endif
+		
+		public static OnReturnFromShare OnReturnFromShareHandler;
+		public static OnReturnFromProfile OnReturnFromProfileHandler;
+		public static OnReturnFromVideoCenter OnReturnFromVideoCenterHandler;
 
 		void Awake() {
-			if (instance != null) {
-				Destroy(gameObject);
-				return;
-			}
-
-			DontDestroyOnLoad(this);
-			instance = this;
-
-			javaInter = new JavaInterface(AppKey, gameObject.name);
-			javaInter.setOnRecorderStateListener(gameObject.name, "onStateChange");
-			javaInter.setSampleRate(AudioSettings.outputSampleRate);
-			int channelCount = AudioSettings.speakerMode == AudioSpeakerMode.Mono ? 1 : 2;
-			javaInter.setChannelCount(channelCount > 0 ? channelCount : 2);
-			javaInter.setFrameRate(25);
+			try {
+				ShareRECImpl.init(AppKey, gameObject.name, (int) MaxFrameSize);
+				ShareRECImpl.SetBitRate(BitRate <= 0 ? 1572864 : BitRate);
+				if (RecordAudioFromMic) {
+					ShareRECImpl.SetRecordAudioFromMic();
+				}
+			} catch (Exception e) {}
 			InitializeFrontMostCamera();
 			InitializeBackMostCamera();
 		}
-		
+
 		private void InitializeFrontMostCamera() {
 			if (GameObject.Find("FrontMostCamera") == null) {
 				GameObject cameraObject = new GameObject();
@@ -69,10 +68,9 @@ namespace cn.sharerec {
 				camera.cullingMask = 0;
 				camera.depth = Single.MinValue;
 				beginHanlder = camera.gameObject.AddComponent<OnFrameBeginHandler>();
-				beginHanlder.SetJavaInterface(javaInter);
 				beginHanlder.enabled = false;
 				cameraObject.SetActive(true);
-				UnityEngine.Object.DontDestroyOnLoad(cameraObject);
+				DontDestroyOnLoad(cameraObject);
 			}
 		}
 		
@@ -85,11 +83,201 @@ namespace cn.sharerec {
 				camera.cullingMask = 0;
 				camera.depth = Single.MaxValue;
 				endHanlder = camera.gameObject.AddComponent<OnFrameEndHandler>();
-				endHanlder.SetJavaInterface(javaInter);
 				endHanlder.enabled = false;
 				cameraObject.SetActive(true);
-				UnityEngine.Object.DontDestroyOnLoad(cameraObject);
+				DontDestroyOnLoad(cameraObject);
 			}
+		}
+
+		private void setUnityRenderEvent(string eventID) {
+			#if ( UNITY_4_5 || UNITY_4_6 )
+				int[] iparameters = new int[1]{0};
+				string[] parameters = eventID.Split('|');
+				int i = 0; 
+				
+				foreach (string parameter in parameters){
+					if (!Int32.TryParse(parameter, out iparameters[i] )) {
+						return;
+					}
+					i++;
+				}
+				ShareRECImpl.setFBOInfo(iparameters[0]);
+			#endif
+		}
+		
+		private void onStateChange(string action) {
+			int iAction = -1;
+			if (!Int32.TryParse(action, out iAction)) {
+				return;
+			}
+			
+			switch (iAction) {
+			case STATE_STARTING: {
+				if (OnRecorderStartingHandler != null) {
+					OnRecorderStartingHandler();
+				}
+			} break;
+			case STATE_STARTED: {
+				if (curAction == STATE_RESUMING) {
+					if (OnRecorderResumedHandler != null) {
+						OnRecorderResumedHandler();
+					}
+				} else if (OnRecorderStartedHandler != null) {
+					OnRecorderStartedHandler();
+				}
+			} break;
+			case STATE_PAUSING: {
+				if (OnRecorderPausingHandler != null) {
+					OnRecorderPausingHandler();
+				}
+			} break;
+			case STATE_PAUSED: {
+				if (OnRecorderPausedHandler != null) {
+					OnRecorderPausedHandler();
+				}
+			} break;
+			case STATE_RESUMING: {
+				if (OnRecorderResumingHandler != null) {
+					OnRecorderResumingHandler();
+				}
+			} break;
+			case STATE_STOPPING: {
+				if (OnRecorderStoppingHandler != null) {
+					OnRecorderStoppingHandler();
+				}
+			} break;
+			case STATE_STOPPED: {
+				if (OnRecorderStoppedHandler != null) {
+					OnRecorderStoppedHandler();
+				}
+			} break;
+			}
+			
+			curAction = iAction;
+		}
+		
+		private void onReturnGame(string action) {
+			int iAction = 0;
+			if (!Int32.TryParse(action, out iAction)) {
+				return;
+			}
+			
+			switch (iAction) {
+			case RETURN_FROM_SHARE: {
+				if (OnReturnFromShareHandler != null) {
+					OnReturnFromShareHandler();
+				}
+			} break;
+			case RETURN_FROM_PROFILE: {
+				if (OnReturnFromProfileHandler != null) {
+					OnReturnFromProfileHandler();
+				}
+			} break;
+			case RETURN_FROM_VIDEO_CENTER: {
+				if (OnReturnFromVideoCenterHandler != null) {
+					OnReturnFromVideoCenterHandler();
+				}
+			} break;
+			}
+		}
+
+		void onRecBarAction(string action) {
+			int iAction = -1;
+			if (!Int32.TryParse(action, out iAction)) {
+				return;
+			}
+			
+			switch (iAction) {
+				case RECBAR_PROFILE: {
+					// 打开个人中心 (show user profile page)
+					ShareREC.ShowProfile(); 
+				} break;
+				case RECBAR_START: {
+					if (ShareREC.IsAvailable()) {
+						// 启动录制 (start recording)
+						ShareREC.StartRecorder();
+					}
+				} break;
+				case RECBAR_STOP: {
+					// 停止录制 (stop recording)
+					ShareREC.StopRecorder();
+				} break;
+				case RECBAR_VIDEOCENTER: {
+					// 打开视频中心 (show video center)
+					ShareREC.ShowVideoCenter();
+				} break;
+			}
+		}
+
+		/// <summary>
+		/// 此方法在录制模块启动时被调用(This method will be called when the recorder module is starting.)
+		/// </summary>
+		public delegate void OnRecorderStarting();
+		
+		/// <summary>
+		/// 此方法在录制模块启动后被调用(This method will be called when the recorder module is started.)
+		/// </summary>
+		public delegate void OnRecorderStarted();
+		
+		/// <summary>
+		/// 此方法在录制模块暂停时被调用(This method will be called when the recorder module is pausing.)
+		/// </summary>
+		public delegate void OnRecorderPausing();
+		
+		/// <summary>
+		/// 此方法在录制模块暂停后被调用(This method will be called when the recorder module is paused.)
+		/// </summary>
+		public delegate void OnRecorderPaused();
+		
+		/// <summary>
+		/// 此方法在录制模块恢复时被调用(This method will be called when the recorder module is resuming.)
+		/// </summary>
+		public delegate void OnRecorderResuming();
+		
+		/// <summary>
+		/// 此方法在录制模块恢复后被调用(This method will be called when the recorder module is resumed.)
+		/// </summary>
+		public delegate void OnRecorderResumed();
+		
+		/// <summary>
+		/// 此方法在录制模块停止时被调用(This method will be called when the recorder module is stopping.)
+		/// </summary>
+		public delegate void OnRecorderStopping();
+		
+		/// <summary>
+		/// 此方法在录制模块停止后被调用(This method will be called when the recorder module is stopped.)
+		/// </summary>
+		public delegate void OnRecorderStopped();
+		
+		/// <summary>
+		/// 此方法在分享页面关闭后调用(his method will be called after the Sharing Page is closed)
+		/// </summary>
+		public delegate void OnReturnFromShare();
+		
+		/// <summary>
+		/// 此方法在资料页面关闭后调用(his method will be called after the Profile Page is closed)
+		/// </summary>
+		public delegate void OnReturnFromProfile();
+		
+		/// <summary>
+		/// 此方法在视频中心页面关闭后调用(his method will be called after the Video Center Page is closed)
+		/// </summary>
+		public delegate void OnReturnFromVideoCenter();
+
+		// =======================================
+
+		/// <summary>
+		/// 设置视频描述文本(Sets the description of the video.)
+		/// </summary>
+		public static void SetText(string text) {
+			ShareRECImpl.SetText(text);
+		}
+		
+		/// <summary>
+		/// 添加视频的自定义属性(Adds the custom attributes of the video.)
+		/// </summary>
+		public static void AddCustomAttr(string key, string value) {
+			ShareRECImpl.AddCustomAttr(key, value);
 		}
 
 		// =======================================
@@ -98,200 +286,103 @@ namespace cn.sharerec {
 		/// 判断ShareRec是否支持当前的设备(Determines whether ShareRec is available for the current device.)
 		/// </summary>
 		public static bool IsAvailable() {
-			return instance.javaInter.isAvailable();
+			return ShareRECImpl.IsAvailable();
 		}
 
 		/// <summary>
 		/// 启动录制模块 (Start the recorder module)
 		/// </summary>
 		public static void StartRecorder() {
-			instance.beginHanlder.enabled = true;
-			instance.endHanlder.enabled = true;
-			instance.javaInter.start();
+			beginHanlder.enabled = true;
+			endHanlder.enabled = true;
+			ShareRECImpl.initRenderTexture();
+			ShareRECImpl.Start();
 		}
 
 		/// <summary>
 		/// 暂停录制模块(Pauses the recorder module)
 		/// </summary>
 		public static void PauseRecorder() {
-			instance.javaInter.pause();
+			ShareRECImpl.Pause();
 		}
 
 		/// <summary>
 		/// 恢复录制(Resumes the recorder module)
 		/// </summary>
 		public static void ResumeRecorder() {
-			instance.javaInter.resume();
+			ShareRECImpl.Resume();
 		}
 
 		/// <summary>
 		/// 停止录制模块 (Stop the recorder module)
 		/// </summary>
 		public static void StopRecorder() {
-			instance.beginHanlder.enabled = false;
-			instance.endHanlder.enabled = false;
-			instance.javaInter.stop();
+			beginHanlder.enabled = false;
+			endHanlder.enabled = false;
+			ShareRECImpl.ReleaseRenderTexture ();
+			ShareRECImpl.Stop();
 		}
 
 		/// <summary>
 		/// 打开视频中心(Shows the video center.)
 		/// </summary>
 		public static void ShowVideoCenter() {
-			instance.javaInter.showVideoCenter();
+			ShareRECImpl.ShowVideoCenter();
 		}
 
 		/// <summary>
 		/// 显示用户资料(Shows the user profile.)
 		/// </summary>
 		public static void ShowProfile() {
-			instance.javaInter.showProfile();
-		}
-
-		/// <summary>
-		/// 设置视频描述文本(Sets the description of the video.)
-		/// </summary>
-		public static void SetText(string text) {
-			instance.javaInter.setText(text);
-		}
-
-		/// <summary>
-		/// 添加视频的自定义属性(Adds the custom attributes of the video.)
-		/// </summary>
-		public static void AddCustomAttr(string key, string value) {
-			instance.javaInter.addAttrData(key, value);
+			ShareRECImpl.ShowProfile();
 		}
 
 		/// <summary>
 		/// 显示分享页面(Shows the share page.)
 		/// </summary>
 		public static void ShowShare() {
-			instance.javaInter.showShare();
+			ShareRECImpl.ShowShare();
 		}
 
 		/// <summary>
 		/// 清除ShareRec的缓存目录(Clears the cache folder of ShareRec.)
 		/// </summary>
 		public static void ClearCache() {
-			instance.javaInter.clearCache();
+			ShareRECImpl.ClearCache();
 		}
 
 		/// <summary>
-		/// 设置视频的码率(Sets the bit rate of the video.)
+		/// 列出本地已经缓存的视频(Lists the local videos.)
 		/// </summary>
-		/// <param name="bitRate">Bit rate.</param>
-		public static void SetBitRate(int bitRate) {
-			instance.javaInter.setBitRate(bitRate);
-		}
-
-		// =======================================
-
-		private void setUnityRenderEvent(string eventID){
-			#if (!(UNITY_2_6 || UNITY_3_0 || UNITY_3_1 || UNITY_3_2 || UNITY_3_3 || UNITY_3_4 || UNITY_3_5 || UNITY_4_0 || UNITY_4_1 || UNITY_4_3_4 || UNITY_5_1_2))
-			int[] iparameters = new int[1]{0};
-			string[] parameters = eventID.Split('|');
-			int i = 0; 
-
-			foreach (string parameter in parameters){
-				if (!Int32.TryParse(parameter, out iparameters[i] )) {
-					return;
-				}
-				i++;
-			}
-			setFBOInfo( iparameters[0] );
-			#endif
-		}
-
-		private void onStateChange(string action) {
-			int iAction = -1;
-			if (!Int32.TryParse(action, out iAction)) {
-				return;
-			}
-
-			switch (iAction) {
-				case STATE_STARTING: {
-					if (OnRecorderStartingHandler != null) {
-						OnRecorderStartingHandler();
-					}
-				} break;
-				case STATE_STARTED: {
-					if (curAction == STATE_RESUMING) {
-						if (OnRecorderResumedHandler != null) {
-							OnRecorderResumedHandler();
-						}
-					} else if (OnRecorderStartedHandler != null) {
-						OnRecorderStartedHandler();
-					}
-				} break;
-				case STATE_PAUSING: {
-					if (OnRecorderPausingHandler != null) {
-						OnRecorderPausingHandler();
-					}
-				} break;
-				case STATE_PAUSED: {
-					if (OnRecorderPausedHandler != null) {
-						OnRecorderPausedHandler();
-					}
-				} break;
-				case STATE_RESUMING: {
-					if (OnRecorderResumingHandler != null) {
-						OnRecorderResumingHandler();
-					}
-				} break;
-				case STATE_STOPPING: {
-					if (OnRecorderStoppingHandler != null) {
-						OnRecorderStoppingHandler();
-					}
-				} break;
-				case STATE_STOPPED: {
-					if (OnRecorderStoppedHandler != null) {
-						OnRecorderStoppedHandler();
-					}
-				} break;
-			}
-
-			curAction = iAction;
+		public static long[] ListLocalVideos() {
+			return ShareRECImpl.ListLocalVideos();
 		}
 
 		/// <summary>
-		/// 此方法在录制模块启动时被调用(This method will be called when the recorder module is starting.)
+		/// 通过缓存的视频ID获取本地路径(Gets the local video path by its ID.)
 		/// </summary>
-		public delegate void OnRecorderStarting();
+		public static string GetLocalVideoPath(long videoId) {
+			return ShareRECImpl.GetLocalVideoPath(videoId);
+		}
 
 		/// <summary>
-		/// 此方法在录制模块启动后被调用(This method will be called when the recorder module is started.)
+		/// 删除缓存视频(Deletes the local video by its ID.)
 		/// </summary>
-		public delegate void OnRecorderStarted();
+		public static void DeleteLocalVideo(long videoId) {
+			ShareRECImpl.DeleteLocalVideo(videoId);
+		}
 
 		/// <summary>
-		/// 此方法在录制模块暂停时被调用(This method will be called when the recorder module is pausing.)
+		/// 添加要录屏的cmaera(add record camera.)
 		/// </summary>
-		public delegate void OnRecorderPausing();
+		public static void addCameraRecord( RenderTexture src ) {
+			ShareRECImpl.addCameraRecord (src );
+		}
 
-		/// <summary>
-		/// 此方法在录制模块暂停后被调用(This method will be called when the recorder module is paused.)
-		/// </summary>
-		public delegate void OnRecorderPaused();
+		public static RECBar GetRECBar(MonoBehaviour script) {
+			return ShareRECImpl.GetRECBar(script.gameObject.name, "onRecBarAction");
+		}
 
-		/// <summary>
-		/// 此方法在录制模块恢复时被调用(This method will be called when the recorder module is resuming.)
-		/// </summary>
-		public delegate void OnRecorderResuming();
-
-		/// <summary>
-		/// 此方法在录制模块恢复后被调用(This method will be called when the recorder module is resumed.)
-		/// </summary>
-		public delegate void OnRecorderResumed();
-
-		/// <summary>
-		/// 此方法在录制模块停止时被调用(This method will be called when the recorder module is stopping.)
-		/// </summary>
-		public delegate void OnRecorderStopping();
-
-		/// <summary>
-		/// 此方法在录制模块停止后被调用(This method will be called when the recorder module is stopped.)
-		/// </summary>
-		public delegate void OnRecorderStopped();
-		
 	}
 	
 #endif

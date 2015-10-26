@@ -345,8 +345,8 @@ void HelloWorld::initShareRecMenuItems() {
 		CCMenuItemLabel* stopRec = CCMenuItemLabel::create(lblStop, this, menu_selector(HelloWorld::onStopRec));
 		stopRec->setColor(ccc3(0, 0, 0 ));
 
-		CCLabelTTF* lblShow = CCLabelTTF::create("Show Profile", "Arial", 12, CCSizeZero, kCCTextAlignmentLeft, kCCVerticalTextAlignmentCenter);
-		CCMenuItemLabel* showProfile = CCMenuItemLabel::create(lblShow, this, menu_selector(HelloWorld::onShowProfile));
+		CCLabelTTF* lblShow = CCLabelTTF::create("Video Center", "Arial", 12, CCSizeZero, kCCTextAlignmentLeft, kCCVerticalTextAlignmentCenter);
+		CCMenuItemLabel* showProfile = CCMenuItemLabel::create(lblShow, this, menu_selector(HelloWorld::onShowVideoCenter));
 		showProfile->setColor(ccc3(0, 0, 0 ));
 		
 		CCMenu *itemsMenu = CCMenu::create(startRec, stopRec, showProfile, NULL);
@@ -381,14 +381,29 @@ void HelloWorld::onStartRec(CCObject * pSender) {
 // stop recording
 void HelloWorld::onStopRec(CCObject * pSender) {
 	ShareRec::stopRecorder();
+
+//	// print local video paths
+//	jlong* list = NULL;
+//	int len = 0;
+//	ShareRec::listLocalVideos(&list, &len);
+//	if (len > 0) {
+//		for (int i = 0; i < len; i++) {
+//			char* path = NULL;
+//			if (ShareRec::getLocalVideoPath(list[i], &path)) {
+//				CCLOG("path: %s", path);
+//				free(path);
+//			}
+//		}
+//	}
+//	free(list);
 }
 
 // show user profile page of ShareRec
-void HelloWorld::onShowProfile(CCObject * pSender) {
+void HelloWorld::onShowVideoCenter(CCObject * pSender) {
 	// pause ShareRec
 	ShareRec::pauseRecorder();
 
-	// show profile page
-	ShareRec::showProfile();
+	// show video center
+	ShareRec::showVideoCenter();
 }
 

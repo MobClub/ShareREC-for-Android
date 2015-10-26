@@ -68,7 +68,6 @@
     <string name="srec_upload_avatar_failed">Failed to upload avatar</string>
     <string name="srec_update_avatar_failed">Failed update avatar</string>
     <string name="srec_cancel_following">Unfollow</string>
-    <string name="srec_muxing">Video Muxing…</string>
     <string name="srec_share_a_video_clip">Share a video clip</string>
     <string name="srec_narration">Narration</string>
     <string name="srec_audio_narration">Audio Narration</string>
@@ -99,7 +98,6 @@
 	<string name="srec_len_of_psw_must_longer_than_6">Password length cannot be less than 6 characters</string>
 	<string name="srec_len_of_nick_must_longer_than_2_char_or_3_word">Nickname length cannot be less than 2 chinese character or 3 letter</string>
 	<string name="srec_len_of_nick_must_less_than_7_char_or_14_word">Nickname length cannot be more than 7 chinese character or 14 letter</string>
-	<string name="srec_duration_of_video_must_longger_than_4_secends">Video duration cannot be less than 4 seconds, recording is continuing</string>
 	<string name="srec_retry">Retry</string>
 	<string name="srec_delete">Delete</string>
 	<string name="srec_nickname_changed">Nickname changed</string>
@@ -118,7 +116,6 @@
 	<string name="srec_share_to_friends">Share to friends</string>
 	<string name="srec_local_video_title">Local Video (%s)</string>
 	<string name="srec_upload">Upload</string>
-	<string name="srec_there_is_no_local_video">There is no local video</string>
 	<string name="srec_game_info">News</string>
 	<string name="srec_player_comments">Comments</string>
 	<string name="srec_game_starrs">Stars：</string>
@@ -150,6 +147,6 @@
 	<string name="srec_bind_the_platform">Authorize</string>
 	<string name="srec_change_password_title">Managing password</string>
 	<string name="srec_duration_title">Duration: </string>
-    <string name="srec_recbar_menu2">Record</string>
-    <string name="srec_recbar_stop">Stop</string>
+	<string name="srec_audio_commentate">Audio\nCommentate</string>
+	<string name="srec_video_commentate">Video\nCommentate</string>
 </resources>

@@ -1,5 +1,8 @@
 package com.example.eraserdemo;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -16,6 +19,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class EraserView extends RelativeLayout {
 
@@ -48,6 +52,22 @@ public class EraserView extends RelativeLayout {
 		
 		MaskView mv = new MaskView(context);
 		addView(mv, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+		
+		final TextView tvTime = new TextView(context);
+		tvTime.setMinEms(8);
+		LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		lp.addRule(ALIGN_PARENT_BOTTOM);
+		addView(tvTime, lp);
+		
+		tvTime.post(new Runnable() {
+			public void run() {
+				SimpleDateFormat sdf = new SimpleDateFormat("h:mm:ss aa");
+				Calendar cal = Calendar.getInstance();
+				cal.setTimeInMillis(System.currentTimeMillis());
+				tvTime.setText(sdf.format(cal.getTime()));
+				tvTime.postDelayed(this, 300);
+			}
+		});
 	}
 
 	private static class MaskView extends View {
@@ -134,7 +154,6 @@ public class EraserView extends RelativeLayout {
 			}
 			return true;
 		}
-		
 
 	}
 	

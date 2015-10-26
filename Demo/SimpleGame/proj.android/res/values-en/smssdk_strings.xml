@@ -12,6 +12,8 @@
     <string name="smssdk_write_right_mobile_phone">Please input the correct phone number</string>
     <string name="smssdk_write_identify_code">Please input verification code</string>
     <string name="smssdk_send_mobile_detail"><Data>We have already sent &lt;font color=#209526>verification code&lt;/font> messages to this number:</Data></string>
+    <string name="smssdk_smart_verify_already">Smart Verification already</string>
+    <string name="smssdk_smart_verify_tips">Credit phone number, no SMS verification:</string>
     <string name="smssdk_unreceive_identify_code"><Data>&lt;font color=#a8b8cb>Not receiving the verification code?&lt;/font></Data></string>
     <string name="smssdk_submit">Submit</string>
     <string name="smssdk_identify_code">Verification code</string>

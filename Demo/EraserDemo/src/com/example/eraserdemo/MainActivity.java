@@ -1,16 +1,13 @@
 package com.example.eraserdemo;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import cn.sharerec.recorder.OnRecorderStateListener;
-import cn.sharerec.recorder.Recorder;
-import cn.sharerec.recorder.ViewRecorder;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.TextView;
 import android.widget.Toast;
+import cn.sharerec.recorder.OnRecorderStateListener;
+import cn.sharerec.recorder.Recorder;
+import cn.sharerec.recorder.impl.ViewRecorder;
 
 public class MainActivity extends Activity implements OnClickListener, OnRecorderStateListener {
 	private ViewRecorder recorder;
@@ -24,22 +21,11 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 		findViewById(R.id.btnStop).setOnClickListener(this);
 		findViewById(R.id.btnProfile).setOnClickListener(this);
 		
-		// 在页面左下角显示时间 (display current time at the left-bottom of the page)
-		final TextView tvTime = (TextView) findViewById(R.id.tvTime);
-		tvTime.post(new Runnable() {
-			public void run() {
-				SimpleDateFormat sdf = new SimpleDateFormat("h:mm:ss aa");
-				Calendar cal = Calendar.getInstance();
-				cal.setTimeInMillis(System.currentTimeMillis());
-				tvTime.setText(sdf.format(cal.getTime()));
-				tvTime.postDelayed(this, 300);
-			}
-		});
-		
 		// 初始化ShareRec (init ShareRec)
 		View view = findViewById(R.id.evCan);
 		recorder = new ViewRecorder(view, "76684bc49b3");
 		recorder.setDebuggable();
+		recorder.setMaxFrameSize(ViewRecorder.LevelMaxFrameSize.LEVEL_1280_720);
 	}
 
 	public void onClick(View v) {
@@ -78,7 +64,7 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 			// when your view will refresh, you can use the following way, let ShareRec
 			// capture the frame automatically. or you can call onTheEndOfTheFrame() 
 			// manually when your frame refreshing)
-			recorder.startAuotRefreshRate(10);
+			recorder.startAuotRefreshRate(15);
 		} else {
 			Toast.makeText(this, R.string.not_availiable, Toast.LENGTH_SHORT).show();
 		}

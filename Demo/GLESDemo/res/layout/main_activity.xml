@@ -16,6 +16,14 @@
         android:padding="5dp" >
 
         <Button
+            android:id="@+id/btnFBO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.75"
+            android:minEms="8"
+            android:text="@string/en_fbo" />
+        
+        <Button
             android:id="@+id/btnStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

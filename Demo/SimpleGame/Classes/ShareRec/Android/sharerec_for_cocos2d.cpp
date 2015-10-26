@@ -1,19 +1,19 @@
 #include "sharerec_for_cocos2d.h"
+
 USING_NS_CC;
 
 namespace cn {
 	namespace sharerec {
-		
-		JNIEXPORT void JNICALL Java_cn_sharerec_recorder_Cocos2DRecorder_onStateChange
+		JNIEXPORT void JNICALL Java_cn_sharerec_recorder_impl_Cocos2DRecorder_onStateChange
 				(JNIEnv* env, jobject thiz, jint callback, jint state) {
 			ShareRec::OnRecorderStateListener listener = (ShareRec::OnRecorderStateListener) callback;
 			listener(state);
 		}
-
+		
 		jobject ShareRec::getRecorder() {
 			JniMethodInfo miGetInstance;
-			const char* className = "cn/sharerec/recorder/Cocos2DRecorder";
-			const char* sig = "(Ljava/lang/String;)Lcn/sharerec/recorder/Cocos2DRecorder;";
+			const char* className = "cn/sharerec/recorder/impl/Cocos2DRecorder";
+			const char* sig = "(Ljava/lang/String;)Lcn/sharerec/recorder/impl/Cocos2DRecorder;";
 			bool res = JniHelper::getStaticMethodInfo(miGetInstance, className, "getInstance", sig);
 			if (res) {
 				jobject javaRecorder = miGetInstance.env->CallStaticObjectMethod(miGetInstance.classID, miGetInstance.methodID, NULL);
@@ -24,7 +24,7 @@ namespace cn {
 		}
 		
 		bool ShareRec::getMethod(JniMethodInfo& mi, const char* name, const char* sig) {
-			const char* className = "cn/sharerec/recorder/Cocos2DRecorder";
+			const char* className = "cn/sharerec/recorder/impl/Cocos2DRecorder";
 			return JniHelper::getMethodInfo(mi, className, name, sig);
 		}
 
@@ -35,38 +35,10 @@ namespace cn {
 		void ShareRec::setDesignResolution() {
 			jobject javaRecorder = getRecorder();
 			if (javaRecorder != NULL) {
-				JniMethodInfo miSetWinScale;
-				bool res = getMethod(miSetWinScale, "setWinScale", "(FF)V");
-				if (res) {
-					#if COCOS2D_VERSION >= 0x00030000
-						float scaleX = Director::getInstance()->getOpenGLView()->getScaleX();
-						float scaleY = Director::getInstance()->getOpenGLView()->getScaleY();
-					#else 
-						float scaleX = CCEGLView::sharedOpenGLView()->getScaleX();
-						float scaleY = CCEGLView::sharedOpenGLView()->getScaleY();
-					#endif
-					miSetWinScale.env->CallVoidMethod(javaRecorder, miSetWinScale.methodID, scaleX, scaleY);
-					releaseMethod(miSetWinScale);
-				}
-				
-				JniMethodInfo miSetWinSize;
-				res = getMethod(miSetWinSize, "setWinSize", "(II)V");
-				if (res) {
-					#if COCOS2D_VERSION >= 0x00030000
-						int width = (int) (Director::getInstance()->getWinSize()).width;
-						int height = (int) (Director::getInstance()->getWinSize()).height;
-					#else 
-						int width = (int) (CCDirector::sharedDirector()->getWinSize()).width;
-						int height = (int) (CCDirector::sharedDirector()->getWinSize()).height;
-					#endif
-					miSetWinSize.env->CallVoidMethod(javaRecorder, miSetWinSize.methodID, width, height);
-					releaseMethod(miSetWinSize);
-				}
-				
 				JniMethodInfo miSetFrameRate;
-				res = getMethod(miSetFrameRate, "setFrameRate", "(I)V");
+				bool res = getMethod(miSetFrameRate, "setFrameRate", "(I)V");
 				if (res) {
-					miSetFrameRate.env->CallVoidMethod(javaRecorder, miSetFrameRate.methodID, 25);
+					miSetFrameRate.env->CallVoidMethod(javaRecorder, miSetFrameRate.methodID, 30);
 					releaseMethod(miSetFrameRate);
 				}
 			}
@@ -233,6 +205,90 @@ namespace cn {
 				}
 			}
 		}
+		
+		void ShareRec::setMaxFrameSize(ShareRec::LevelMaxFrameSize level) {
+			jobject javaRecorder = getRecorder();
+			if (javaRecorder != NULL) {
+				JniMethodInfo mi;
+				bool res = getMethod(mi, "setMaxFrameSize", "(I)V");
+				if (res) {
+					mi.env->CallVoidMethod(javaRecorder, mi.methodID, (jint)level);
+					releaseMethod(mi);
+				}
+			}
+		}
+
+		void ShareRec::listLocalVideos(jlong** list, int* len) {
+			jobject javaRecorder = getRecorder();
+			if (javaRecorder != NULL) {
+				JniMethodInfo mi;
+				bool res = getMethod(mi, "listLocalVideos", "()[J");
+				if (res) {
+					jlongArray ids = (jlongArray) mi.env->CallObjectMethod(javaRecorder, mi.methodID);
+					releaseMethod(mi);
+				
+					len[0] = mi.env->GetArrayLength(ids);
+					jlong* clist = mi.env->GetLongArrayElements(ids, JNI_FALSE);
+					jlong* tmp = (jlong*) malloc(sizeof(jlong) * len[0]);
+					for (int i = 0; i < len[0]; i++) {
+						tmp[i] = clist[i];
+					}
+					mi.env->ReleaseLongArrayElements(ids, clist, JNI_FALSE);
+					list[0] = tmp;
+				}
+			}
+		}
+		
+		bool ShareRec::getLocalVideoPath(jlong videoId, char** path){
+			jobject javaRecorder = getRecorder();
+			if (javaRecorder != NULL) {
+				JniMethodInfo mi;
+				bool res = getMethod(mi, "getLocalVideoPath", "(J)Ljava/lang/String;");
+				if (res) {
+					jstring jpath = (jstring) mi.env->CallObjectMethod(javaRecorder, mi.methodID, videoId);
+					releaseMethod(mi);
+					
+					if (jpath != NULL) {
+						const char* cpath = mi.env->GetStringUTFChars(jpath, JNI_FALSE);
+						int len = mi.env->GetStringUTFLength(jpath);
+						char* tmp = (char*) malloc(sizeof(char) * len);
+						for (int i = 0; i < len; i++) {
+							tmp[i] = cpath[i];
+						}
+						path[0] = tmp;
+						mi.env->ReleaseStringUTFChars(jpath, cpath);
+						return true;
+					}
+				}
+			}
+
+			return false;
+		}
+
+		void ShareRec::deleteLocalVideo(jlong videoId) {
+			jobject javaRecorder = getRecorder();
+			if (javaRecorder != NULL) {
+				JniMethodInfo mi;
+				bool res = getMethod(mi, "deleteLocalVideo", "(J)V");
+				if (res) {
+					mi.env->CallVoidMethod(javaRecorder, mi.methodID, videoId);
+					releaseMethod(mi);
+				}
+			}
+		}
+
+		void ShareRec::setUseES3(jboolean bES3) {
+			jobject javaRecorder = getRecorder();
+			if (javaRecorder != NULL) {
+				JniMethodInfo mi;
+				bool res = getMethod(mi, "setUseES3", "(Z)V");
+				if (res) {
+					mi.env->CallVoidMethod(javaRecorder, mi.methodID, bES3);
+					releaseMethod(mi);
+				}
+			}
+		}
+	
 	}
 }
 

@@ -12,6 +12,8 @@
     <string name="smssdk_write_right_mobile_phone">请填写正确的手机号码</string>
     <string name="smssdk_write_identify_code">填写验证码</string>
     <string name="smssdk_send_mobile_detail"><Data>我们已发送&lt;font color=#209526>验证码&lt;/font>短信到这个号码:</Data></string>
+    <string name="smssdk_smart_verify_already">您的手机号码已验证成功</string>
+    <string name="smssdk_smart_verify_tips">以下号码为诚信号码,无需验证短信:</string>
     <string name="smssdk_unreceive_identify_code"><Data>&lt;font color=#a8b8cb> 收不到验证码？&lt;/font></Data></string>
     <string name="smssdk_submit">提交</string>
     <string name="smssdk_identify_code">验证码</string>
@@ -40,7 +42,8 @@
     <string name="smssdk_add_contact">添加</string>
     <string name="smssdk_get_verifycode_frequentlly">发送验证码太频繁，请稍后再发！</string>
     <string name="smssdk_get_phone_verifycode_today_frequentlly">很抱歉，该手机号申请验证码次数过多，请明天重试！</string>
-    <string name="smssdk_send_sounds_identify_code">确定后将致电您的手机号，语音播报验证码.如不希望被来电打扰请使用短信验证码。</string>
+    <string name="smssdk_send_sounds_identify_code">确定后将致电您的手机号，语音播报验证码.\n如不希望被来电打扰请使用短信验证码。</string>
     <string name="smssdk_make_sure_send_sounds">确认发送？</string>
+    <string name="smssdk_send_sounds">点击发送语音验证</string>
     <string name="smssdk_send_sounds_success">语音验证码发送成功</string>
 </resources>
