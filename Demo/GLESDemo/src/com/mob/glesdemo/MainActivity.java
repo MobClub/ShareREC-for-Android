@@ -2,9 +2,6 @@ package com.mob.glesdemo;
 
 import java.util.Random;
 
-import cn.sharerec.recorder.GLRecorder;
-import cn.sharerec.recorder.OnRecorderStateListener;
-import cn.sharerec.recorder.Recorder;
 import android.app.Activity;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
@@ -12,9 +9,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Toast;
+import cn.sharerec.recorder.OnRecorderStateListener;
+import cn.sharerec.recorder.Recorder;
+import cn.sharerec.recorder.Recorder.LevelMaxFrameSize;
+import cn.sharerec.recorder.impl.GLRecorder;
 
 public class MainActivity extends Activity implements OnClickListener, OnRecorderStateListener, 
 		OnSeekBarChangeListener, OnPreparedListener {
@@ -23,12 +25,16 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 	private TestGLSurfaceView svHost;
 	private MediaPlayer mp;
 	private boolean paused;
+	private boolean fboState;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		TestGLSurfaceView.setOpenglVer(getIntent().getFlags() == 11);
 
 		// 初始化UI (init UI)
 		setContentView(R.layout.main_activity);
+		findViewById(R.id.btnFBO).setOnClickListener(this);
 		findViewById(R.id.btnStart).setOnClickListener(this);
 		findViewById(R.id.btnStop).setOnClickListener(this);
 		findViewById(R.id.btnVideosCenter).setOnClickListener(this);
@@ -43,7 +49,9 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 		svHost = (TestGLSurfaceView) findViewById(R.id.svHost);
 		recorder = svHost.getRecorder();
 		recorder.setDebuggable();
-		
+		recorder.setMaxFrameSize(LevelMaxFrameSize.LEVEL_1920_1080);
+		recorder.setBitRate(1572864 * 4);
+
 		Toast.makeText(this, R.string.drag_the_seekbar, Toast.LENGTH_SHORT).show();
 		sbSpeed.setProgress(sbSpeed.getProgress() + maxProgress / 20);
 	}
@@ -77,6 +85,7 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 
 	public void onClick(View v) {
 		switch (v.getId()) {
+			case R.id.btnFBO: switchFBOState(); break;
 			case R.id.btnStart: startRecorder(); break;
 			case R.id.btnStop: stopRecorder(); break;
 			case R.id.btnVideosCenter: showVideoCenter(); break;
@@ -110,13 +119,26 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 		System.exit(0);
 	}
 	
+	// 开启或关闭FBO(turning on / off FBO)
+	private void switchFBOState() {
+		if (getIntent().getFlags() == 11) {
+			Toast.makeText(this, "Eh... He he!", Toast.LENGTH_SHORT).show();
+		} else {
+			fboState = !fboState;
+			svHost.setFboEnable(fboState);
+			Button btnFBO = (Button) findViewById(R.id.btnFBO);
+			btnFBO.setText(fboState ? R.string.dis_fbo : R.string.en_fbo);
+		}
+	}
+	
 	// 启动录像 (start ShareRec)
 	private void startRecorder() {
 		if (recorder.isAvailable()) {
 			recorder.setOnRecorderStateListener(this);
 			recorder.startRecorder();
 		} else {
-			Toast.makeText(this, R.string.not_availiable, Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, R.string.not_availiable, Toast.LENGTH_SHORT)
+					.show();
 		}
 	}
 	

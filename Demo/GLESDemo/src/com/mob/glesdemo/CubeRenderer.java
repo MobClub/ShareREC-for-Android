@@ -10,8 +10,8 @@ import android.opengl.GLSurfaceView.Renderer;
 import android.opengl.Matrix;
 
 public class CubeRenderer implements Renderer {
-	private static final int MAX_HEIGHT = 1080;
-	private static final int MAX_WIDTH = 1920;
+	private static final float INSIDE_CUBE_LEN = 0.7f;
+	private static final float INSIDE_CUBE_OUT = 1.0f;
 	
 	private FloatBuffer mCubePositions;
 	private FloatBuffer mCubeColors;
@@ -27,6 +27,7 @@ public class CubeRenderer implements Renderer {
 	private FBO fbo;
 	private int width;
 	private int height;
+	private boolean fboEnable;
 	
 	public void onSurfaceCreated(GL10 glUnused, EGLConfig config) {
 		fbo = new FBO();
@@ -39,57 +40,109 @@ public class CubeRenderer implements Renderer {
 	private void initPositions() {
 		float cubePosition[] = {
 		        // Front face
-		        -1.0f, 1.0f, 1.0f,                
-		        -1.0f, -1.0f, 1.0f,
-		        1.0f, 1.0f, 1.0f, 
-		        -1.0f, -1.0f, 1.0f,                 
-		        1.0f, -1.0f, 1.0f,
-		        1.0f, 1.0f, 1.0f,
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, INSIDE_CUBE_OUT,                
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, INSIDE_CUBE_OUT,
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, INSIDE_CUBE_OUT, 
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, INSIDE_CUBE_OUT,                 
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, INSIDE_CUBE_OUT,
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, INSIDE_CUBE_OUT,
 		        
 		        // Right face
-		        1.0f, 1.0f, 1.0f,                
-		        1.0f, -1.0f, 1.0f,
-		        1.0f, 1.0f, -1.0f,
-		        1.0f, -1.0f, 1.0f,                
-		        1.0f, -1.0f, -1.0f,
-		        1.0f, 1.0f, -1.0f,
+		        INSIDE_CUBE_OUT, INSIDE_CUBE_LEN, INSIDE_CUBE_LEN,                
+		        INSIDE_CUBE_OUT, -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN,
+		        INSIDE_CUBE_OUT, INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,
+		        INSIDE_CUBE_OUT, -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN,                
+		        INSIDE_CUBE_OUT, -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,
+		        INSIDE_CUBE_OUT, INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,
 		        
 		        // Back face
-		        1.0f, 1.0f, -1.0f,                
-		        1.0f, -1.0f, -1.0f,
-		        -1.0f, 1.0f, -1.0f,
-		        1.0f, -1.0f, -1.0f,                
-		        -1.0f, -1.0f, -1.0f,
-		        -1.0f, 1.0f, -1.0f,
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, -INSIDE_CUBE_OUT,                
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, -INSIDE_CUBE_OUT,
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, -INSIDE_CUBE_OUT,
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, -INSIDE_CUBE_OUT,                
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, -INSIDE_CUBE_OUT,
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, -INSIDE_CUBE_OUT,
 		        
 		        // Left face
-		        -1.0f, 1.0f, -1.0f,                
-		        -1.0f, -1.0f, -1.0f,
-		        -1.0f, 1.0f, 1.0f, 
-		        -1.0f, -1.0f, -1.0f,                
-		        -1.0f, -1.0f, 1.0f, 
-		        -1.0f, 1.0f, 1.0f, 
+		        -INSIDE_CUBE_OUT, INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,                
+		        -INSIDE_CUBE_OUT, -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,
+		        -INSIDE_CUBE_OUT, INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, 
+		        -INSIDE_CUBE_OUT, -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,                
+		        -INSIDE_CUBE_OUT, -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, 
+		        -INSIDE_CUBE_OUT, INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, 
 		        
 		        // Top face
-		        -1.0f, 1.0f, -1.0f,                
-		        -1.0f, 1.0f, 1.0f, 
-		        1.0f, 1.0f, -1.0f, 
-		        -1.0f, 1.0f, 1.0f,                 
-		        1.0f, 1.0f, 1.0f, 
-		        1.0f, 1.0f, -1.0f,
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_OUT, -INSIDE_CUBE_LEN,                
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_OUT, INSIDE_CUBE_LEN, 
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_OUT, -INSIDE_CUBE_LEN, 
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_OUT, INSIDE_CUBE_LEN,                 
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_OUT, INSIDE_CUBE_LEN, 
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_OUT, -INSIDE_CUBE_LEN,
 		        
 		        // Bottom face
-		        1.0f, -1.0f, -1.0f,                
-		        1.0f, -1.0f, 1.0f, 
-		        -1.0f, -1.0f, -1.0f,
-		        1.0f, -1.0f, 1.0f,                 
-		        -1.0f, -1.0f, 1.0f,
-		        -1.0f, -1.0f, -1.0f,    
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_OUT, -INSIDE_CUBE_LEN,                
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_OUT, INSIDE_CUBE_LEN, 
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_OUT, -INSIDE_CUBE_LEN,
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_OUT, INSIDE_CUBE_LEN,                 
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_OUT, INSIDE_CUBE_LEN,
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_OUT, -INSIDE_CUBE_LEN,    
 		};
-		ByteBuffer bb = ByteBuffer.allocateDirect(cubePosition.length * 4);
+		
+		float cubePositionOut[] = {
+		        // Front face
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, INSIDE_CUBE_LEN,                
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN,
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, 
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN,                 
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN,
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, INSIDE_CUBE_LEN,
+		        
+		        // Right face
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, INSIDE_CUBE_LEN,                
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN,
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN,                
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,
+		        
+		        // Back face
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,                
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,                
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,
+		        
+		        // Left face
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,                
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, 
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,                
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, 
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, 
+		        
+		        // Top face
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,                
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, 
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, 
+		        -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, INSIDE_CUBE_LEN,                 
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, 
+		        INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,
+		        
+		        // Bottom face
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,                
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN, 
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,
+		        INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN,                 
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, INSIDE_CUBE_LEN,
+		        -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN, -INSIDE_CUBE_LEN,    
+		};
+		
+		ByteBuffer bb = ByteBuffer.allocateDirect(cubePosition.length * 4 * 2);
 		bb.order(ByteOrder.nativeOrder());
 		mCubePositions = bb.asFloatBuffer();
 	    mCubePositions.put(cubePosition);
+	    mCubePositions.put(cubePositionOut);
 	    mCubePositions.position(0);
 	}
 
@@ -143,10 +196,62 @@ public class CubeRenderer implements Renderer {
 		        1.0f, 0.0f, 1.0f, 1.0f,
 		        1.0f, 0.0f, 1.0f, 1.0f    
 		};
-		ByteBuffer bb = ByteBuffer.allocateDirect(cubeColor.length * 4);
+		
+		float[] cubeColorOut = {
+		        // Front face (red)
+		        0.7f, 0.0f, 0.0f, 1.0f,                
+		        0.7f, 0.0f, 0.0f, 1.0f,
+		        0.7f, 0.0f, 0.0f, 1.0f,
+		        0.7f, 0.0f, 0.0f, 1.0f,                
+		        0.7f, 0.0f, 0.0f, 1.0f,
+		        0.7f, 0.0f, 0.0f, 1.0f,
+		        
+		        // Right face (green)
+		        0.0f, 0.7f, 0.0f, 1.0f,                
+		        0.0f, 0.7f, 0.0f, 1.0f,
+		        0.0f, 0.7f, 0.0f, 1.0f,
+		        0.0f, 0.7f, 0.0f, 1.0f,                
+		        0.0f, 0.7f, 0.0f, 1.0f,
+		        0.0f, 0.7f, 0.0f, 1.0f,
+		        
+		        // Back face (blue)
+		        0.0f, 0.0f, 0.7f, 1.0f,                
+		        0.0f, 0.0f, 0.7f, 1.0f,
+		        0.0f, 0.0f, 0.7f, 1.0f,
+		        0.0f, 0.0f, 0.7f, 1.0f,                
+		        0.0f, 0.0f, 0.7f, 1.0f,
+		        0.0f, 0.0f, 0.7f, 1.0f,
+		        
+		        // Left face (yellow)
+		        0.7f, 0.7f, 0.0f, 1.0f,                
+		        0.7f, 0.7f, 0.0f, 1.0f,
+		        0.7f, 0.7f, 0.0f, 1.0f,
+		        0.7f, 0.7f, 0.0f, 1.0f,                
+		        0.7f, 0.7f, 0.0f, 1.0f,
+		        0.7f, 0.7f, 0.0f, 1.0f,
+		        
+		        // Top face (cyan)
+		        0.0f, 0.7f, 0.7f, 1.0f,                
+		        0.0f, 0.7f, 0.7f, 1.0f,
+		        0.0f, 0.7f, 0.7f, 1.0f,
+		        0.0f, 0.7f, 0.7f, 1.0f,                
+		        0.0f, 0.7f, 0.7f, 1.0f,
+		        0.0f, 0.7f, 0.7f, 1.0f,
+		        
+		        // Bottom face (magenta)
+		        0.7f, 0.0f, 0.7f, 1.0f,                
+		        0.7f, 0.0f, 0.7f, 1.0f,
+		        0.7f, 0.0f, 0.7f, 1.0f,
+		        0.7f, 0.0f, 0.7f, 1.0f,                
+		        0.7f, 0.0f, 0.7f, 1.0f,
+		        0.7f, 0.0f, 0.7f, 1.0f    
+		};
+		
+		ByteBuffer bb = ByteBuffer.allocateDirect(cubeColor.length * 4 * 2);
 		bb.order(ByteOrder.nativeOrder());
         mCubeColors = bb.asFloatBuffer();
         mCubeColors.put(cubeColor);
+        mCubeColors.put(cubeColorOut);
         mCubeColors.position(0);
 	}
 
@@ -157,7 +262,8 @@ public class CubeRenderer implements Renderer {
 		mMVPMatrix = new float[16];
 		
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-        GLES20.glEnable(GLES20.GL_CULL_FACE);
+        GLES20.glDisable(GLES20.GL_CULL_FACE);
+        GLES20.glEnable(GLES20.GL_DEPTH_TEST);
         // Position the eye behind the origin.
         final float eyeX = 0.0f;
         final float eyeY = 0.0f;
@@ -262,7 +368,8 @@ public class CubeRenderer implements Renderer {
 	}
 	
 	public void onSurfaceChanged(GL10 glUnused, int width, int height) {
-		setFBOSize(width, height);
+		this.width = width;
+		this.height = height;
         GLES20.glViewport(0, 0, width, height);
         
         final float ratio = (float) width / height;
@@ -275,75 +382,20 @@ public class CubeRenderer implements Renderer {
         
         Matrix.frustumM(mProjectionMatrix, 0, left, right, bottom, top, near, far);
 	}
-
-	/*
-	 * no mater how large the screen of the device is, the size of 
-	 * ShareRec recording texture won't be larger than 1920x1088, 
-	 * so we have to scale down the size of the FBO texture, to 
-	 * make sure that the cube is placed at the center of the 
-	 * texture.
-	 */
-	private void setFBOSize(int width, int height) {
-		int iWidth = width;
-		int iHeight = height;
-		boolean flag = false;
-		if (iWidth < iHeight) { // exchange width and height
-			int tmp = iWidth;
-			iWidth = iHeight;
-			iHeight = tmp;
-			flag = true;
-		}
-		
-		int[] src = new int[] {iWidth, iHeight};
-		int[] target = new int[] {MAX_WIDTH, MAX_HEIGHT};
-		if (src[0] > target[0] || src[1] > target[1]) {
-			int[] dst = fixRect(src, target);
-			iWidth = dst[0];
-			iHeight = dst[1];
-		}
-		
-		if (flag) {
-			int tmp = iWidth;
-			iWidth = iHeight;
-			iHeight = tmp;
-		}
-		int dpyWidth = iWidth;
-		if (iWidth % 16 > 0) {
-			dpyWidth = iWidth - (iWidth % 16) + 16;
-		}
-		int dpyHeight = iHeight;
-		if (iHeight % 16 > 0) {
-			dpyHeight = iHeight - (iHeight % 16) + 16;
-		}
-		
-		this.width = dpyWidth;
-		this.height = dpyHeight;
-	}
-	
-    private int[] fixRect(int[] src, int[] target) {
-    	int[] dst = new int[2];
-    	float rs = ((float) src[0]) / src[1];
-    	float rt = ((float) target[0]) / target[1];
-    	if (rs > rt) { // modify height
-    		dst[0] = target[0];
-    		dst[1] = (int) (((float) src[1]) * target[0] / src[0] + 0.5f);
-    	} else { // modify width
-    		dst[1] = target[1];
-    		dst[0] = (int) (((float) src[0]) * target[1] / src[1] + 0.5f);
-    	}
-
-    	return dst;
-    }
 	
 	public void onDrawFrame(GL10 glUnused) {
-		if (!fbo.isReady()) {
-			fbo.prepareFBO(width, height);
-		}
-		
-		if (fbo.isReady()) {
-			fbo.bineFBO();
+		if (fboEnable) {
+			if (!fbo.isReady()) {
+				fbo.prepareFBO(width, height);
+			}
+			
+			if (fbo.isReady()) {
+				fbo.bineFBO();
+				drawFrame();
+				fbo.unbineFBO();
+			}
+		} else {
 			drawFrame();
-			fbo.unbineFBO();
 		}
 	}
 	
@@ -353,7 +405,7 @@ public class CubeRenderer implements Renderer {
 		GLES20.glUseProgram(mProgramHandle);
 		
 		GLES20.glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
-		GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
+		GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
 		Matrix.setIdentityM(mModelMatrix, 0);
 		Matrix.translateM(mModelMatrix, 0, 0.0f, 0.0f, -5.0f);
 		Matrix.rotateM(mModelMatrix, 0, angleInDegrees, 1.0f, 1.0f, 0.0f);   
@@ -374,11 +426,15 @@ public class CubeRenderer implements Renderer {
         Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);
         
         GLES20.glUniformMatrix4fv(mMVPMatrixHandle, 1, false, mMVPMatrix, 0);
-        GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, 36);
+        GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, cubePositionsBuffer.limit() / 3);
     }
 
 	public void setAngleInDegrees(float angleInDegrees) {
 		this.angleInDegrees = angleInDegrees;
+	}
+	
+	public void setFboEnable(boolean enable) {
+		fboEnable = enable;
 	}
 	
 }

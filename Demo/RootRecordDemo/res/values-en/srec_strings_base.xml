@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="srec_recbar_menu2">Record</string>
+    <string name="srec_recbar_stop">Stop</string>
+    <string name="srec_duration_of_video_must_longger_than_4_secends">Video duration cannot be less than 4 seconds, recording is continuing</string>
+    <string name="srec_muxing">Video Muxing…</string>
+    <string name="srec_there_is_no_local_video">There is no local video</string>
+</resources>

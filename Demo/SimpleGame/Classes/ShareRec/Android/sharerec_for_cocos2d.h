@@ -144,6 +144,16 @@ namespace cn {
 			  * 设置是否使用opengl3.0 的方式录屏.
 			  */
 			static void setUseES3( jboolean bES3 );
+			
+			/**
+			  * 设置是否需要录制声音
+			*/
+			static void setRecordAudio( jboolean isRecordAudio );
+			
+		 /**
+			* 设置需要录制的最短时间
+			*/
+			static void setMinDuration( jlong duration );
 
 		private:
 

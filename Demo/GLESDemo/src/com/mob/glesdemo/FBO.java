@@ -57,6 +57,7 @@ public class FBO {
 			GLES20.glDeleteFramebuffers(1, id, 0);
 			id[0] = texture;
 			GLES20.glDeleteTextures(1, id, 0);
+			GLES20.glBindFramebuffer(GLES20.GL_FRAMEBUFFER, oldFbo);
 			return;
 		}
 		
@@ -66,7 +67,6 @@ public class FBO {
 	
 	public void bineFBO() {
 		GLES20.glBindFramebuffer(GLES20.GL_FRAMEBUFFER, fbo);
-		GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, texture);
 	}
 	
 	public void unbineFBO() {
@@ -77,12 +77,17 @@ public class FBO {
 			initDrwProgram();
 		}
 		
+		GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, 0);
+		GLES20.glBindBuffer(GLES20.GL_ELEMENT_ARRAY_BUFFER, 0);
+		GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+		GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
+		
 		int[] id = new int[1];
 		GLES20.glGetIntegerv(GLES20.GL_CURRENT_PROGRAM, id, 0);
 		
 		GLES20.glUseProgram(program);
 		GLES20.glEnableVertexAttribArray(attribPosition);
-		GLES20.glVertexAttribPointer(attribPosition, 2, GLES20.GL_FLOAT, false, 8, vertex);
+		GLES20.glVertexAttribPointer(attribPosition, 3, GLES20.GL_FLOAT, false, 12, vertex);
 		GLES20.glEnableVertexAttribArray(attribcoord);
 		GLES20.glVertexAttribPointer(attribcoord, 2, GLES20.GL_FLOAT, false, 8, coord);
 		GLES20.glUniformMatrix4fv(uniformMatrix, 1, false, matrix);
@@ -94,10 +99,10 @@ public class FBO {
 	
 	private void initDrwProgram() {
 		float[] drwQuadVertex = new float[] {
-				-1, 1, -1, 0, 0, 0, 0, 1,      // left-top
-				-1, 0, -1, -1, 0, -1, 0, 0,    // left-bottom
-				0, 1, 0, 0, 1, 0, 1, 1,        // right-top
-		        0, 0, 0, -1, 1, -1, 1, 0       // right-bottom
+				-1, 1, 0,     -1, 0, 0,     0, 0, 0,     0, 1, 0,      // left-top
+				-1, 0, 0,     -1, -1, 0,    0, -1, 0,    0, 0, 0,      // left-bottom
+				0, 1, 0,      0, 0, 0,      1, 0, 0,     1, 1, 0,      // right-top
+		        0, 0, 0,      0, -1, 0,     1, -1, 0,    1, 0, 0       // right-bottom
 		};
 		ByteBuffer bb = ByteBuffer.allocateDirect(drwQuadVertex.length * 4);
 		bb.order(ByteOrder.nativeOrder());
@@ -106,10 +111,10 @@ public class FBO {
 		vertex.position(0);
 		
 		float[] drwQuadCoord = new float[] {
-		        0, 1, 0, 0, 1, 0, 1, 1,       // left-top
-		        0, 1, 0, 0, 1, 0, 1, 1,       // left-bottom
-		        0, 1, 0, 0, 1, 0, 1, 1,       // right-top
-		        0, 1, 0, 0, 1, 0, 1, 1        // right-bottom
+		        0, 1,     0, 0,     1, 0,     1, 1,       // left-top
+		        0, 1,     0, 0,     1, 0,     1, 1,       // left-bottom
+		        0, 1,     0, 0,     1, 0,     1, 1,       // right-top
+		        0, 1,     0, 0,     1, 0,     1, 1        // right-bottom
 		};
 		bb = ByteBuffer.allocateDirect(drwQuadCoord.length * 4);
 		bb.order(ByteOrder.nativeOrder());
@@ -118,10 +123,10 @@ public class FBO {
 		coord.position(0);
 		
 		byte[] drwQuadIndex = new byte[] {
-		        (byte)(0), (byte)(1), (byte)(2), (byte)(2), (byte)(3), (byte)(0),
-		        (byte)(4), (byte)(5), (byte)(6), (byte)(6), (byte)(7), (byte)(4),
-		        (byte)(8), (byte)(9), (byte)(10), (byte)(10), (byte)(11), (byte)(8),
-		        (byte)(12), (byte)(13), (byte)(14), (byte)(14), (byte)(15), (byte)(12)
+		        (byte)(0), (byte)(1), (byte)(2),     (byte)(2), (byte)(3), (byte)(0),
+		        (byte)(4), (byte)(5), (byte)(6),     (byte)(6), (byte)(7), (byte)(4),
+		        (byte)(8), (byte)(9), (byte)(10),    (byte)(10), (byte)(11), (byte)(8),
+		        (byte)(12), (byte)(13), (byte)(14),  (byte)(14), (byte)(15), (byte)(12)
 		};
 		bb = ByteBuffer.allocateDirect(drwQuadIndex.length);
 		bb.order(ByteOrder.nativeOrder());

@@ -149,4 +149,6 @@
 	<string name="srec_duration_title">Duration: </string>
 	<string name="srec_audio_commentate">Audio\nCommentate</string>
 	<string name="srec_video_commentate">Video\nCommentate</string>
+	<string name="srec_trim">Trim</string>
+	<string name="srec_trim_range_error">Wrong range</string>
 </resources>

@@ -152,4 +152,6 @@
 	<string name="srec_unityrecoder_version_wrong">UNITY_4_3_4 版本的请不用 SrecUnityPlayer,具体的请查看文档，谢谢！！</string>
 	<string name="srec_audio_commentate">语音解说</string>
 	<string name="srec_video_commentate">视频解说</string>
+	<string name="srec_trim">裁剪</string>
+	<string name="srec_trim_range_error">长度错误</string>
 </resources>

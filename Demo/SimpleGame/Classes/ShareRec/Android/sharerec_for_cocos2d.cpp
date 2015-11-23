@@ -288,6 +288,32 @@ namespace cn {
 				}
 			}
 		}
+		
+
+		void setRecordAudio( jboolean isRecordAudio ) {
+			jobject javaRecorder = getRecorder();
+			if (javaRecorder != NULL) {
+				JniMethodInfo mi;
+				bool res = getMethod(mi, "setRecordAudio", "(Z)V");
+				if (res) {
+					mi.env->CallVoidMethod(javaRecorder, mi.methodID, isRecordAudio);
+					releaseMethod(mi);
+				}
+			}
+		}
+			
+
+		void setMinDuration( jlong duration ) {
+			jobject javaRecorder = getRecorder();
+			if (javaRecorder != NULL) {
+				JniMethodInfo mi;
+				bool res = getMethod(mi, "setMinDuration", "(J)V");
+				if (res) {
+					mi.env->CallVoidMethod(javaRecorder, mi.methodID, duration);
+					releaseMethod(mi);
+				}
+			}
+		}
 	
 	}
 }
