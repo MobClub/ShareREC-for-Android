@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bsbContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/srec_crop_sb_item_back_nor" >
+
+    <LinearLayout
+        android:id="@+id/llLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:minEms="2"
+            android:text="0:00"
+            android:textColor="#ffffffff"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:minEms="2"
+            android:text="0:00"
+            android:textColor="#ffbbbbbb"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRight"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvTo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:minEms="2"
+            android:text="0:00"
+            android:textColor="#ffffffff"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tvDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:minEms="2"
+            android:text="0:00"
+            android:textColor="#ffbbbbbb"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="4dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/llRight"
+        android:layout_toRightOf="@id/llLeft"
+        android:background="@drawable/srec_ve_progress_bg" />
+
+    <View
+        android:id="@+id/vFrom"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/llLeft"
+        android:background="@drawable/srec_ve_from" />
+
+    <View
+        android:id="@+id/vTo"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/llRight"
+        android:background="@drawable/srec_ve_to" />
+
+    <View
+        android:id="@+id/vTrim"
+        android:layout_width="wrap_content"
+        android:layout_height="4dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@id/llRight"
+        android:layout_toRightOf="@id/llLeft"
+        android:background="@drawable/srec_ve_trim_bg" />
+
+    <View
+        android:id="@+id/vProgress"
+        android:layout_width="10dp"
+        android:layout_height="15dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/llLeft"
+        android:background="@drawable/srec_ve_progress" />
+
+</RelativeLayout>
