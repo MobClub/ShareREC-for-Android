@@ -15,10 +15,10 @@ namespace cn {
 		jobject ShareRec::getRecorder() {
 			JniMethodInfo miGetInstance;
 			const char* className = "cn/sharerec/recorder/impl/Cocos2DRecorder";
-			const char* sig = "(Ljava/lang/String;)Lcn/sharerec/recorder/impl/Cocos2DRecorder;";
+			const char* sig = "(Ljava/lang/String;Ljava/lang/String;)Lcn/sharerec/recorder/impl/Cocos2DRecorder;";
 			bool res = JniHelper::getStaticMethodInfo(miGetInstance, className, "getInstance", sig);
 			if (res) {
-				jobject javaRecorder = miGetInstance.env->CallStaticObjectMethod(miGetInstance.classID, miGetInstance.methodID, NULL);
+				jobject javaRecorder = miGetInstance.env->CallStaticObjectMethod(miGetInstance.classID, miGetInstance.methodID, NULL, NULL);
 				// miGetInstance.env->DeleteGlobalRef(miGetInstance.classID);
 				return javaRecorder;
 			}

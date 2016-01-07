@@ -17,6 +17,10 @@ public class RECBarDemo extends Cocs2dxRecBarActivity {
 		return "76684bc49b3";
 	}
 	
+	protected String getAppSecret() {
+		return "cc162a0c24a4928e215a4b99ceffb425";
+	}
+	
     static {
         System.loadLibrary("game");
     }

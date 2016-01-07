@@ -26,6 +26,7 @@ namespace cn.sharerec {
 		private const int RECBAR_VIDEOCENTER = 4;
 
 		public string AppKey = "76684bc49b3";
+		public string AppSecret = "cc162a0c24a4928e215a4b99ceffb425";
 		public LevelMaxFrameSize MaxFrameSize = LevelMaxFrameSize.LEVEL_1920_1080;
 		public int BitRate = 1572864; // default is 1572864;
 		public bool RecordAudioFromMic = false;
@@ -49,7 +50,7 @@ namespace cn.sharerec {
 
 		void Awake() {
 			try {
-				ShareRECImpl.init(AppKey, gameObject.name, (int) MaxFrameSize);
+				ShareRECImpl.init(AppKey, AppSecret, gameObject.name, (int) MaxFrameSize);
 				ShareRECImpl.SetBitRate(BitRate <= 0 ? 1572864 : BitRate);
 				if (RecordAudioFromMic) {
 					ShareRECImpl.SetRecordAudioFromMic();

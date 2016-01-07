@@ -26,8 +26,8 @@ package org.cocos2dx.simplegame;
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
-import android.os.Bundle;
 import cn.sharerec.recorder.impl.Cocos2DRecorder;
+import android.os.Bundle;
 public class SimpleGame extends Cocos2dxActivity {
 	
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class SimpleGame extends Cocos2dxActivity {
 	}
 	
 	public Cocos2dxGLSurfaceView onCreateView() {
-		return Cocos2DRecorder.getCocos2dxGLSurfaceView("76684bc49b3");
+		return Cocos2DRecorder.getCocos2dxGLSurfaceView("76684bc49b3", "cc162a0c24a4928e215a4b99ceffb425");
 	}
 	
     static {

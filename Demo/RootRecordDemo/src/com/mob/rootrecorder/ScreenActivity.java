@@ -2,6 +2,7 @@ package com.mob.rootrecorder;
 
 import cn.sharerec.recorder.OnRecorderStateListener;
 import cn.sharerec.recorder.Recorder;
+import cn.sharerec.recorder.Recorder.LevelMaxFrameSize;
 import cn.sharerec.recorder.impl.RootRecorder;
 import android.app.Activity;
 import android.os.Bundle;
@@ -38,9 +39,10 @@ public class ScreenActivity extends Activity {
         btn_center = (Button)findViewById(R.id.btncenter);
         btn_exit = (Button)findViewById(R.id.btnexit);
 
-        recorder = new RootRecorder(this, getAppkey());
+        recorder = new RootRecorder(this, getAppkey(),getAppSecret());
         recorder.setBitRate(4000000);
         recorder.setFrameRate(30);
+        recorder.setMaxFrameSize(LevelMaxFrameSize.LEVEL_1280_720);
         
         btn_start.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v) {
@@ -86,6 +88,10 @@ public class ScreenActivity extends Activity {
     
 	protected String getAppkey() {
 		return "76684bc49b3";
+	}
+	
+	protected String getAppSecret() {
+		return "cc162a0c24a4928e215a4b99ceffb425";
 	}
 
 	private RootGLSurfaceView glview;

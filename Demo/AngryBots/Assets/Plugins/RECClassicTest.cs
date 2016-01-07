@@ -8,11 +8,6 @@ using cn.sharerec;
 /// <para>(A demo script of ShareREC, drag this script to MainCamera and run)</para>
 /// </summary>
 public class RECClassicTest : MonoBehaviour {
-	const int RECBAR_PROFILE = 1;
-	const int RECBAR_START = 2;
-	const int RECBAR_STOP = 3;
-	const int RECBAR_VIDEOCENTER = 4;
-
 	private bool started;
 	private int fontSize;
 	private Rect panel;
@@ -28,40 +23,6 @@ public class RECClassicTest : MonoBehaviour {
 		btnStart = new Rect (60 * factor, 120 * factor, 250 * factor, 60 * factor);
 		btnStop = new Rect (60 * factor, 210 * factor, 250 * factor, 60 * factor);
 		btnProfile = new Rect (60 * factor, 300 * factor, 250 * factor, 60 * factor);
-	}
-
-	void onRecBarAction(string action) {
-		int iAction = -1;
-		if (!Int32.TryParse(action, out iAction)) {
-			return;
-		}
-
-		switch (iAction) {
-			case RECBAR_PROFILE: {
-				// 打开个人中心 (show user profile page)
-				ShareREC.ShowProfile(); 
-			} break;
-			case RECBAR_START: {
-				if (ShareREC.IsAvailable()) {
-					// 设置启动监听(add recorder started listener)
-					ShareREC.OnRecorderStartedHandler = onStarted;
-					// 启动录制 (start recording)
-					ShareREC.StartRecorder();
-				}
-			} break;
-			case RECBAR_STOP: {
-				// 设置停止监听 (add recorder stopped listener)
-				ShareREC.OnRecorderStoppedHandler = onStopped;
-				// 停止录制 (stop recording)
-				ShareREC.StopRecorder();
-			} break;
-			case RECBAR_VIDEOCENTER: {
-				// 添加返回操作(add callback to handle returning operations)
-				ShareREC.OnReturnFromVideoCenterHandler = OnReturned;
-				// 打开视频中心 (show video center)
-				ShareREC.ShowVideoCenter();
-			} break;
-		}
 	}
 
 	void OnGUI() {

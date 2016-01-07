@@ -7,3 +7,4 @@
 	* Unity3D -- http://wiki.mob.com/sharerec-for-android-unity3d-%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90/
 	* normal View -- http://wiki.mob.com/sharerec-for-android-viewrecorder-%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90/
 	* GLSurfaceView -- http://wiki.mob.com/sharerec-for-android-glrecorder-%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90/
+	* rootRecorder -- http://wiki.mob.com/sharerec-for-android-rootrecorder%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90/

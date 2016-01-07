@@ -153,7 +153,7 @@ local g_SenceNearly = { frame = {}, countScreen = 24, offsetx = 0.0, timeCount =
 local g_actionTo = nil
 
 local sceneGame
-local schedulerOver = nil
+schedulerOver = nil
 
 local stopMenuItem = nil
 local startMenuItem = nil
@@ -170,6 +170,9 @@ end
 local function entryOverSence()
 	if schedulerOver ~= nil then
 		scheduler:unscheduleScriptEntry(schedulerOver)
+		schedulerOver = nil
+	else
+		return
 	end
 	exitRun()
 	local level = getInteger( (g_flogIndex / 6) / (g_SenceNearly.countScreen / 5) ) + 1
@@ -183,6 +186,7 @@ end
 local function entryStartSence()
 	if schedulerOver ~= nil then
 		scheduler:unscheduleScriptEntry(schedulerOver)
+		schedulerOver = nil
 	end
 	exitRun()
 	local level = getInteger( (g_flogIndex / 6) / (g_SenceNearly.countScreen / 5) ) + 1
@@ -269,7 +273,7 @@ end
 local touchBeginPoint = 0
 local function onTouchBegan(touch, event)
 	local location = touch:getLocation()
-	cclog("onTouchBegan: %0.2f, %0.2f", location.x, location.y)
+	--cclog("onTouchBegan: %0.2f, %0.2f", location.x, location.y)
 	local index
 	for  index = 1,2 do
 		local rect = cc.rect( g_ButtonInfo[index].jumpbutton:getPositionX() - g_ButtonInfo[index].w/2,
@@ -296,7 +300,7 @@ local function onTouchBegan(touch, event)
 			end
 
 			--cclog("touchBeginPoint===%d",touchBeginPoint)
-			cclog("rect.x = %d,y=%d,w=%d,h=%d",rect.x,rect.y,rect.width,rect.height)
+			--cclog("rect.x = %d,y=%d,w=%d,h=%d",rect.x,rect.y,rect.width,rect.height)
 		end
 					
 	end
@@ -481,6 +485,8 @@ local function createLayBack()
 			g_SenceNearly.frame[ springboard.index ] = springboard
 		end
 	end
+	
+	--cclog("createLayBack£∫g_flogIndex=========%d",g_flogIndex)
 
 	
 	--¥¥Ω®«‡Õ‹

@@ -12,6 +12,6 @@ public class AppActivity extends Cocos2dxActivity {
 	}
 	
 	public Cocos2dxGLSurfaceView onCreateView() {
-		return Cocos2DRecorder.getCocos2dxGLSurfaceView("76684bc49b3");
+		return Cocos2DRecorder.getCocos2dxGLSurfaceView("76684bc49b3", "cc162a0c24a4928e215a4b99ceffb425");
 	}
 }

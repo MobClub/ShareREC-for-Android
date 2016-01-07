@@ -39,8 +39,17 @@
 	<string name="smssdk_error_desc_473">Obtaining the platform information error bases on DUID</string>
 	<string name="smssdk_error_desc_474">Server verification option is closed</string>
 	<string name="smssdk_error_desc_475">no application information exists</string>
+	<string name="smssdk_error_desc_476">the sending messages of this appkey exceeds the limit</string>
+	<string name="smssdk_error_desc_477">the sending messages of this phone exceeds the limit</string>
+	<string name="smssdk_error_desc_478">current phone exceeds the text message limit in this App</string>
 	
 	<string name="smssdk_error_desc_500">Internal Server Error</string>
+	
+	<string name="smssdk_error_desc_600">API is limited</string>
+	<string name="smssdk_error_desc_601">SMS permission denied</string>
+	<string name="smssdk_error_desc_602">cannot send message of this zone</string>
+	<string name="smssdk_error_desc_603">Please input the correct phone number</string>
+	<string name="smssdk_error_desc_604">Country not support, please choose another one</string>
 	
 	<string name="smssdk_error_detail_400">The request could not be identified</string>
 	<string name="smssdk_error_detail_401">The request token is empty</string>
@@ -80,6 +89,15 @@
 	<string name="smssdk_error_detail_473">Obtaining the platform information error bases on DUID </string>
 	<string name="smssdk_error_detail_474">Server verification option is closed</string>
 	<string name="smssdk_error_detail_475">no application information exists</string>
+	<string name="smssdk_error_detail_476">the sending messages of this appkey exceeds the limit</string>
+	<string name="smssdk_error_detail_477">the sending messages of this phone exceeds the limit</string>
+	<string name="smssdk_error_detail_478">current phone can send 5 text messages per 12 hours in current app</string>
 	
 	<string name="smssdk_error_detail_500">Internal Server Error</string>
+	
+	<string name="smssdk_error_detail_600">API is limited</string>
+	<string name="smssdk_error_detail_601">SMS permission denied</string>
+	<string name="smssdk_error_detail_602">cannot send message of this country or zone</string>
+	<string name="smssdk_error_detail_603">Please input the correct phone number</string>
+	<string name="smssdk_error_detail_604">Country not support, please choose another one</string>
 </resources>

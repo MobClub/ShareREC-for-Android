@@ -23,7 +23,7 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 		
 		// 初始化ShareRec (init ShareRec)
 		View view = findViewById(R.id.evCan);
-		recorder = new ViewRecorder(view, "76684bc49b3");
+		recorder = new ViewRecorder(view, "76684bc49b3", "cc162a0c24a4928e215a4b99ceffb425");
 		recorder.setDebuggable();
 		recorder.setMaxFrameSize(ViewRecorder.LevelMaxFrameSize.LEVEL_1280_720);
 	}

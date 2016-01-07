@@ -147,6 +147,7 @@ end
 
 function onReplaceOverScene(level)
 	g_level = level
+	--cclog("onReplaceOverScene--------------- ")
 	cc.Director:getInstance():purgeCachedData()
 	local sceneGame = cc.Scene:create()
 	sceneGame:addChild(createOverLayBack())

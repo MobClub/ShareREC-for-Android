@@ -7,11 +7,11 @@ namespace cn.sharerec {
 	public class JavaInterface {
 		private AndroidJavaObject javaRecorder;
 
-		public JavaInterface(string appkey) {
+		public JavaInterface(string appkey, string appSecret) {
 			try {
 				AndroidJavaClass clz = null;
 				clz = new AndroidJavaClass("cn.sharerec.recorder.impl.UnityRecorder");
-				javaRecorder = clz.CallStatic<AndroidJavaObject>("getInstance", appkey);
+				javaRecorder = clz.CallStatic<AndroidJavaObject>("getInstance", appkey, appSecret);
 			} catch(Exception e) {
 				javaRecorder = null;
 			}

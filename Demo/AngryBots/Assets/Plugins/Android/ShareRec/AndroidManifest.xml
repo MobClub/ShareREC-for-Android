@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <application>
-		<activity
+    <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"

@@ -15,9 +15,9 @@ namespace cn.sharerec {
         private static RenderTexture g_RenderTexture;
 		#endif
 		
-		public static void init(string appkey, string gameObject, int maxFrameSize) {
+		public static void init(string appkey, string appSecret, string gameObject, int maxFrameSize) {
 			if (javaInter == null) {
-				javaInter = new JavaInterface(appkey);
+				javaInter = new JavaInterface(appkey, appSecret);
 				javaInter.setGameObject(gameObject);
 				javaInter.setMaxFrameSize(maxFrameSize, "setUnityRenderEvent");
 				javaInter.setOnRecorderStateListener("onStateChange");
