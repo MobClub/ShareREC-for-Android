@@ -143,4 +143,6 @@
 	<string name="srec_video_commentate">视频解说</string>
 	<string name="srec_trim">裁剪</string>
 	<string name="srec_trim_range_error">长度错误</string>
+	<string name="srec_failed_to_start_mic">无法开启麦克风</string>
+	<string name="srec_failed_to_start_cam">无法开启摄像机</string>
 </resources>
