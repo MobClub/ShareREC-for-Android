@@ -140,4 +140,6 @@
 	<string name="srec_video_commentate">Video\nCommentate</string>
 	<string name="srec_trim">Trim</string>
 	<string name="srec_trim_range_error">Wrong range</string>
+	<string name="srec_failed_to_start_mic">Failed to start MIC</string>
+	<string name="srec_failed_to_start_cam">Failed to start camera</string>
 </resources>

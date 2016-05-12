@@ -44,9 +44,9 @@ class SwarmAI extends MonoBehaviour {
 			if (!buzzers[i])
 				Debug.Log ("buzzer not found at "+i, transform);	
 			buzzer.transform = buzzers[i].transform;
-			buzzer.audio = buzzers[i].audio;
+			buzzer.audio = buzzers[i].GetComponent.<AudioSource>();
 			buzzer.sign = i % 2 == 0 ? 1 : -1;
-			buzzer.chargeMaterial = buzzer.transform.Find("buzzer_bot/electric_buzzer_plasma").renderer.material;
+			buzzer.chargeMaterial = buzzer.transform.Find("buzzer_bot/electric_buzzer_plasma").GetComponent.<Renderer>().material;
 			buzzer.spawnPosition = buzzer.transform.position;
 			buzzer.spawnRotation = buzzer.transform.rotation;
 				buzzer.electricBall = buzzer.transform.GetComponentInChildren (ParticleEmitter) as ParticleEmitter;
@@ -101,8 +101,8 @@ class SwarmAI extends MonoBehaviour {
 					buzz[i].transform.position = buzz[i].spawnPosition;
 					buzz[i].transform.rotation = buzz[i].spawnRotation;
 					buzz[i].motor.enabled = false;
-					buzz[i].transform.rigidbody.velocity = Vector3.zero;
-					buzz[i].transform.rigidbody.angularVelocity = Vector3.zero;
+					buzz[i].transform.GetComponent.<Rigidbody>().velocity = Vector3.zero;
+					buzz[i].transform.GetComponent.<Rigidbody>().angularVelocity = Vector3.zero;
 				}
 			}
 		}
@@ -201,7 +201,7 @@ class SwarmAI extends MonoBehaviour {
 			buzz[i].chargeMaterial.mainTextureOffset = new Vector2 (0, (1-visibleCharged) * -1.9);
 			
 			// Make charged buzzer vibrate
-			buzz[i].motor.rigidbody.angularVelocity +=
+			buzz[i].motor.GetComponent.<Rigidbody>().angularVelocity +=
 				Random.onUnitSphere * 4 * visibleCharged;
 		}
 	}

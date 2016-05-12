@@ -6,5 +6,5 @@ function Start () {
 }
 
 function OnSignal () {
-	renderer.material.mainTextureOffset += offsetVector;
+	GetComponent.<Renderer>().material.mainTextureOffset += offsetVector;
 }

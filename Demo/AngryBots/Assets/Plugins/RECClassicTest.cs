@@ -17,7 +17,8 @@ public class RECClassicTest : MonoBehaviour {
 
 	void Start() {
 		// 初始化控制按钮 (initializing button positions)
-		float factor = Screen.width / 1920f;
+		float refEdge = Screen.width > Screen.height ? Screen.width : Screen.height;
+		float factor = refEdge / 1920f;
 		fontSize = (int) (40 * factor);
 		panel = new Rect(30 * factor, 30 * factor, 310 * factor, 360 * factor);
 		btnStart = new Rect (60 * factor, 120 * factor, 250 * factor, 60 * factor);

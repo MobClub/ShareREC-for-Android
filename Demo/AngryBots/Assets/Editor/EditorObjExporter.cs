@@ -35,7 +35,7 @@ public class EditorObjExporter : ScriptableObject
     private static string MeshToString(MeshFilter mf, Dictionary<string, ObjMaterial> materialList) 
     {
         Mesh m = mf.sharedMesh;
-        Material[] mats = mf.renderer.sharedMaterials;
+        Material[] mats = mf.GetComponent<Renderer>().sharedMaterials;
         
         StringBuilder sb = new StringBuilder();
         
@@ -160,7 +160,7 @@ public class EditorObjExporter : ScriptableObject
         m.RecalculateNormals();
                 
         
-        Material[] mats = skRenderer.renderer.sharedMaterials;
+        Material[] mats = skRenderer.GetComponent<Renderer>().sharedMaterials;
         
         StringBuilder sb = new StringBuilder();
         

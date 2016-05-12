@@ -10,9 +10,9 @@ public class Eject : MonoBehaviour
 
 	void Start ()
 	{
-		rigidbody.useGravity = true;
-		rigidbody.AddForce (force);
-		rigidbody.AddTorque (torque);
+		GetComponent<Rigidbody>().useGravity = true;
+		GetComponent<Rigidbody>().AddForce (force);
+		GetComponent<Rigidbody>().AddTorque (torque);
 	}
 	
 	

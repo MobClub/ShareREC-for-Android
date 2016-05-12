@@ -9,8 +9,8 @@ private var back : boolean = false;
 private var normalizedTime : float = 0;
 
 function Awake () {
-	if (!audioSource && audio)
-		audioSource = audio;
+	if (!audioSource && GetComponent.<AudioSource>())
+		audioSource = GetComponent.<AudioSource>();
 	if (lengthWithoutTrailing == 0)
 		lengthWithoutTrailing = Mathf.Min (sound.length, soundReverse.length);
 }

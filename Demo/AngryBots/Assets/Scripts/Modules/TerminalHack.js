@@ -24,13 +24,13 @@ function OnHacking () {
 }
 
 function OnHackingCompleted () {
-	audio.Play ();
+	GetComponent.<AudioSource>().Play ();
 	animationComp.Stop ();
 	enabled = false;
 }
 
 function UpdateHackingProgress () {
-	animationComp.gameObject.SampleAnimation (animationComp.clip, (1 - health.health / health.maxHealth) * animationComp.clip.length);
+	animationComp.clip.SampleAnimation (animationComp.gameObject, (1 - health.health / health.maxHealth) * animationComp.clip.length);
 }
 
 function Update () {;

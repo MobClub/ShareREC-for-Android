@@ -18,7 +18,7 @@ class RenderCubemapWizard extends ScriptableWizard
         
 //        go.camera.backgroundColor = Color (0.1, 0.1, 0.1, 1.0);
         
-        go.camera.clearFlags = CameraClearFlags.Skybox;
+        go.GetComponent.<Camera>().clearFlags = CameraClearFlags.Skybox;
         if (!go.GetComponent (Skybox))
         	go.AddComponent (Skybox);
         
@@ -26,16 +26,16 @@ class RenderCubemapWizard extends ScriptableWizard
         
         // place it on the object
         go.transform.position = renderFromPosition.position;
-        if( renderFromPosition.renderer )
-        	go.transform.position = renderFromPosition.renderer.bounds.center;
+        if( renderFromPosition.GetComponent.<Renderer>() )
+        	go.transform.position = renderFromPosition.GetComponent.<Renderer>().bounds.center;
         	
         go.transform.rotation = Quaternion.identity;
         
-        go.camera.fieldOfView = 90.0;
-        go.camera.aspect = 1.0;
+        go.GetComponent.<Camera>().fieldOfView = 90.0;
+        go.GetComponent.<Camera>().aspect = 1.0;
 
         // render into cubemap        
-        go.camera.RenderToCubemap( cubemap );
+        go.GetComponent.<Camera>().RenderToCubemap( cubemap );
         
         // destroy temporary camera
         DestroyImmediate( go );

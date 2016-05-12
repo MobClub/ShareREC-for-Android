@@ -58,11 +58,11 @@ function Update () {
 			targetHealth.OnDamage (damageAmount, -tr.forward);
 		}
 		// Get the rigidbody if any
-		if (c.rigidbody) {
+		if (c.GetComponent.<Rigidbody>()) {
 			// Apply force to the target object
 			var force : Vector3 = tr.forward * forceAmount;
 			force.y = 0;
-			c.rigidbody.AddForce (force, ForceMode.Impulse);
+			c.GetComponent.<Rigidbody>().AddForce (force, ForceMode.Impulse);
 		}
 		collided = true;
 	}

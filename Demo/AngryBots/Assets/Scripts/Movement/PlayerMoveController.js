@@ -320,7 +320,7 @@ function HandleCursorAlignment (cursorWorldPosition : Vector3) {
 	
 	#if !UNITY_FLASH
 		// Hide mouse cursor when within screen area, since we're showing game cursor instead
-		Screen.showCursor = (Input.mousePosition.x < 0 || Input.mousePosition.x > Screen.width || Input.mousePosition.y < 0 || Input.mousePosition.y > Screen.height);
+		Cursor.visible = (Input.mousePosition.x < 0 || Input.mousePosition.x > Screen.width || Input.mousePosition.y < 0 || Input.mousePosition.y > Screen.height);
 	#endif
 	
 	

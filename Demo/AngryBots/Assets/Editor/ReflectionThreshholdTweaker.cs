@@ -40,7 +40,7 @@ class ReflectionThreshholdTweaker : ScriptableWizard {
        		if(go.sharedMaterial.shader == s) {
        			Debug.Log(go.name);
        			
-            string path = AssetDatabase.GetAssetPath(go.renderer.sharedMaterial.GetTexture("_MainTex")); 
+            string path = AssetDatabase.GetAssetPath(go.GetComponent<Renderer>().sharedMaterial.GetTexture("_MainTex")); 
             TextureImporter textureImporter = AssetImporter.GetAtPath(path) as TextureImporter; 
             
             Debug.Log("adjusting @ "+path);

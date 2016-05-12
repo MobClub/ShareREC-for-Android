@@ -19,14 +19,14 @@ function Start () {
 function OnDrawGizmos () {
 	if (transform.parent) {
 		Gizmos.color = Color (0.5f, 0.9f, 1.0f, 0.15f);
-		Gizmos.DrawCube (collider.bounds.center, collider.bounds.size );
+		Gizmos.DrawCube (GetComponent.<Collider>().bounds.center, GetComponent.<Collider>().bounds.size );
 	}
 }
 
 function OnDrawGizmosSelected () {
 	if (transform.parent) {
 		Gizmos.color = Color (0.5f, 0.9f, 1.0f, 0.75f);
-		Gizmos.DrawCube (collider.bounds.center, collider.bounds.size );
+		Gizmos.DrawCube (GetComponent.<Collider>().bounds.center, GetComponent.<Collider>().bounds.size );
 	}
 }
 

@@ -19,29 +19,29 @@ function Start () {
 	
 	for (go in ambientEmitters) {
 		InstantiateDelayed(go);
-		if (go.gameObject.particleEmitter)
-			maxTime = Mathf.Max (maxTime, go.delay + go.gameObject.particleEmitter.maxEnergy);
+		if (go.gameObject.GetComponent.<ParticleEmitter>())
+			maxTime = Mathf.Max (maxTime, go.delay + go.gameObject.GetComponent.<ParticleEmitter>().maxEnergy);
 	}
 	for (go in explosionEmitters) {
 		InstantiateDelayed(go);	
-		if (go.gameObject.particleEmitter)
-			maxTime = Mathf.Max (maxTime, go.delay + go.gameObject.particleEmitter.maxEnergy);
+		if (go.gameObject.GetComponent.<ParticleEmitter>())
+			maxTime = Mathf.Max (maxTime, go.delay + go.gameObject.GetComponent.<ParticleEmitter>().maxEnergy);
 	}
 	for (go in smokeEmitters) {
 		InstantiateDelayed(go);
-		if (go.gameObject.particleEmitter)
-			maxTime = Mathf.Max (maxTime, go.delay + go.gameObject.particleEmitter.maxEnergy);
+		if (go.gameObject.GetComponent.<ParticleEmitter>())
+			maxTime = Mathf.Max (maxTime, go.delay + go.gameObject.GetComponent.<ParticleEmitter>().maxEnergy);
 	}
 	
-	if (audio && audio.clip)
-		maxTime = Mathf.Max (maxTime, audio.clip.length);
+	if (GetComponent.<AudioSource>() && GetComponent.<AudioSource>().clip)
+		maxTime = Mathf.Max (maxTime, GetComponent.<AudioSource>().clip.length);
 	
 	yield;
 	
 	for (go in miscSpecialEffects) {
 		InstantiateDelayed(go);
-		if (go.gameObject.particleEmitter)
-			maxTime = Mathf.Max (maxTime, go.delay + go.gameObject.particleEmitter.maxEnergy);
+		if (go.gameObject.GetComponent.<ParticleEmitter>())
+			maxTime = Mathf.Max (maxTime, go.delay + go.gameObject.GetComponent.<ParticleEmitter>().maxEnergy);
 	}
 	
 	Destroy (gameObject, maxTime + 0.5);

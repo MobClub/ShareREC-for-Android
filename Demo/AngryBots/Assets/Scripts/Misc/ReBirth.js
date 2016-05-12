@@ -13,5 +13,5 @@ function Start () {
 	var sm : ShaderDatabase = GetComponent.<ShaderDatabase> ();
 	sm.WhiteIn ();
 	
-	camera.backgroundColor = Color.white;
+	GetComponent.<Camera>().backgroundColor = Color.white;
 }

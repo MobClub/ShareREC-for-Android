@@ -17,6 +17,6 @@ public class GlowPlaneOrient : MonoBehaviour {
 		
 		// fade out for ugly angles
 		float dist = (m_Camera.transform.position-transform.position).sqrMagnitude;
-		transform.GetChild(0).renderer.material.color = new Color(0F,0F,0F, dist*0.00000000F);
+		transform.GetChild(0).GetComponent<Renderer>().material.color = new Color(0F,0F,0F, dist*0.00000000F);
 	}
 }

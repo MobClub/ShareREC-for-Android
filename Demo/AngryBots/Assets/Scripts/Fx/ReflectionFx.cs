@@ -59,7 +59,7 @@ public class ReflectionFx : MonoBehaviour
 			go = new GameObject(reflName, typeof(Camera)); 
 		if(!go.GetComponent(typeof(Camera)))
 			go.AddComponent(typeof(Camera));
-		Camera reflectCamera = go.camera;				
+		Camera reflectCamera = go.GetComponent<Camera>();				
 		
 		reflectCamera.backgroundColor = clearColor;
 		reflectCamera.clearFlags = CameraClearFlags.SolidColor;				
@@ -130,7 +130,7 @@ public class ReflectionFx : MonoBehaviour
 		float closestDist = Mathf.Infinity;
 		Vector3 pos = Camera.main.transform.position;
 		foreach (Transform t in reflectiveObjects) {
-			if (t.renderer.isVisible) {
+			if (t.GetComponent<Renderer>().isVisible) {
 				float dist = (pos - t.position).sqrMagnitude;
 				if (dist < closestDist) {
 					closestDist = dist;

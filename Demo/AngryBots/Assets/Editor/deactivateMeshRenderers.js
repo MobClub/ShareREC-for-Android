@@ -8,7 +8,7 @@ static function deactivateRenderers ()
     // Change the values of all
     for (var go in gos) 
     {
-        go.renderer.enabled = false;
+        go.GetComponent.<Renderer>().enabled = false;
     }
 }
 
@@ -20,6 +20,6 @@ static function activateRenderers ()
     // Change the values of all
     for (var go in gos) 
     {
-        go.renderer.enabled = true;
+        go.GetComponent.<Renderer>().enabled = true;
     }
 }

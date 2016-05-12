@@ -14,8 +14,8 @@ class HoverMovementMotor extends MovementMotor {
 	function FixedUpdate () {
 		// Handle the movement of the character
 		var targetVelocity : Vector3 = movementDirection * flyingSpeed;
-		var deltaVelocity : Vector3 = targetVelocity - rigidbody.velocity;
-		rigidbody.AddForce (deltaVelocity * flyingSnappyness, ForceMode.Acceleration);
+		var deltaVelocity : Vector3 = targetVelocity - GetComponent.<Rigidbody>().velocity;
+		GetComponent.<Rigidbody>().AddForce (deltaVelocity * flyingSnappyness, ForceMode.Acceleration);
 		
 		// Make the character rotate towards the target rotation
 		var facingDir : Vector3 = facingDirection != Vector3.zero ? facingDirection : movementDirection;
@@ -25,18 +25,18 @@ class HoverMovementMotor extends MovementMotor {
 			var axis : Vector3;
 			var angle : float;
 			deltaRotation.ToAngleAxis (angle, axis);
-			var deltaAngularVelocity : Vector3 = axis * Mathf.Clamp (angle, -turningSpeed, turningSpeed) - rigidbody.angularVelocity;
+			var deltaAngularVelocity : Vector3 = axis * Mathf.Clamp (angle, -turningSpeed, turningSpeed) - GetComponent.<Rigidbody>().angularVelocity;
 			
 			var banking : float = Vector3.Dot (movementDirection, -transform.right);
 			
-			rigidbody.AddTorque (deltaAngularVelocity * turningSnappyness + transform.forward * banking * bankingAmount);
+			GetComponent.<Rigidbody>().AddTorque (deltaAngularVelocity * turningSnappyness + transform.forward * banking * bankingAmount);
 		}
 	}
 	
 	function OnCollisionStay (collisionInfo : Collision) {
 		// Move up if colliding with static geometry
 		if (collisionInfo.rigidbody == null)
-			rigidbody.velocity += Vector3.up * Time.deltaTime * 50;
+			GetComponent.<Rigidbody>().velocity += Vector3.up * Time.deltaTime * 50;
 	}
 	
 }

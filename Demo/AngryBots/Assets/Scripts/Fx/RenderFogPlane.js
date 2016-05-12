@@ -13,7 +13,7 @@ private var mesh : Mesh;
 private var uv : Vector2[] = new Vector2[4];
 
 function OnEnable () {
-	renderer.enabled = true;
+	GetComponent.<Renderer>().enabled = true;
 
 	if (!mesh)
 		mesh = (GetComponent(MeshFilter) as MeshFilter).sharedMesh;
@@ -41,11 +41,11 @@ private function EarlyOutIfNotSupported () : boolean {
 }
 
 function OnDisable () {
-	renderer.enabled = false;
+	GetComponent.<Renderer>().enabled = false;
 }
 
 function Supported () : boolean {
-	return (renderer.sharedMaterial.shader.isSupported && SystemInfo.supportsImageEffects && SystemInfo.supportsRenderTextures && SystemInfo.SupportsRenderTextureFormat (RenderTextureFormat.Depth));
+	return (GetComponent.<Renderer>().sharedMaterial.shader.isSupported && SystemInfo.supportsImageEffects && SystemInfo.supportsRenderTextures && SystemInfo.SupportsRenderTextureFormat (RenderTextureFormat.Depth));
 }
 
 function Update () {
@@ -53,7 +53,7 @@ function Update () {
 		enabled = false;
 		return;
 	}
-	if (!renderer.enabled)
+	if (!GetComponent.<Renderer>().enabled)
 		return;
 
 	frustumCorners = Matrix4x4.identity;
@@ -105,7 +105,7 @@ function Update () {
 	frustumCorners.SetRow (2, bottomRight);
 	frustumCorners.SetRow (3, bottomLeft);
 
-	renderer.sharedMaterial.SetMatrix ("_FrustumCornersWS", frustumCorners);
-	renderer.sharedMaterial.SetVector ("_CameraWS", cameraForRay.transform.position);
+	GetComponent.<Renderer>().sharedMaterial.SetMatrix ("_FrustumCornersWS", frustumCorners);
+	GetComponent.<Renderer>().sharedMaterial.SetVector ("_CameraWS", cameraForRay.transform.position);
 }
 

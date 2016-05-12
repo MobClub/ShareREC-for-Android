@@ -94,32 +94,32 @@ function OnRenderImage (source : RenderTexture, destination : RenderTexture) {
 	widthOverHeight = (1.0f * source.width) / (1.0f * source.height);
 	oneOverBaseSize = 1.0f / 512.0f;		
 	
-	cameraNear = camera.nearClipPlane;
-	cameraFar = camera.farClipPlane;
-	cameraFov = camera.fieldOfView;
-	cameraAspect = camera.aspect;
+	cameraNear = GetComponent.<Camera>().nearClipPlane;
+	cameraFar = GetComponent.<Camera>().farClipPlane;
+	cameraFov = GetComponent.<Camera>().fieldOfView;
+	cameraAspect = GetComponent.<Camera>().aspect;
 
 	var frustumCorners : Matrix4x4 = Matrix4x4.identity;		
 	var vec : Vector4;
 	var corner : Vector3;
 	var fovWHalf : float = cameraFov * 0.5f;
-	var toRight : Vector3 = camera.transform.right * cameraNear * Mathf.Tan (fovWHalf * Mathf.Deg2Rad) * cameraAspect;
-	var toTop : Vector3 = camera.transform.up * cameraNear * Mathf.Tan (fovWHalf * Mathf.Deg2Rad);
-	var topLeft : Vector3 = (camera.transform.forward * cameraNear - toRight + toTop);
+	var toRight : Vector3 = GetComponent.<Camera>().transform.right * cameraNear * Mathf.Tan (fovWHalf * Mathf.Deg2Rad) * cameraAspect;
+	var toTop : Vector3 = GetComponent.<Camera>().transform.up * cameraNear * Mathf.Tan (fovWHalf * Mathf.Deg2Rad);
+	var topLeft : Vector3 = (GetComponent.<Camera>().transform.forward * cameraNear - toRight + toTop);
 	var cameraScaleFactor : float = topLeft.magnitude * cameraFar/cameraNear;	
 		
 	topLeft.Normalize();
 	topLeft *= cameraScaleFactor;
 
-	var topRight : Vector3 = (camera.transform.forward * cameraNear + toRight + toTop);
+	var topRight : Vector3 = (GetComponent.<Camera>().transform.forward * cameraNear + toRight + toTop);
 	topRight.Normalize();
 	topRight *= cameraScaleFactor;
 	
-	var bottomRight : Vector3 = (camera.transform.forward * cameraNear + toRight - toTop);
+	var bottomRight : Vector3 = (GetComponent.<Camera>().transform.forward * cameraNear + toRight - toTop);
 	bottomRight.Normalize();
 	bottomRight *= cameraScaleFactor;
 	
-	var bottomLeft : Vector3 = (camera.transform.forward * cameraNear - toRight - toTop);
+	var bottomLeft : Vector3 = (GetComponent.<Camera>().transform.forward * cameraNear - toRight - toTop);
 	bottomLeft.Normalize();
 	bottomLeft *= cameraScaleFactor;
 			
@@ -129,16 +129,16 @@ function OnRenderImage (source : RenderTexture, destination : RenderTexture) {
 	frustumCorners.SetRow (3, bottomLeft);	
 	
 	dofMaterial.SetMatrix ("_FrustumCornersWS", frustumCorners);
-	dofMaterial.SetVector ("_CameraWS", camera.transform.position);			
+	dofMaterial.SetVector ("_CameraWS", GetComponent.<Camera>().transform.position);			
 	
 	var t : Transform;
 	if (!objectFocus)
-		t = camera.transform;
+		t = GetComponent.<Camera>().transform;
 	else
 		t = objectFocus.transform;
 																	
 	dofMaterial.SetVector ("_ObjectFocusParameter", Vector4 (	
-				t.position.y - 0.25f, t.localScale.y * 1.0f / smoothness, 1.0f, objectFocus ? objectFocus.collider.bounds.extents.y * 0.75f : 0.55f));
+				t.position.y - 0.25f, t.localScale.y * 1.0f / smoothness, 1.0f, objectFocus ? objectFocus.GetComponent.<Collider>().bounds.extents.y * 0.75f : 0.55f));
        		
 	dofMaterial.SetFloat ("_ForegroundBlurExtrude", foregroundBlurExtrude);
 	dofMaterial.SetVector ("_InvRenderTargetSize", Vector4 (1.0 / (1.0 * source.width), 1.0 / (1.0 * source.height),0.0,0.0));

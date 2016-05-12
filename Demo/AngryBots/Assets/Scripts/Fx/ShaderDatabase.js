@@ -30,7 +30,7 @@ function Awake () {
 
 function CreateCameraCoverPlane () : GameObject {
 	cookShadersObject = GameObject.CreatePrimitive (PrimitiveType.Cube);
-	cookShadersObject.renderer.material = cookShadersCover;	
+	cookShadersObject.GetComponent.<Renderer>().material = cookShadersCover;	
 	cookShadersObject.transform.parent = transform;
 	cookShadersObject.transform.localPosition = Vector3.zero;
 	cookShadersObject.transform.localPosition.z += 1.55;
@@ -44,7 +44,7 @@ function CreateCameraCoverPlane () : GameObject {
 
 function WhiteOut () {
 	CreateCameraCoverPlane ();
-	var mat : Material  = cookShadersObject.renderer.sharedMaterial;
+	var mat : Material  = cookShadersObject.GetComponent.<Renderer>().sharedMaterial;
 	mat.SetColor ("_TintColor", Color (1.0f, 1.0f, 1.0f, 0.0));	
 	
 	yield;
@@ -61,7 +61,7 @@ function WhiteOut () {
 
 function WhiteIn () {	
 	CreateCameraCoverPlane ();
-	var mat : Material  = cookShadersObject.renderer.sharedMaterial;
+	var mat : Material  = cookShadersObject.GetComponent.<Renderer>().sharedMaterial;
 	mat.SetColor ("_TintColor", Color (1.0f, 1.0f, 1.0f, 1.0));	
 	
 	yield;
@@ -110,7 +110,7 @@ function CookShaders () {
 		for (var s : Shader in shaders) {
 			if (s) {
 				m.shader = s;
-				cube.renderer.material = m;
+				cube.GetComponent.<Renderer>().material = m;
 			}
 			yield;
 		}

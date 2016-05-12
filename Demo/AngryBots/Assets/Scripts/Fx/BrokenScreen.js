@@ -5,9 +5,9 @@ static var brokenMaterial : Material = null;
 
 function Start () {
 	if (brokenMaterial == null)
-		brokenMaterial = new Material (renderer.sharedMaterial);
+		brokenMaterial = new Material (GetComponent.<Renderer>().sharedMaterial);
 		
-	renderer.material = brokenMaterial;
+	GetComponent.<Renderer>().material = brokenMaterial;
 }
 
 function OnWillRenderObject () {

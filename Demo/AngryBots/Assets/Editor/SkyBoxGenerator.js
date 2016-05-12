@@ -24,16 +24,16 @@ class SkyBoxGenerator extends ScriptableWizard
     {
         var go = new GameObject ("SkyboxCamera", Camera);
         
-        go.camera.backgroundColor = Camera.main.backgroundColor;
-        go.camera.clearFlags = CameraClearFlags.Skybox;
-        go.camera.fieldOfView = 90;    
-        go.camera.aspect = 1.0;
+        go.GetComponent.<Camera>().backgroundColor = Camera.main.backgroundColor;
+        go.GetComponent.<Camera>().clearFlags = CameraClearFlags.Skybox;
+        go.GetComponent.<Camera>().fieldOfView = 90;    
+        go.GetComponent.<Camera>().aspect = 1.0;
         
         go.transform.position = renderFromPosition.position;
         
-        if (renderFromPosition.renderer)
+        if (renderFromPosition.GetComponent.<Renderer>())
         {
-            go.transform.position = renderFromPosition.renderer.bounds.center;
+            go.transform.position = renderFromPosition.GetComponent.<Renderer>().bounds.center;
         }
         
         go.transform.rotation = Quaternion.identity;
@@ -57,9 +57,9 @@ class SkyBoxGenerator extends ScriptableWizard
     go.transform.eulerAngles = skyDirection[orientation];
     var screenSize = 512;
     var rt = new RenderTexture (screenSize, screenSize, 24);
-    go.camera.targetTexture = rt;
+    go.GetComponent.<Camera>().targetTexture = rt;
     var screenShot = new Texture2D (screenSize, screenSize, TextureFormat.RGB24, false);
-    go.camera.Render();
+    go.GetComponent.<Camera>().Render();
     RenderTexture.active = rt;
     screenShot.ReadPixels (Rect (0, 0, screenSize, screenSize), 0, 0); 
         

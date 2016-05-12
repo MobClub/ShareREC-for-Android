@@ -2,5 +2,5 @@
 
 function OnSignal () 
 {
-	particleEmitter.emit = true;
+	GetComponent.<ParticleEmitter>().emit = true;
 }
