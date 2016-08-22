@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item type="drawable" name="srec_dialog_bg">#00000000</item>
-    <style name="srec_common_dialog" parent="@android:style/Theme.Dialog">
-        <item name="android:windowBackground">@drawable/srec_dialog_bg</item>
-        <item name="android:windowNoTitle">true</item>
-    </style>
-</resources>
