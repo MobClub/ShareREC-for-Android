@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<RootNamespace></RootNamespace>
+	<ProjectGuid>{87A6EEB7-6E60-DF95-BF55-641064500955}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_2_0;UNITY_5_2;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_REFLECTION_BUFFERS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;ENABLE_DUCK_TYPING</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Editor\CheckValidShaders.cs" />
+     <Compile Include="Assets\Editor\CopyMoodBox.cs" />
+     <Compile Include="Assets\Editor\CopyTransform.cs" />
+     <Compile Include="Assets\Editor\EditorObjExporter.cs" />
+     <Compile Include="Assets\Editor\ReflectionThreshholdTweaker.cs" />
+     <Compile Include="Assets\Editor\RevealMeshColliders.cs" />
+     <Compile Include="Assets\Editor\TransformGroup.cs" />
+     <Compile Include="Assets\Scripts\Editor\CleanProject.cs" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_share_video_platforms_back.xml" />
+     <None Include="Assets\Shaders\Fx\Rain.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_profile_nick_bg_land.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_like_liked_back.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_report_cancel_back.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values\smssdk_strings.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_local_video_title_edit_et_back_base.xml" />
+     <None Include="Assets\Shaders\BackgroundAndCharacters\RealtimeReflectionInWaterFlow.shader" />
+     <None Include="Assets\Shaders\Fx\Cursor.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_share_share_back_right_top.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_recomm_play_video_circle.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_play_video_icon_base.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_play_video_circle_base.xml" />
+     <None Include="Assets\Shaders\Fx\ParticleAdditiveBlend.shader" />
+     <None Include="Assets\Shaders\Fx\AdditiveBlend.shader" />
+     <None Include="Assets\Shaders\BackgroundAndCharacters\RealtimeReflectionReplacement.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values\srec_strings_base.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_local_video_title_edit_back_base.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values-en\smssdk_strings.xml" />
+     <None Include="Assets\Shaders\Fx\Additive.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_ve_progress.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_video_item_left_bg_land.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values\srec_errors.xml" />
+     <None Include="Assets\Shaders\BackgroundAndCharacters\ReflectiveBackgroundArbitrary.shader" />
+     <None Include="Assets\Shaders\BackgroundAndCharacters\ReflectiveBackgroundSelfIllumination.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_profile_local_video_back.xml" />
+     <None Include="Assets\Resources\HeightDepthOfField.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_game_news_thumb_back.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_comment_back.xml" />
+     <None Include="Assets\Resources\BlurPassesForDof.shader" />
+     <None Include="Assets\Shaders\Fx\ScreenRefract.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_prt_header_back.xml" />
+     <None Include="Assets\Shaders\Fx\RainSplash.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values-en\srec_strings_base.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values-en\ssdk_oks_strings.xml" />
+     <None Include="Assets\Shaders\BackgroundAndCharacters\Fallback.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values\smssdk_errors.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_bine_phone.xml" />
+     <None Include="Assets\Shaders\Fx\Multiply.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_share_close_btn_back.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values\smssdk_colors.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_profile_conf_bg_land.xml" />
+     <None Include="Assets\Plugins\Android\assets\ShareSDK.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values\srec_styles_base.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\smssdk_corners_bg_pre.xml" />
+     <None Include="Assets\Shaders\Fx\Blend.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_signin_account_back.xml" />
+     <None Include="Assets\Shaders\Fx\HeightFogBeforeTransparent.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values\srec_drawables.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_recomm_play_video_icon.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_ve_progress_bg.xml" />
+     <None Include="Assets\Shaders\BackgroundAndCharacters\CharacterSelfIlluminationReflective.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_video_item_right_bottom_bg_land.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_signout_btn_back.xml" />
+     <None Include="Assets\Resources\ColoredNoise.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values\ssdk_strings.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_crop_sb_item_back.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values-en\srec_plurals.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\smssdk_dialog_btn_back.xml" />
+     <None Include="Assets\Shaders\Fx\InterlacePatternBlend.shader" />
+     <None Include="Assets\Shaders\BackgroundAndCharacters\PlanarRealtimeReflection.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_share_thumb_back.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_fluency_back.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values\srec_strings.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values-en\smssdk_errors.xml" />
+     <None Include="Assets\Shaders\BackgroundAndCharacters\ReflectiveBackgroundPlanar.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values\ssdk_oks_color_drawables.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values-en\srec_errors.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values-en\srec_strings.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\smssdk_country_group_scroll_down.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_like_back.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\ssdk_oks_classic_platform_cell_back.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\smssdk_corners_bg_nor.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_pause_video_icon_base.xml" />
+     <None Include="Assets\Shaders\BackgroundAndCharacters\EnemySelfIlluminationReflective.shader" />
+     <None Include="Assets\Shaders\BackgroundAndCharacters\AngryInclude.cginc" />
+     <None Include="Assets\Resources\MobileBloom.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values\smssdk_arrays.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\ssdk_oks_classic_progressbar.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values-en\ssdk_strings.xml" />
+     <None Include="Assets\Shaders\Fx\ParticleMultiply.shader" />
+     <None Include="Assets\Shaders\Fx\ParticleAdditive.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_signin_btn_back.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_sb_item_back.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values\ssdk_oks_strings.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_share_share_back_left_top.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\smssdk_country_group_scroll_up.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_add_comment_back_land.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\smssdk_country_bg_selector.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values\smssdk_styles.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\smssdk_edittext_bg_selector.xml" />
+     <None Include="Assets\Shaders\BackgroundAndCharacters\AlphaCutoutCheapFallback.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_share_thumb_back_port.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_local_video_upload_back_base.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_share_edit_back.xml" />
+     <None Include="Assets\Shaders\Fx\LaserScope.shader" />
+     <None Include="Assets\Shaders\BackgroundAndCharacters\SuperSimpleSelfIllumination.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_share_share_back_left_bottom.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_edit_profile_back.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values\srec_plurals.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_share_panel_back.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_ve_trim_bg.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_share_btn_back.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\smssdk_btn_disenable.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\values-en\smssdk_arrays.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_share_share_back_right_bottom.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\smssdk_btn_enable.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_main_share_progress.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_report_back.xml" />
+     <None Include="Assets\Shaders\Fx\ParticleBlend.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_gray_circle.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_video_item_right_top_bg_land.xml" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\srec_local_video_narrator_back.xml" />
+     <None Include="Assets\Shaders\Fx\InterlacePatternAdditive.shader" />
+     <None Include="Assets\Plugins\Android\ShareRec\res\drawable\smssdk_corners_bg.xml" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/Users/yuxj/Desktop/AngryBots/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
+ <Reference Include="Assembly-UnityScript">
+ <HintPath>C:/Users/yuxj/Desktop/AngryBots/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Android.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/androidplayer/UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WP8.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/wp8support/UnityEditor.WP8.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Metro.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/metrosupport/UnityEditor.Metro.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Tizen.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/TizenPlayer/TizenPlayer/UnityEditor.Tizen.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.SamsungTV.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/stvplayer/STVPlayer/UnityEditor.SamsungTV.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WebGL.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/webglsupport/UnityEditor.WebGL.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.LinuxStandalone.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/linuxstandalonesupport/UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.OSXStandalone.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/macstandalonesupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Cecil">
+ <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{061B1BC0-CB95-2ED2-7942-8297BDBD73D4}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{96973C44-81EA-6A79-E5F0-0EA67F954EB0}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

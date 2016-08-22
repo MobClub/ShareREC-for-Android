@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="srec_error_desc_400">Bad request</string>
+	<string name="srec_error_desc_401">Token is needed</string>
+	<string name="srec_error_desc_402">Token do not exists</string>
+	<string name="srec_error_desc_403">CRC32 is needed</string>
+	<string name="srec_error_desc_404">CRC32 verification failed</string>
+	<string name="srec_error_desc_405">Appkey is needed</string>
+	<string name="srec_error_desc_406">Appkey is illegal</string>
+	<string name="srec_error_desc_407">Some requested arguments could not be found</string>
+	<string name="srec_error_desc_408">Page size is illegal</string>
+	<string name="srec_error_desc_409">Page index is illegal</string>
+	<string name="srec_error_desc_410">User ID is illegal</string>
+	<string name="srec_error_desc_411">Nickname do not exists</string>
+	<string name="srec_error_desc_412">Nickname is already in use</string>
+	<string name="srec_error_desc_413">Incorrect nickname or password</string>
+	<string name="srec_error_desc_414">Password is needed</string>
+	<string name="srec_error_desc_415">Passwords do not match</string>
+	<string name="srec_error_desc_416">DUID do not match</string>
+	<string name="srec_error_desc_417">This phone is not binding</string>
+	<string name="srec_error_desc_418">could not retrieve data</string>
+	<string name="srec_error_desc_419">Res is empty</string>
+	<string name="srec_error_desc_420">List is empty</string>
+	<string name="srec_error_desc_421">Item is empty</string>
+	<string name="srec_error_desc_422">This phone is binded by another account</string>
+	<string name="srec_error_desc_423">Nickname is illegal</string>
+	<string name="srec_error_desc_424">Authtoken is empty</string>
+	<string name="srec_error_desc_425">Forbidden</string>
+	<string name="srec_error_desc_500">Internal server error</string>
+</resources>

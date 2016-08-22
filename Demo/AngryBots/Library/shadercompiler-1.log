@@ -1,0 +1,19 @@
+Base path: C:/Program Files (x86)/Unity/Editor/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-1-4964
+Cmd: getPlatforms
+Cmd: compileSnippet
+  api=1 type=0 insize=1960 outsize=497 kw=LIGHTMAP_ON ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1960 outsize=696 kw=LIGHTMAP_ON ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=2053 outsize=739 kw=LIGHTMAP_ON ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=2053 outsize=725 kw=LIGHTMAP_ON ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=2152 outsize=734 kw=LIGHTMAP_ON ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=2152 outsize=760 kw=LIGHTMAP_ON ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1984 outsize=739 kw=LIGHTMAP_ON ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1984 outsize=759 kw=LIGHTMAP_ON ok=1
