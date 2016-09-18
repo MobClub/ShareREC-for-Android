@@ -97,7 +97,7 @@ namespace cn.sharerec {
 		}
 
 		private void setUnityRenderEvent(string eventID) {
-			#if ( UNITY_4_5 || UNITY_4_6 )
+			#if (UNITY_4_5 || UNITY_4_6)
 				int[] iparameters = new int[1]{0};
 				string[] parameters = eventID.Split('|');
 				int i = 0; 

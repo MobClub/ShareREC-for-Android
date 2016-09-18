@@ -17,6 +17,7 @@ public class AndroidLauncher extends AndroidApplication {
 		String appkey = getIntent().getStringExtra("srec_key_appKey");
 		String appsecret = getIntent().getStringExtra("srec_key_appSecret");
 		MyGdxGame game = new MyGdxGame(this, appkey, appsecret);
+		game.getRecorder().setUseES3("true".equalsIgnoreCase(getIntent().getStringExtra("srec_key_forceGles30")));
 		game.getRecorder().setMaxFrameSize(LevelMaxFrameSize.valueOf(getIntent().getStringExtra("srec_key_maxFrameSize")));
 		game.getRecorder().setVideoQuality(LevelVideoQuality.valueOf(getIntent().getStringExtra("srec_key_videoQuality")));
 		game.getRecorder().setMinDuration(1000 * Long.parseLong(getIntent().getStringExtra("srec_key_minDuration")));

@@ -183,6 +183,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	ShareRec::setVideoQuality(getVideoQuality("srec_key_videoQuality"));
 	ShareRec::setMinDuration(1000 * getLongConfig("srec_key_minDuration"));
 	ShareRec::setCacheFolder(getStringConfig("srec_key_cacheFolder"));
+	ShareRec::setUseES3(getBoolConfig("srec_key_forceGles30"));
 
 	// Force ShareREC to use the software video / audio encoder, which will be better compatibility, but cost more CPU utilization
  	bool sWAudioEnc = getBoolConfig("srec_key_softwareAudioEncoder");

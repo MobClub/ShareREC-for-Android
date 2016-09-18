@@ -50,6 +50,7 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 		// 初始化ShareRec (init ShareRec)
 		svHost = (TestGLSurfaceView) findViewById(R.id.svHost);
 		recorder = svHost.getRecorder();
+		recorder.setUseES3("true".equalsIgnoreCase(getIntent().getStringExtra("srec_key_forceGles30")));
 		recorder.setMaxFrameSize(LevelMaxFrameSize.valueOf(getIntent().getStringExtra("srec_key_maxFrameSize")));
 		recorder.setVideoQuality(LevelVideoQuality.valueOf(getIntent().getStringExtra("srec_key_videoQuality")));
 		recorder.setMinDuration(1000 * Long.parseLong(getIntent().getStringExtra("srec_key_minDuration")));

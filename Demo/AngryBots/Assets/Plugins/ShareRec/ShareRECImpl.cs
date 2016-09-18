@@ -10,7 +10,7 @@ namespace cn.sharerec {
 		private static JavaInterface javaInter;
 		private static int g_screenfbo = 0;
 
-		#if ( UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 )
+		#if (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4)
         private static RenderTexture g_RenderTexture;
 		#endif
 		
@@ -45,7 +45,7 @@ namespace cn.sharerec {
 		}
 
 		public static void initRenderTexture(){
-			#if ( UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 ) 
+		#if (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4) 
 			if(g_RenderTexture == null){
 				g_RenderTexture = RenderTexture.GetTemporary(Screen.width, Screen.height);
 			}
@@ -53,7 +53,7 @@ namespace cn.sharerec {
         }
 
 		public static void ReleaseRenderTexture(){
-			#if ( UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 )
+		#if (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4)
             if (g_RenderTexture != null) {
 				RenderTexture.ReleaseTemporary (g_RenderTexture);
 			}
@@ -61,7 +61,7 @@ namespace cn.sharerec {
 		}
 
 		public static void addCameraRecord(RenderTexture src) {
-			#if ( UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 )
+		#if (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4)
 			if (src != null) {
 				Graphics.SetRenderTarget(g_RenderTexture);
 				Graphics.Blit(src, g_RenderTexture);
@@ -149,10 +149,10 @@ namespace cn.sharerec {
 		// =======================================
 
 		public static void OnPreRender() {
-			#if ( UNITY_4_5 || UNITY_4_6 )
+			#if (UNITY_4_5 || UNITY_4_6)
 			javaInter.onPreRender(1);
 			GL.IssuePluginEvent(RENDER_EVENTID);
-			#elif ( UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 )
+		#elif (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4)
             javaInter.onPreRender(1);
 			#else
 			javaInter.onPreRender(0);
@@ -160,9 +160,9 @@ namespace cn.sharerec {
 		}
 		
 		public static void OnPostRender() {
-			#if ( UNITY_4_5 || UNITY_4_6 )
+			#if (UNITY_4_5 || UNITY_4_6)
 			javaInter.onPostRender(getScreenFbo());
-			#elif ( UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 )
+		#elif (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4)
             Graphics.Blit(g_RenderTexture,(RenderTexture) null);
 			javaInter.OnRenderImage(g_RenderTexture.GetNativeTexturePtr().ToInt32());
 			#else
@@ -171,7 +171,7 @@ namespace cn.sharerec {
 		}
 
 
-		#if ( UNITY_4_5 || UNITY_4_6 )
+		#if (UNITY_4_5 || UNITY_4_6)
 		[DllImport("ShareRecUnity")]
 		public static extern void setFBOInfo( int screenfbo );
 		
