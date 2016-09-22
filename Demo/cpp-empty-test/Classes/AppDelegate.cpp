@@ -83,10 +83,20 @@ ShareRec::LevelVideoQuality getVideoQuality(const char* key) {
 	const char* cValue = (const char*) env->GetStringUTFChars(jvalue, JNI_FALSE);
 
 	ShareRec::LevelVideoQuality value = ShareRec::LEVEL_LOW;
-	if (strcmp("LEVEL_MEDIUN", cValue) == 0) {
+	if (strcmp("LEVEL_SUPER_LOW", cValue) == 0) {
+		value = ShareRec::LEVEL_SUPER_LOW;
+	} else if (strcmp("LEVEL_VERY_LOW", cValue) == 0) {
+		value = ShareRec::LEVEL_VERY_LOW;
+	} else if (strcmp("LEVEL_LOW", cValue) == 0) {
+		value = ShareRec::LEVEL_LOW;
+	} else if (strcmp("LEVEL_MEDIUN", cValue) == 0) {
 		value = ShareRec::LEVEL_MEDIUN;
 	} else if (strcmp("LEVEL_HIGH", cValue) == 0) {
 		value = ShareRec::LEVEL_HIGH;
+	} else if (strcmp("LEVEL_VERY_HIGH", cValue) == 0) {
+		value = ShareRec::LEVEL_VERY_HIGH;
+	} else if (strcmp("LEVEL_SUPER_HIGH", cValue) == 0) {
+		value = ShareRec::LEVEL_SUPER_HIGH;
 	}
 
 	env->ReleaseStringChars(jvalue, (const jchar*) cValue);

@@ -1,20 +1,16 @@
 package com.example.eraserdemo;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
-
-import com.mob.tools.utils.BitmapHelper;
 
 import cn.sharerec.recorder.OnRecorderStateListener;
 import cn.sharerec.recorder.Recorder;
 import cn.sharerec.recorder.Recorder.LevelMaxFrameSize;
 import cn.sharerec.recorder.Recorder.LevelVideoQuality;
 import cn.sharerec.recorder.impl.ViewRecorder;
-import cn.sharerec.recorder.media.MP4;
 
 public class MainActivity extends Activity implements OnClickListener, OnRecorderStateListener {
 	private ViewRecorder recorder;

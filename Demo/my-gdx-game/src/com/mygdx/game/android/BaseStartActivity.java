@@ -72,9 +72,13 @@ public abstract class BaseStartActivity extends PreferenceActivity implements On
 		lpVideoQuality.setKey("srec_key_videoQuality");
 		lpVideoQuality.setTitle("Video Quality");
 		lpVideoQuality.setEntries(new String[] {
+				"LEVEL_SUPER_LOW",
+				"LEVEL_VERY_LOW",
 				"LEVEL_LOW",
 				"LEVEL_MEDIUN",
-				"LEVEL_HIGH"
+				"LEVEL_HIGH",
+				"LEVEL_VERY_HIGH",
+				"LEVEL_SUPER_HIGH"
 		});
 		lpVideoQuality.setEntryValues(lpVideoQuality.getEntries());
 		lpVideoQuality.setDialogTitle(lpVideoQuality.getTitle());
@@ -140,7 +144,7 @@ public abstract class BaseStartActivity extends PreferenceActivity implements On
 		
 		String videoQuality = sp.getString(lpVideoQuality.getKey(), null);
 		if (TextUtils.isEmpty(videoQuality)) {
-			lpVideoQuality.setValueIndex(2);
+			lpVideoQuality.setValueIndex(4);
 		} else {
 			lpVideoQuality.setValue(videoQuality);
 		}

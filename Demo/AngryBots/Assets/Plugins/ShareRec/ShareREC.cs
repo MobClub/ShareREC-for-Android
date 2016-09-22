@@ -27,9 +27,9 @@ namespace cn.sharerec {
 		public string AppKey = "76684bc49b3";
 		public string AppSecret = "cc162a0c24a4928e215a4b99ceffb425";
 		public LevelMaxFrameSize MaxFrameSize = LevelMaxFrameSize.LEVEL_1280_720;
-		public LevelVideoQuality VideoQuality = LevelVideoQuality.LEVEL_MEDIUN;
+		public LevelVideoQuality VideoQuality = LevelVideoQuality.LEVEL_HIGH;
 		public int MinDuration = 4;
-		public bool RecordAudioFromMic = false;
+		public bool RecordAudioFromMic = true;
 		public bool SoftwareAudioEncoder = false;
 		public bool SoftwareVideoEncoder = false;
 		public string CacheFolder = null;

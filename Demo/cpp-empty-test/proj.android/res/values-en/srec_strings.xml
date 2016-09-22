@@ -73,7 +73,7 @@
     <string name="srec_release_to_refresh">Release to Refresh</string>
     <string name="srec_refreshing">Refreshing…</string>
     <string name="srec_change_psw">Change Password</string>
-    <string name="srec_bine_phone">Bine phone</string>
+    <string name="srec_bine_phone">Bind phone</string>
     <string name="srec_bine_phone_x">Bining Phone: %s</string>
     <string name="srec_signout">Signout</string>
     <string name="srec_old_psw">Password</string>
