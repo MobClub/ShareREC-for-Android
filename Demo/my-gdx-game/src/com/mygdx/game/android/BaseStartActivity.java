@@ -1,7 +1,5 @@
 package com.mygdx.game.android;
 
-import java.util.Map.Entry;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
@@ -15,6 +13,8 @@ import android.preference.PreferenceScreen;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.util.Map.Entry;
 
 public abstract class BaseStartActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
 	private EditTextPreference etpAppKey;
