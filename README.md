@@ -8,3 +8,4 @@
 	* normal View -- http://wiki.mob.com/sharerec-for-android-viewrecorder-%e5%bf%ab%e9%80%9f%e9%9b%86%e6%88%90/
 	* GLSurfaceView -- http://wiki.mob.com/sharerec-for-android-glrecorder-%e5%bf%ab%e9%80%9f%e9%9b%86%e6%88%90/
 	* libGDX -- http://wiki.mob.com/sharerec-for-libgdx-android%e5%bf%ab%e9%80%9f%e9%9b%86%e6%88%90/
+	* Whole System -- http://wiki.mob.com/sharerec-for-android%e5%bf%ab%e9%80%9f%e9%9b%86%e6%88%90/
