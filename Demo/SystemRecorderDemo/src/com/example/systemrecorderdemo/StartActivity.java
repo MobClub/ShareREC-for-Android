@@ -10,6 +10,7 @@ import android.preference.PreferenceScreen;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import cn.sharerec.ShareREC;
 import cn.sharerec.recorder.OnRecorderStateListener;
 import cn.sharerec.recorder.Recorder;
 import cn.sharerec.recorder.Recorder.LevelVideoQuality;
@@ -49,17 +50,20 @@ public class StartActivity extends BaseStartActivity implements OnRecorderStateL
 		return super.onOptionsItemSelected(item);
 	}
 
-	protected void onStartDemo(Intent data) {
+	protected boolean onStartDemo(Intent data) {
 		if (item != null) {
-			if (item.getTitle().equals(getString(R.string.start))) {
+			String title = item.getTitle().toString();
+			item = null;
+			if (title.equals(getString(R.string.start))) {
 				startRecorder(data);
-			} else if (item.getTitle().equals(getString(R.string.video_center))) {
+				return true;
+			} else if (title.equals(getString(R.string.video_center))) {
 				showVideoCenter(data);
 			} else {
 				showProfile(data);
 			}
-			item = null;
 		}
+		return false;
 	}
 
 	private void startRecorder(Intent data) {
@@ -85,8 +89,6 @@ public class StartActivity extends BaseStartActivity implements OnRecorderStateL
 		i.putExtra("STOP_RECORDER", true);
 		not.contentIntent = PendingIntent.getActivity(this, 0, i, 0);
 		nm.notify(0, not);
-
-		finish();
 	}
 
 	private void showVideoCenter(Intent data) {
