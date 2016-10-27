@@ -51,6 +51,7 @@
      <Compile Include="Assets\Plugins\ShareRec\JavaInterface.cs" />
      <Compile Include="Assets\Plugins\ShareRec\LevelMaxFrameSize.cs" />
      <Compile Include="Assets\Plugins\ShareRec\LevelVideoQuality.cs" />
+     <Compile Include="Assets\Plugins\ShareRec\MP4.cs" />
      <Compile Include="Assets\Plugins\ShareRec\OnFrameBeginHandler.cs" />
      <Compile Include="Assets\Plugins\ShareRec\OnFrameEndHandler.cs" />
      <Compile Include="Assets\Plugins\ShareRec\RECBar.cs" />

@@ -20,6 +20,7 @@ namespace cn.sharerec {
 				javaInter.setGameObject(gameObject);
 				javaInter.setMaxFrameSize(maxFrameSize, "setUnityRenderEvent");
 				javaInter.setOnRecorderStateListener("onStateChange");
+				javaInter.setOnPlatformSelectedCallback("onPlatformSelected");
 				javaInter.setSampleRate(AudioSettings.outputSampleRate);
 				int channelCount = AudioSettings.speakerMode == AudioSpeakerMode.Mono ? 1 : 2;
 				javaInter.setChannelCount(channelCount > 0 ? channelCount : 2);
@@ -76,7 +77,11 @@ namespace cn.sharerec {
 		public static void AddCustomAttr(string key, string value) {
 			javaInter.addAttrData(key, value);
 		}
-		
+
+		public static void AddCustomPlatform(string name) {
+			javaInter.addCustomPlatform(name);
+		}
+
 		public static void SetVideoQuality(int videoQuality) {
 			javaInter.setVideoQuality(videoQuality);
 		}
@@ -104,11 +109,6 @@ namespace cn.sharerec {
 		public static void Resume() {
 			javaInter.resume();
 		}
-
-		public static bool canStop() {
-			return javaInter.canStop();
-		}
-
 
 		public static void Stop() {
 			javaInter.stop();

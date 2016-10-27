@@ -9,6 +9,124 @@ namespace cn {
 			ShareRec::OnRecorderStateListener listener = (ShareRec::OnRecorderStateListener) callback;
 			listener(state);
 		}
+
+		JNIEXPORT void JNICALL Java_cn_sharerec_recorder_impl_Cocos2DRecorder_onPlatformSelected
+				(JNIEnv* env, jobject thiz, jint callback, jstring name, jobject mp4) {
+			ShareRec::OnPlatformSelected customPlatform = (ShareRec::OnPlatformSelected) callback;
+			MP4 cMp4(mp4);
+			const char* cName = env->GetStringUTFChars(name, JNI_FALSE);
+			customPlatform(cName, &cMp4);
+			env->ReleaseStringChars(name, (const jchar*) cName);
+		}
+
+		// =======================================
+		
+		MP4::MP4(jobject mp4) {
+			this->mp4 = mp4;
+		}
+
+		MP4::~MP4 () {
+			this->mp4 = NULL;
+		}
+
+		long long MP4::getCreateTime() {
+			if (mp4 != NULL) {
+				JniMethodInfo mi;
+				const char* className = "cn/sharerec/recorder/media/MP4";
+				bool res = JniHelper::getMethodInfo(mi, className, "setCacheFolder", "()J");
+				if (res) {
+					return mi.env->CallLongMethod(mp4, mi.methodID);
+				}
+			}
+			return 0;
+		}
+
+		int MP4::getLocalPath(char** path) {
+			if (mp4 != NULL) {
+				JniMethodInfo mi;
+				const char* className = "cn/sharerec/recorder/media/MP4";
+				bool res = JniHelper::getMethodInfo(mi, className, "getLocalPath", "()Ljava/lang/String;");
+				if (res) {
+					jstring jPath = (jstring) mi.env->CallObjectMethod(mp4, mi.methodID);
+					const char* cPath = mi.env->GetStringUTFChars(jPath, JNI_FALSE);
+					int len = strlen(cPath);
+					char tmp[len];
+					strcpy(tmp, cPath);
+					*path = tmp;
+					mi.env->ReleaseStringChars(jPath, (const jchar*) cPath);
+					return len;
+				}
+			}
+			return 0;
+		}
+
+		jobject MP4::getThumb(float progress) {
+			if (mp4 != NULL) {
+				JniMethodInfo mi;
+				const char* className = "cn/sharerec/recorder/media/MP4";
+				bool res = JniHelper::getMethodInfo(mi, className, "getThumb", "()Landroid/graphics/Bitmap;");
+				if (res) {
+					return mi.env->CallObjectMethod(mp4, mi.methodID);
+				}
+			}
+			return NULL;
+		}
+
+		long long MP4::getDuration() {
+			if (mp4 != NULL) {
+				JniMethodInfo mi;
+				const char* className = "cn/sharerec/recorder/media/MP4";
+				bool res = JniHelper::getMethodInfo(mi, className, "getDuration", "()J");
+				if (res) {
+					return mi.env->CallLongMethod(mp4, mi.methodID);
+				}
+			}
+			return 0;
+		}
+
+		void MP4::remove() {
+			if (mp4 != NULL) {
+				JniMethodInfo mi;
+				const char* className = "cn/sharerec/recorder/media/MP4";
+				bool res = JniHelper::getMethodInfo(mi, className, "remove", "()V");
+				if (res) {
+					mi.env->CallVoidMethod(mp4, mi.methodID);
+				}
+			}
+		}
+
+		int MP4::getText(char** text) {
+			if (mp4 != NULL) {
+				JniMethodInfo mi;
+				const char* className = "cn/sharerec/recorder/media/MP4";
+				bool res = JniHelper::getMethodInfo(mi, className, "getText", "()Ljava/lang/String;");
+				if (res) {
+					jstring jText = (jstring) mi.env->CallObjectMethod(mp4, mi.methodID);
+					const char* cText = mi.env->GetStringUTFChars(jText, JNI_FALSE);
+					int len = strlen(cText);
+					char tmp[len];
+					strcpy(tmp, cText);
+					*text = tmp;
+					mi.env->ReleaseStringChars(jText, (const jchar*) cText);
+					return 1;
+				}
+			}
+			return 0;
+		}
+
+		jobject MP4::getCustomAttrs() {
+			if (mp4 != NULL) {
+				JniMethodInfo mi;
+				const char* className = "cn/sharerec/recorder/media/MP4";
+				bool res = JniHelper::getMethodInfo(mi, className, "getCustomAttrs", "()Ljava/util/HashMap;");
+				if (res) {
+					return mi.env->CallObjectMethod(mp4, mi.methodID);
+				}
+			}
+			return NULL;
+		}
+		
+		// =======================================
 		
 		jobject ShareRec::getRecorder() {
 			JniMethodInfo miGetInstance;
@@ -135,7 +253,10 @@ namespace cn {
 			jobject javaRecorder = getRecorder();
 			if (javaRecorder != NULL) {
 				JniMethodInfo mi;
-				bool res = getMethod(mi, "addAttrData", "(Ljava/lang/String;Ljava/lang/String;)V");
+				bool res = getMethod(mi, "addCustomAttr", "(Ljava/lang/String;Ljava/lang/String;)V");
+				if (!res) {
+					res = getMethod(mi, "addAttrData", "(Ljava/lang/String;Ljava/lang/String;)V");
+				}
 				if (res) {
 					jstring jKey = mi.env->NewStringUTF(key);
 					jstring jValue = mi.env->NewStringUTF(value);
@@ -336,6 +457,18 @@ namespace cn {
 					mi.env->DeleteLocalRef(jpath);
 					releaseMethod(mi);
 				}
+			}
+		}
+
+		void ShareRec::addCustomPlatform(const char* name, OnPlatformSelected customPlatform) {
+			const char* className = "cn/sharerec/recorder/impl/Cocos2DRecorder";
+			const char* sig = "(Ljava/lang/String;I)V";
+			JniMethodInfo mi;
+			bool res = JniHelper::getStaticMethodInfo(mi, className, "addCustomPlatform", sig);
+			if (res) {
+				jstring jName = mi.env->NewStringUTF(name);
+				mi.env->CallStaticVoidMethod(mi.classID, mi.methodID, jName, (jint) customPlatform);
+				mi.env->DeleteLocalRef(jName);
 			}
 		}
 	}

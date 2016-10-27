@@ -10,11 +10,10 @@ import android.preference.PreferenceScreen;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import cn.sharerec.ShareREC;
 import cn.sharerec.recorder.OnRecorderStateListener;
 import cn.sharerec.recorder.Recorder;
-import cn.sharerec.recorder.Recorder.LevelVideoQuality;
 import cn.sharerec.recorder.Recorder.LevelMaxFrameSize;
+import cn.sharerec.recorder.Recorder.LevelVideoQuality;
 import cn.sharerec.recorder.impl.SystemRecorder;
 
 public class StartActivity extends BaseStartActivity implements OnRecorderStateListener {
@@ -80,14 +79,16 @@ public class StartActivity extends BaseStartActivity implements OnRecorderStateL
 			recorder.start();
 		}
 
-		String msg = getString(R.string.click_to_stop);
-		Notification not = new Notification(R.drawable.ic_launcher, msg, System.currentTimeMillis());
+		String title = getString(R.string.app_name);
+		Notification not = new Notification(R.drawable.ic_launcher, title, System.currentTimeMillis());
 		not.flags = Notification.FLAG_NO_CLEAR;
 		NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 		Intent i = new Intent();
 		i.setComponent(new ComponentName(getPackageName(), getClass().getName()));
 		i.putExtra("STOP_RECORDER", true);
-		not.contentIntent = PendingIntent.getActivity(this, 0, i, 0);
+		PendingIntent pi = PendingIntent.getActivity(getApplicationContext(), 0, i, 0);
+		String msg = getString(R.string.click_to_stop);
+		not.setLatestEventInfo(getApplicationContext(), title, msg, pi);
 		nm.notify(0, not);
 	}
 

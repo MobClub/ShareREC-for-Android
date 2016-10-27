@@ -234,10 +234,10 @@ public class MyGdxGame extends SrecApplicationAdapter implements InputProcessor 
 			
 			// 设置分享参数并打开分享页面(Set share params and show share page)
 			getRecorder().setText("libgdx Demo");
-			getRecorder().addAttrData("score", "5000");
-			getRecorder().addAttrData("name", "ShareRec Developer");
-			getRecorder().addAttrData("brand", "hehe!");
-			getRecorder().addAttrData("level", "10");
+			getRecorder().addCustomAttr("score", "5000");
+			getRecorder().addCustomAttr("name", "ShareRec Developer");
+			getRecorder().addCustomAttr("brand", "hehe!");
+			getRecorder().addCustomAttr("level", "10");
 			getRecorder().showShare();
 		}
 	}

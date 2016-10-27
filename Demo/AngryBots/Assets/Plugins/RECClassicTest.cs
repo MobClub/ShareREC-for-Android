@@ -48,10 +48,20 @@ public class RECClassicTest : MonoBehaviour {
 				} else if (GUI.Button(btnProfile, "Profile")) {
 					// 添加返回操作(add callback to handle returning operations)
 					ShareREC.OnReturnFromProfileHandler = OnReturned;
+					ShareREC.OnPlatformSelectedHandler = OnPlatformSelected;
+					ShareREC.AddCustomPlatform("CustomPlatform");
 					// 打开个人中心 (show user profile page)
 					ShareREC.ShowProfile();
 				}
 			}
+		}
+	}
+
+	void OnApplicationPause(bool pauseStatus) {
+		if (pauseStatus) {
+			ShareREC.PauseRecorder();
+		} else {
+			ShareREC.ResumeRecorder();
 		}
 	}
 
@@ -70,11 +80,18 @@ public class RECClassicTest : MonoBehaviour {
 		ShareREC.AddCustomAttr("level", "10");
 		// 添加返回操作(add callback to handle returning operations)
 		ShareREC.OnReturnFromShareHandler = OnReturned;
+		ShareREC.OnPlatformSelectedHandler = OnPlatformSelected;
+		ShareREC.AddCustomPlatform("CustomPlatform");
 		ShareREC.ShowShare();
 	}
 
 	void OnReturned() {
 		Debug.Log("============== I am BACK!!!!");
+	}
+
+	void OnPlatformSelected(string name, MP4 mp4) {
+		Debug.Log ("menu \"" + name + "\" is selected");
+		Debug.Log ("video path:" + mp4.getLocalPath());
 	}
 #endif
 }

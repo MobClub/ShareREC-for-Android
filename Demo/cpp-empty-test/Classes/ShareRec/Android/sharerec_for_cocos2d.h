@@ -32,10 +32,31 @@ namespace cn {
 
 		JNIEXPORT void JNICALL Java_cn_sharerec_recorder_impl_Cocos2DRecorder_onStateChange
 				(JNIEnv* env, jobject thiz, jint listener, jint state);
+		JNIEXPORT void JNICALL Java_cn_sharerec_recorder_impl_Cocos2DRecorder_onPlatformSelected
+				(JNIEnv* env, jobject thiz, jint callback, jstring name, jobject mp4);
 
 		#ifdef __cplusplus
 		}
 		#endif
+
+		class MP4 {
+			public:
+				MP4(jobject mp4);
+				~MP4();
+				
+				long long getCreateTime();
+				int getLocalPath(char** path);
+				/* returns a Bitmap object */
+				jobject getThumb(float progress);
+				long long getDuration();
+				void remove();
+				int getText(char** text);
+				/* returns a HashMap<String, String> object */
+				jobject getCustomAttrs();
+
+			private:
+				jobject mp4;
+		};
 
 		class ShareRec {
 		public:
@@ -57,6 +78,7 @@ namespace cn {
 			};
 			
 			typedef void(*OnRecorderStateListener) (int state);
+			typedef void(*OnPlatformSelected) (const char* name, MP4* mp4);
 		
 			/**
 			  * 判断ShareRec是否支持当前的设备(Determines whether ShareRec is available for the current device.)
@@ -172,6 +194,11 @@ namespace cn {
 			  * 设置录制完毕后视频的缓存目录(Sets cache folder of output video)
 			  */
 			static void setCacheFolder(const char* path);
+
+			/**
+			  * 在视屏预览界面菜单添加自定义分享平台(Sets custom share platform in video preview menu)
+			  */
+			static void addCustomPlatform(const char* name, OnPlatformSelected customPlatform);
 		private:
 
 			static jobject getRecorder();

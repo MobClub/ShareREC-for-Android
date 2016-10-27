@@ -16,4 +16,5 @@
     <string name="srec_local_video_title">本地视频（%s）</string>
     <string name="srec_upload">上传</string>
     <string name="srec_share_a_video_clip">分享一段视频</string>
+    <string name="srec_more">更多</string>
 </resources>

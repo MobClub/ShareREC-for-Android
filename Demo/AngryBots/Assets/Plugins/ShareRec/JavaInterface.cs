@@ -5,6 +5,7 @@ namespace cn.sharerec {
 	public class JavaInterface {
 	#if UNITY_ANDROID
 		private AndroidJavaObject javaRecorder;
+		private string onSelected;
 
 		public JavaInterface(string appkey, string appSecret) {
 			try {
@@ -26,6 +27,10 @@ namespace cn.sharerec {
 			if (javaRecorder != null) {
 				javaRecorder.Call("setOnRecorderStateListener", callback);
 			}
+		}
+
+		public void setOnPlatformSelectedCallback(string onSelected) {
+			this.onSelected = onSelected;
 		}
 
 		public void setSampleRate(int sampleRate) {
@@ -108,10 +113,11 @@ namespace cn.sharerec {
 			return false;
 		}
 
-		public void stop() {
+		public bool stop() {
 			if (javaRecorder != null) {
-				javaRecorder.Call("stop");
+				return javaRecorder.Call<bool>("tryStop");
 			}
+			return false;
 		}
 
 		public void setText(string text) {
@@ -122,7 +128,7 @@ namespace cn.sharerec {
 
 		public void addAttrData(string key, string value) {
 			if (javaRecorder != null) {
-				javaRecorder.Call("addAttrData", key, value);
+				javaRecorder.Call("addCustomAttr", key, value);
 			}
 		}
 
@@ -218,6 +224,12 @@ namespace cn.sharerec {
 				return new RECBar(javaRecorder, gameObjet, callback);
 			}
 			return null;
+		}
+
+		public void addCustomPlatform(string name) {
+			if (javaRecorder != null) {
+				javaRecorder.Call("addCustomPlatform", name, onSelected);
+			}
 		}
 	#else
 		public JavaInterface(string appkey, string appSecret) {

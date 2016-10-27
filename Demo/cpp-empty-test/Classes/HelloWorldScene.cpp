@@ -211,11 +211,21 @@ void HelloWorld::menuStopRECCallback(Ref* sender) {
 	
 }
 
+void onPlatformSelected(const char* name, MP4* mp4) {
+	// CCLog真坑爹，输出来全是乱码(never mind)
+	__android_log_print(ANDROID_LOG_DEBUG, "cocos2d-x debug info", "menu \"%s\" has been clicked!", name);
+	char* path = NULL;
+	__android_log_print(ANDROID_LOG_DEBUG, "cocos2d-x debug info", "%d", mp4->getLocalPath(&path));
+	__android_log_print(ANDROID_LOG_DEBUG, "cocos2d-x debug info", "Video Path: %s", path == NULL ? "NULL" : path);
+}
+
 void HelloWorld::menuVedioCenterCallback(Ref* sender) {
+	ShareRec::addCustomPlatform("CustomPlatform", onPlatformSelected);
 	ShareRec::showVideoCenter();
 }
 
 void HelloWorld::menuUserProfileCallback(Ref* sender) {
+	ShareRec::addCustomPlatform("CustomPlatform", onPlatformSelected);
 	ShareRec::showProfile();
 }
 
@@ -228,6 +238,7 @@ void HelloWorld::onStateChange(int state) {
 		ShareRec::addCustomAttr("name", "ShareRec Developer");
 		ShareRec::addCustomAttr("brand", "hehe!");
 		ShareRec::addCustomAttr("level", "10");
+		ShareRec::addCustomPlatform("CustomPlatform", onPlatformSelected);
 		ShareRec::showShare();
 	}
 }

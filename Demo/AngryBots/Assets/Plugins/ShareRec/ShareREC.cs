@@ -51,6 +51,8 @@ namespace cn.sharerec {
 		public static OnReturnFromProfile OnReturnFromProfileHandler;
 		public static OnReturnFromVideoCenter OnReturnFromVideoCenterHandler;
 
+		public static OnPlatformSelected OnPlatformSelectedHandler;
+
 		void Awake() {
 			try {
 				ShareRECImpl.init(AppKey, AppSecret, gameObject.name, (int) MaxFrameSize);
@@ -154,6 +156,9 @@ namespace cn.sharerec {
 				}
 			} break;
 			case STATE_STOPPED: {
+				beginHanlder.enabled = false;
+				endHanlder.enabled = false;
+				ShareRECImpl.ReleaseRenderTexture();
 				if (OnRecorderStoppedHandler != null) {
 					OnRecorderStoppedHandler();
 				}
@@ -188,7 +193,7 @@ namespace cn.sharerec {
 			}
 		}
 
-		void onRecBarAction(string action) {
+		private void onRecBarAction(string action) {
 			int iAction = -1;
 			if (!Int32.TryParse(action, out iAction)) {
 				return;
@@ -213,6 +218,12 @@ namespace cn.sharerec {
 					// 打开视频中心 (show video center)
 					ShareREC.ShowVideoCenter();
 				} break;
+			}
+		}
+
+		private void onPlatformSelected(string action) {
+			if (OnPlatformSelectedHandler != null) {
+				OnPlatformSelectedHandler(action, new MP4(AppKey, AppSecret, action));
 			}
 		}
 
@@ -257,19 +268,24 @@ namespace cn.sharerec {
 		public delegate void OnRecorderStopped();
 		
 		/// <summary>
-		/// 此方法在分享页面关闭后调用(his method will be called after the Sharing Page is closed)
+		/// 此方法在分享页面关闭后调用(This method will be called after the Sharing Page is closed)
 		/// </summary>
 		public delegate void OnReturnFromShare();
 		
 		/// <summary>
-		/// 此方法在资料页面关闭后调用(his method will be called after the Profile Page is closed)
+		/// 此方法在资料页面关闭后调用(This method will be called after the Profile Page is closed)
 		/// </summary>
 		public delegate void OnReturnFromProfile();
 		
 		/// <summary>
-		/// 此方法在视频中心页面关闭后调用(his method will be called after the Video Center Page is closed)
+		/// 此方法在视频中心页面关闭后调用(This method will be called after the Video Center Page is closed)
 		/// </summary>
 		public delegate void OnReturnFromVideoCenter();
+
+		/// <summary>
+		/// 此方法在自定义平台被选中时调用(This method will be called when custom platform is selected)
+		/// </summary>
+		public delegate void OnPlatformSelected(string name, MP4 mp4);
 
 		// =======================================
 
@@ -285,6 +301,13 @@ namespace cn.sharerec {
 		/// </summary>
 		public static void AddCustomAttr(string key, string value) {
 			ShareRECImpl.AddCustomAttr(key, value);
+		}
+
+		/// <summary>
+		/// 在视屏预览界面菜单添加自定义分享平台(Sets custom share platform in video preview menu)
+		/// </summary>
+		public static void AddCustomPlatform(string name) {
+			ShareRECImpl.AddCustomPlatform(name);
 		}
 
 		// =======================================
@@ -326,12 +349,7 @@ namespace cn.sharerec {
 		/// 停止录制模块 (Stop the recorder module)
 		/// </summary>
 		public static void StopRecorder() {
-			if (ShareRECImpl.canStop()) {
-				beginHanlder.enabled = false;
-				endHanlder.enabled = false;
-				ShareRECImpl.ReleaseRenderTexture();
-				ShareRECImpl.Stop();
-			}
+			ShareRECImpl.Stop();
 		}
 
 		/// <summary>

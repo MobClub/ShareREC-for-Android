@@ -16,4 +16,5 @@
     <string name="srec_local_video_title">Local Video (%s)</string>
     <string name="srec_upload">Upload</string>
     <string name="srec_share_a_video_clip">Share a video clip</string>
+    <string name="srec_more">More</string>
 </resources>

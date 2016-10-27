@@ -127,7 +127,6 @@
 	<string name="srec_by_x">by %s</string>
 	<string name="srec_there_is_no_share_platform">未找到任何可供分享的平台</string>
 	<string name="srec_content_can_not_be_changed_on_uploading">不能在上传过程中修改分享文本</string>
-	<string name="srec_more">更多</string>
 	<string name="srec_video_quality_play">视频画质</string>
 	<string name="srec_binded_platforms">平台绑定</string>
 	<string name="srec_other_setting">其他设置</string>

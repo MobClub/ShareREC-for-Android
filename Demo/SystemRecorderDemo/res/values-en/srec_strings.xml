@@ -125,7 +125,6 @@
 	<string name="srec_by_x">by %s</string>
 	<string name="srec_there_is_no_share_platform">There is no Platform for sharing</string>
 	<string name="srec_content_can_not_be_changed_on_uploading">Share content can not be edited on uploading</string>
-	<string name="srec_more">More</string>
 	<string name="srec_video_quality_play">Video quality</string>
 	<string name="srec_binded_platforms">Binded platforms</string>
 	<string name="srec_clear_cache">Clear cache</string>
