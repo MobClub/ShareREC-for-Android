@@ -170,7 +170,7 @@
      <None Include="Assets\Plugins\Android\ShareRec\res\values-en\smssdk_arrays.xml" />
      <None Include="Assets\Shaders\Fx\InterlacePatternAdditive.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>D:/workspace/git/ShareREC-for-Android/Demo/AngryBots/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>D:/workspace/svn/ShareRec/trunk/Demos/AngryBots/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
