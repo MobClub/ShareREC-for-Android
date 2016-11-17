@@ -27,7 +27,7 @@
     
     <plurals name="srec_before_x_years">
         <item quantity="one">%s年之前</item>
-        <item quantity="other">%s年月之前</item>
+        <item quantity="other">%s年之前</item>
     </plurals>
     
     <plurals name="srec_there_are_x_local_videos">

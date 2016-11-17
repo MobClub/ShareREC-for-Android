@@ -14,6 +14,8 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.mob.tools.utils.ResHelper;
+
 import java.util.Map.Entry;
 
 public abstract class BaseStartActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
@@ -159,7 +161,7 @@ public abstract class BaseStartActivity extends PreferenceActivity implements On
 		etpMinDura.setSummary(minDura + (minDura > 1 ?  " Seconds" : " Second"));
 		
 		String cacheFolder = sp.getString(etpCacheFolder.getKey(), null);
-		etpCacheFolder.setText(TextUtils.isEmpty(cacheFolder) ? com.mob.tools.utils.R.getCachePath(this, "videoes") : cacheFolder);
+		etpCacheFolder.setText(TextUtils.isEmpty(cacheFolder) ? ResHelper.getCachePath(this, "videoes") : cacheFolder);
 		etpCacheFolder.setSummary(etpCacheFolder.getText());
 		
 		cbpSWAudioEnc.setChecked(sp.getBoolean(cbpSWAudioEnc.getKey(), true));

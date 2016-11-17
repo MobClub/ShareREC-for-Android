@@ -116,7 +116,7 @@ long getLongConfig(const char* key) {
 	return value;
 }
 
-const char* getStringConfig(const char* key) {
+void setCacheFolder(const char* key) {
 	JNIEnv* env;
 	jstring jvalue = getConfig("srec_key_cacheFolder", &env);
 	
@@ -125,7 +125,6 @@ const char* getStringConfig(const char* key) {
 
 	env->ReleaseStringChars(jvalue, (const jchar*) value);
 	env->DeleteLocalRef(jvalue);
-	return value;
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
@@ -192,8 +191,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	ShareRec::setMaxFrameSize(getMaxFrameSize("srec_key_maxFrameSize"));
 	ShareRec::setVideoQuality(getVideoQuality("srec_key_videoQuality"));
 	ShareRec::setMinDuration(1000 * getLongConfig("srec_key_minDuration"));
-	ShareRec::setCacheFolder(getStringConfig("srec_key_cacheFolder"));
 	ShareRec::setUseES3(getBoolConfig("srec_key_forceGles30"));
+	setCacheFolder("srec_key_cacheFolder");
 
 	// Force ShareREC to use the software video / audio encoder, which will be better compatibility, but cost more CPU utilization
  	bool sWAudioEnc = getBoolConfig("srec_key_softwareAudioEncoder");
