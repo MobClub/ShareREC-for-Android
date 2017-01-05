@@ -77,9 +77,10 @@ public class EraserView extends RelativeLayout {
 		private int screenHeight;
 		private Bitmap bitmap;
 		private Canvas bmCanvas;
-		private Paint mPaint;
-		private Path mPath;
-		private float mX, mY;
+		private Paint paint;
+		private Path path;
+		private float mvX;
+		private float mvY;
 
 		public MaskView(Context context) {
 			super(context);
@@ -102,17 +103,17 @@ public class EraserView extends RelativeLayout {
 			screenWidth = dm.widthPixels;
 			screenHeight = dm.heightPixels;
 			
-			mPaint = new Paint();
-			mPaint.setAlpha(0);
-			mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-			mPaint.setAntiAlias(true);
-			mPaint.setDither(true);
-			mPaint.setStyle(Paint.Style.STROKE);
-			mPaint.setStrokeJoin(Paint.Join.ROUND);
-			mPaint.setStrokeCap(Paint.Cap.ROUND);
-			mPaint.setStrokeWidth(60);
+			paint = new Paint();
+			paint.setAlpha(0);
+			paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+			paint.setAntiAlias(true);
+			paint.setDither(true);
+			paint.setStyle(Paint.Style.STROKE);
+			paint.setStrokeJoin(Paint.Join.ROUND);
+			paint.setStrokeCap(Paint.Cap.ROUND);
+			paint.setStrokeWidth(60);
 			
-			mPath = new Path();
+			path = new Path();
 			
 			bitmap = Bitmap.createBitmap(screenWidth, screenHeight, Config.ARGB_8888);
 			bmCanvas = new Canvas(bitmap);
@@ -120,7 +121,7 @@ public class EraserView extends RelativeLayout {
 		}
 
 		protected void onDraw(Canvas canvas) {
-			bmCanvas.drawPath(mPath, mPaint);
+			bmCanvas.drawPath(path, paint);
 			canvas.drawBitmap(bitmap, 0, 0, null);
 		}
 
@@ -129,28 +130,25 @@ public class EraserView extends RelativeLayout {
 			float y = event.getY();
 			switch (event.getAction()) {
 				case MotionEvent.ACTION_DOWN: {
-					mPath.reset();
-					mPath.moveTo(x, y);
-					mX = x;
-					mY = y;
+					path.reset();
+					path.moveTo(x, y);
+					mvX = x;
+					mvY = y;
 					invalidate();
-				}
-				break;
+				} break;
 				case MotionEvent.ACTION_MOVE: {
-					float dx = Math.abs(x - mX);
-					float dy = Math.abs(y - mY);
+					float dx = Math.abs(x - mvX);
+					float dy = Math.abs(y - mvY);
 					if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
-						mPath.quadTo(mX, mY, (x + mX) / 2, (y + mY) / 2);
-						mX = x;
-						mY = y;
+						path.quadTo(mvX, mvY, (x + mvX) / 2, (y + mvY) / 2);
+						mvX = x;
+						mvY = y;
 					}
 					invalidate();
-				}
-				break;
+				} break;
 				case MotionEvent.ACTION_UP: {
-					mPath.reset();
-				}
-				break;
+					path.reset();
+				} break;
 			}
 			return true;
 		}
