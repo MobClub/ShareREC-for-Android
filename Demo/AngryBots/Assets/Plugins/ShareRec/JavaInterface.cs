@@ -59,7 +59,7 @@ namespace cn.sharerec {
 
 		public void setMinDuration(int duration) {
 			if (javaRecorder != null) {
-				javaRecorder.Call("setMinDuration", duration < 4 ? 4000L : (duration * 1000L));
+				javaRecorder.Call("setMinDuration", duration < 1 ? 4000L : (duration * 1000L));
 			}
 		}
 
