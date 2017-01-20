@@ -9,11 +9,16 @@ namespace cn.sharerec {
 
 		IEnumerator OnPostRender() {
 			yield return new WaitForEndOfFrame();
-			ShareRECImpl.OnPostRender();
+			if (ShareRECImpl.IsRecordGUILayer ()) {
+				ShareRECImpl.OnPostRender();
+			}
 		}
 
 		void OnRenderImage(RenderTexture src, RenderTexture dest) {
 			ShareRECImpl.addCameraRecord(src);
+			if (!ShareRECImpl.IsRecordGUILayer ()) {
+				ShareRECImpl.OnPostRender();
+			}
 		}
 	}
 
