@@ -32,6 +32,7 @@ namespace cn.sharerec {
 		public bool RecordAudioFromMic = true;
 		public bool SoftwareAudioEncoder = false;
 		public bool SoftwareVideoEncoder = false;
+		public bool RecordGUILayer = true;
 		public string CacheFolder = null;
 
 		private static OnFrameBeginHandler beginHanlder;
@@ -62,6 +63,9 @@ namespace cn.sharerec {
 				ShareRECImpl.setMinDuration(MinDuration);
 				if (RecordAudioFromMic) {
 					ShareRECImpl.SetRecordAudioFromMic();
+				}
+				if (RecordGUILayer) {
+					ShareRECImpl.SetRecordGUILayer();
 				}
 			} catch (Exception e) {}
 			InitializeFrontMostCamera();

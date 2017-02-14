@@ -9,6 +9,7 @@ namespace cn.sharerec {
 
 		private static JavaInterface javaInter;
 		private static int g_screenfbo = 0;
+		private static bool recordGUILayer = false;
 
 		#if (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4 || UNITY_5_4_OR_NEWER)
         private static RenderTexture g_RenderTexture;
@@ -92,6 +93,14 @@ namespace cn.sharerec {
 		
 		public static void SetRecordAudioFromMic() {
 			javaInter.setRecordAudioFromMic(true);
+		}
+
+		public static void SetRecordGUILayer() {
+			recordGUILayer = true;
+		}
+
+		public static bool IsRecordGUILayer() {
+			return recordGUILayer;
 		}
 
 		public static bool IsAvailable() {
