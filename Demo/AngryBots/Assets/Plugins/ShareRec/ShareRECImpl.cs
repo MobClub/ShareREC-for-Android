@@ -10,11 +10,11 @@ namespace cn.sharerec {
 		private static JavaInterface javaInter;
 		private static int g_screenfbo = 0;
 
-		#if (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4)
+		#if (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4 || UNITY_5_4_OR_NEWER)
         private static RenderTexture g_RenderTexture;
 		#endif
 		
-		public static void init(string appkey, string appSecret, string gameObject, int maxFrameSize) {
+		public static void Init(string appkey, string appSecret, string gameObject, int maxFrameSize) {
 			if (javaInter == null) {
 				javaInter = new JavaInterface(appkey, appSecret);
 				javaInter.setGameObject(gameObject);
@@ -32,21 +32,25 @@ namespace cn.sharerec {
 				javaInter.setGameObject(gameObject);
 			}
 		}
+		
+		public static void SetSMSSDKAppkey(string appkey, string appSecret) {
+			javaInter.setSMSSDKAppkey(appkey, appSecret);
+		}
 
-		public static void setForceSoftwareEncoding(bool video, bool audio) {
+		public static void SetForceSoftwareEncoding(bool video, bool audio) {
 			javaInter.setForceSoftwareEncoding(video, audio);
 		}
 
-		public static void setCacheFolder(string path) {
+		public static void SetCacheFolder(string path) {
 			javaInter.setCacheFolder(path);
 		}
 
-		public static void setMinDuration(int duration) {
+		public static void SetMinDuration(int duration) {
 			javaInter.setMinDuration(duration);
 		}
 
-		public static void initRenderTexture(){
-		#if (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4) 
+		public static void InitRenderTexture(){
+		#if (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4 || UNITY_5_4_OR_NEWER) 
 			if(g_RenderTexture == null){
 				g_RenderTexture = RenderTexture.GetTemporary(Screen.width, Screen.height);
 			}
@@ -54,15 +58,15 @@ namespace cn.sharerec {
         }
 
 		public static void ReleaseRenderTexture(){
-		#if (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4)
+		#if (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4 || UNITY_5_4_OR_NEWER)
             if (g_RenderTexture != null) {
 				RenderTexture.ReleaseTemporary (g_RenderTexture);
 			}
             #endif
 		}
 
-		public static void addCameraRecord(RenderTexture src) {
-		#if (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4)
+		public static void AddCameraRecord(RenderTexture src) {
+		#if (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4 || UNITY_5_4_OR_NEWER)
 			if (src != null) {
 				Graphics.SetRenderTarget(g_RenderTexture);
 				Graphics.Blit(src, g_RenderTexture);
@@ -94,7 +98,7 @@ namespace cn.sharerec {
 			return javaInter.isAvailable();
 		}
 
-		public static bool canStart() {
+		public static bool CanStart() {
 			return javaInter.canStart();
 		}
 
@@ -152,7 +156,7 @@ namespace cn.sharerec {
 			#if (UNITY_4_5 || UNITY_4_6)
 			javaInter.onPreRender(1);
 			GL.IssuePluginEvent(RENDER_EVENTID);
-		#elif (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4)
+		#elif (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4 || UNITY_5_4_OR_NEWER)
             javaInter.onPreRender(1);
 			#else
 			javaInter.onPreRender(0);
@@ -162,7 +166,7 @@ namespace cn.sharerec {
 		public static void OnPostRender() {
 			#if (UNITY_4_5 || UNITY_4_6)
 			javaInter.onPostRender(getScreenFbo());
-		#elif (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4)
+		#elif (UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3 || UNITY_5_4 || UNITY_5_4_OR_NEWER)
             Graphics.Blit(g_RenderTexture,(RenderTexture) null);
 			javaInter.OnRenderImage(g_RenderTexture.GetNativeTexturePtr().ToInt32());
 			#else
