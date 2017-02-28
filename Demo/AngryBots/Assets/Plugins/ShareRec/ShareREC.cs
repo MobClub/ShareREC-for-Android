@@ -56,11 +56,19 @@ namespace cn.sharerec {
 
 		void Awake() {
 			try {
-				ShareRECImpl.init(AppKey, AppSecret, gameObject.name, (int) MaxFrameSize);
+				ShareRECImpl.Init(AppKey, AppSecret, gameObject.name, (int) MaxFrameSize);
 				ShareRECImpl.SetVideoQuality((int) VideoQuality);
-				ShareRECImpl.setForceSoftwareEncoding(SoftwareVideoEncoder, SoftwareAudioEncoder);
-				ShareRECImpl.setCacheFolder(CacheFolder);
-				ShareRECImpl.setMinDuration(MinDuration);
+
+				//获取手机型号信息,判断是否开启GLES30API
+				bool NeedOpenGLES30 = false;
+				if(NeedOpenGLES30)
+				{
+					useGLES30API();
+				
+				}
+				ShareRECImpl.SetForceSoftwareEncoding(SoftwareVideoEncoder, SoftwareAudioEncoder);
+				ShareRECImpl.SetCacheFolder(CacheFolder);
+				ShareRECImpl.SetMinDuration(MinDuration);
 				if (RecordAudioFromMic) {
 					ShareRECImpl.SetRecordAudioFromMic();
 				}
@@ -291,6 +299,14 @@ namespace cn.sharerec {
 		/// </summary>
 		public delegate void OnPlatformSelected(string name, MP4 mp4);
 
+
+		/// <summary>
+		/// 启用GLES30
+		/// </summary>
+		public static void useGLES30API() {
+			ShareRECImpl.useGLES30API();
+		}
+
 		// =======================================
 
 		/// <summary>
@@ -327,10 +343,10 @@ namespace cn.sharerec {
 		/// 启动录制模块 (Start the recorder module)
 		/// </summary>
 		public static void StartRecorder() {
-			if (ShareRECImpl.canStart()) {
+			if (ShareRECImpl.CanStart()) {
 				beginHanlder.enabled = true;
 				endHanlder.enabled = true;
-				ShareRECImpl.initRenderTexture();
+				ShareRECImpl.InitRenderTexture();
 				ShareRECImpl.Start();
 			}
 		}
@@ -409,7 +425,7 @@ namespace cn.sharerec {
 		/// 添加要录屏的cmaera(add record camera.)
 		/// </summary>
 		public static void addCameraRecord( RenderTexture src ) {
-			ShareRECImpl.addCameraRecord (src );
+			ShareRECImpl.AddCameraRecord (src );
 		}
 
 		public static RECBar GetRECBar(MonoBehaviour script) {

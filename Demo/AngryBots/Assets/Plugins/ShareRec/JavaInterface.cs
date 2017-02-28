@@ -5,6 +5,7 @@ namespace cn.sharerec {
 	public class JavaInterface {
 	#if UNITY_ANDROID
 		private AndroidJavaObject javaRecorder;
+		private AndroidJavaClass utilsClz = null;
 		private string onSelected;
 
 		public JavaInterface(string appkey, string appSecret) {
@@ -12,8 +13,30 @@ namespace cn.sharerec {
 				AndroidJavaClass clz = null;
 				clz = new AndroidJavaClass("cn.sharerec.recorder.impl.UnityRecorder");
 				javaRecorder = clz.CallStatic<AndroidJavaObject>("getInstance", appkey, appSecret);
+
+				//AndroidJavaClass utilsClz = null;
+
+				utilsClz = new AndroidJavaClass("cn.sharerec.core.biz.Utils");
+
+
+
 			} catch(Exception e) {
 				javaRecorder = null;
+			}
+		}
+
+		public string getManufacturerMode(){
+			
+			AndroidJavaObject context = javaRecorder.Call<AndroidJavaObject>("getContext");
+			String manufactmode = utilsClz.CallStatic<string>("getManufacturerMode",context);
+
+			return manufactmode;
+		}
+
+		public void useGLES30API()
+		{
+			if (javaRecorder != null) {
+				javaRecorder.Call("setUseES3", true);
 			}
 		}
 
@@ -28,7 +51,12 @@ namespace cn.sharerec {
 				javaRecorder.Call("setOnRecorderStateListener", callback);
 			}
 		}
-
+		public void setSMSSDKAppkey(string appkey,string appSecret)
+		{
+			if (javaRecorder != null) {
+				javaRecorder.Call("setSMSSDKAppkey", appkey,appSecret);
+			}
+		}
 		public void setOnPlatformSelectedCallback(string onSelected) {
 			this.onSelected = onSelected;
 		}

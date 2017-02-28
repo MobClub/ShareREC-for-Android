@@ -15,7 +15,7 @@ namespace cn.sharerec {
 		}
 
 		void OnRenderImage(RenderTexture src, RenderTexture dest) {
-			ShareRECImpl.addCameraRecord(src);
+			ShareRECImpl.AddCameraRecord(src);
 			if (!ShareRECImpl.IsRecordGUILayer ()) {
 				ShareRECImpl.OnPostRender();
 			}

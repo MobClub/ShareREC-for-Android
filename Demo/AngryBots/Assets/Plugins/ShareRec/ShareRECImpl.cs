@@ -33,6 +33,9 @@ namespace cn.sharerec {
 				javaInter.setGameObject(gameObject);
 			}
 		}
+		public static string getManufacturerMode(){
+			return javaInter.getManufacturerMode();
+		}
 		
 		public static void SetSMSSDKAppkey(string appkey, string appSecret) {
 			javaInter.setSMSSDKAppkey(appkey, appSecret);
@@ -73,6 +76,10 @@ namespace cn.sharerec {
 				Graphics.Blit(src, g_RenderTexture);
 			}
 			#endif
+		}
+
+		public static void useGLES30API() {
+			javaInter.useGLES30API();
 		}
 
 		public static void SetText(string text) {
