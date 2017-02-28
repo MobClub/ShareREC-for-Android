@@ -5,7 +5,7 @@ namespace cn.sharerec {
 	public class JavaInterface {
 	#if UNITY_ANDROID
 		private AndroidJavaObject javaRecorder;
-		private AndroidJavaClass utilsClz = null;
+		//private AndroidJavaClass utilsClz = null;
 		private string onSelected;
 
 		public JavaInterface(string appkey, string appSecret) {
@@ -14,24 +14,24 @@ namespace cn.sharerec {
 				clz = new AndroidJavaClass("cn.sharerec.recorder.impl.UnityRecorder");
 				javaRecorder = clz.CallStatic<AndroidJavaObject>("getInstance", appkey, appSecret);
 
-				//AndroidJavaClass utilsClz = null;
-
-				utilsClz = new AndroidJavaClass("cn.sharerec.core.biz.Utils");
-
-
-
 			} catch(Exception e) {
 				javaRecorder = null;
 			}
+		//	try{
+		//		utilsClz = new AndroidJavaClass("cn.sharerec.core.biz.Utils");	
+		//	}catch(Exception e){
+		//		utilsClz = null;
+		//	}
+
 		}
 
-		public string getManufacturerMode(){
+		//public string getManufacturerMode(){
 			
-			AndroidJavaObject context = javaRecorder.Call<AndroidJavaObject>("getContext");
-			String manufactmode = utilsClz.CallStatic<string>("getManufacturerMode",context);
+		//	AndroidJavaObject context = javaRecorder.Call<AndroidJavaObject>("getContext");
+		//	String manufactmode = utilsClz.CallStatic<string>("getManufacturerMode",context);
 
-			return manufactmode;
-		}
+		//	return manufactmode;
+		//}
 
 		public void useGLES30API()
 		{
