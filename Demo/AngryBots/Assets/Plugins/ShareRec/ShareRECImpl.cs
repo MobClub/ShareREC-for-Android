@@ -166,6 +166,13 @@ namespace cn.sharerec {
 			return javaInter.getRECBar(gameObjet, callback);
 		}
 
+		public static void PrepareSoundCopying(int channelCount, int sampleRate, int maxBufferSizeInBytes){
+			javaInter.PrepareSoundCopying(channelCount, sampleRate,maxBufferSizeInBytes);
+		}
+
+		public static void OfferSample(byte[] sample,int offset,int len){
+			javaInter.OfferSample(sample,offset,len);
+		}
 		// =======================================
 
 		public static void OnPreRender() {

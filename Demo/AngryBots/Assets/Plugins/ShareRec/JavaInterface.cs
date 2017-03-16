@@ -237,13 +237,24 @@ namespace cn.sharerec {
 
 		public void deleteLocalVideo(long videoId) {
 			if (javaRecorder != null) {
-				javaRecorder.Call<string>("deleteLocalVideo", videoId);
+				javaRecorder.Call("deleteLocalVideo", videoId);
 			}
 		}
 		
 		public void setUseES3( bool bES3 ){
 			if (javaRecorder != null) {
 				javaRecorder.Call("setUseES3",bES3);
+			}
+		}
+		public void PrepareSoundCopying(int channelCount, int sampleRate, int maxBufferSizeInBytes){
+			if (javaRecorder != null) {
+				javaRecorder.Call("unityprepareSoundCopying",channelCount,sampleRate,maxBufferSizeInBytes);
+			}
+		}
+
+		public void OfferSample(byte[] sample,int offset,int len){
+			if (javaRecorder != null) {
+				javaRecorder.Call("offerSample",sample,offset,len);
 			}
 		}
 
