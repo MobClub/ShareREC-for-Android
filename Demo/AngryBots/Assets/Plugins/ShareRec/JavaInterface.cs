@@ -5,6 +5,7 @@ namespace cn.sharerec {
 	public class JavaInterface {
 	#if UNITY_ANDROID
 		private AndroidJavaObject javaRecorder;
+		//private AndroidJavaClass utilsClz = null;
 		private string onSelected;
 
 		public JavaInterface(string appkey, string appSecret) {
@@ -12,8 +13,30 @@ namespace cn.sharerec {
 				AndroidJavaClass clz = null;
 				clz = new AndroidJavaClass("cn.sharerec.recorder.impl.UnityRecorder");
 				javaRecorder = clz.CallStatic<AndroidJavaObject>("getInstance", appkey, appSecret);
+
 			} catch(Exception e) {
 				javaRecorder = null;
+			}
+		//	try{
+		//		utilsClz = new AndroidJavaClass("cn.sharerec.core.biz.Utils");	
+		//	}catch(Exception e){
+		//		utilsClz = null;
+		//	}
+
+		}
+
+		//public string getManufacturerMode(){
+			
+		//	AndroidJavaObject context = javaRecorder.Call<AndroidJavaObject>("getContext");
+		//	String manufactmode = utilsClz.CallStatic<string>("getManufacturerMode",context);
+
+		//	return manufactmode;
+		//}
+
+		public void useGLES30API()
+		{
+			if (javaRecorder != null) {
+				javaRecorder.Call("setUseES3", true);
 			}
 		}
 
@@ -28,7 +51,12 @@ namespace cn.sharerec {
 				javaRecorder.Call("setOnRecorderStateListener", callback);
 			}
 		}
-
+		public void setSMSSDKAppkey(string appkey,string appSecret)
+		{
+			if (javaRecorder != null) {
+				javaRecorder.Call("setSMSSDKAppkey", appkey,appSecret);
+			}
+		}
 		public void setOnPlatformSelectedCallback(string onSelected) {
 			this.onSelected = onSelected;
 		}
@@ -209,13 +237,24 @@ namespace cn.sharerec {
 
 		public void deleteLocalVideo(long videoId) {
 			if (javaRecorder != null) {
-				javaRecorder.Call<string>("deleteLocalVideo", videoId);
+				javaRecorder.Call("deleteLocalVideo", videoId);
 			}
 		}
 		
 		public void setUseES3( bool bES3 ){
 			if (javaRecorder != null) {
 				javaRecorder.Call("setUseES3",bES3);
+			}
+		}
+		public void PrepareSoundCopying(int channelCount, int sampleRate, int maxBufferSizeInBytes){
+			if (javaRecorder != null) {
+				javaRecorder.Call("unityprepareSoundCopying",channelCount,sampleRate,maxBufferSizeInBytes);
+			}
+		}
+
+		public void OfferSample(byte[] sample,int offset,int len){
+			if (javaRecorder != null) {
+				javaRecorder.Call("offerSample",sample,offset,len);
 			}
 		}
 

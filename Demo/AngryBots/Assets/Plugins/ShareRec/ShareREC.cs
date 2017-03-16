@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Threading;
 
 namespace cn.sharerec {
 	public class ShareREC : MonoBehaviour {
@@ -56,17 +57,26 @@ namespace cn.sharerec {
 
 		void Awake() {
 			try {
-				ShareRECImpl.init(AppKey, AppSecret, gameObject.name, (int) MaxFrameSize);
+				ShareRECImpl.Init(AppKey, AppSecret, gameObject.name, (int) MaxFrameSize);
 				ShareRECImpl.SetVideoQuality((int) VideoQuality);
-				ShareRECImpl.setForceSoftwareEncoding(SoftwareVideoEncoder, SoftwareAudioEncoder);
-				ShareRECImpl.setCacheFolder(CacheFolder);
-				ShareRECImpl.setMinDuration(MinDuration);
+
+				//获取手机型号信息,判断是否开启GLES30API
+				bool NeedOpenGLES30 = false;
+				if(NeedOpenGLES30)
+				{
+					useGLES30API();
+				
+				}
+				ShareRECImpl.SetForceSoftwareEncoding(SoftwareVideoEncoder, SoftwareAudioEncoder);
+				ShareRECImpl.SetCacheFolder(CacheFolder);
+				ShareRECImpl.SetMinDuration(MinDuration);
 				if (RecordAudioFromMic) {
 					ShareRECImpl.SetRecordAudioFromMic();
 				}
 				if (RecordGUILayer) {
 					ShareRECImpl.SetRecordGUILayer();
 				}
+
 			} catch (Exception e) {}
 			InitializeFrontMostCamera();
 			InitializeBackMostCamera();
@@ -291,6 +301,14 @@ namespace cn.sharerec {
 		/// </summary>
 		public delegate void OnPlatformSelected(string name, MP4 mp4);
 
+
+		/// <summary>
+		/// 启用GLES30
+		/// </summary>
+		public static void useGLES30API() {
+			ShareRECImpl.useGLES30API();
+		}
+
 		// =======================================
 
 		/// <summary>
@@ -322,16 +340,72 @@ namespace cn.sharerec {
 		public static bool IsAvailable() {
 			return ShareRECImpl.IsAvailable();
 		}
+		private static Boolean recorder = false;
+		private static Boolean pause = false;
+		private static void recordMic(){
+			//Debug.LogError (" ====================== recordMic begin ");
+			int record = 0;
+			while(recorder){
+				record++;
+				//Debug.LogError (" ================= recorder now "+record +" recorder : "+recorder);
+				if(!pause){
+					int SampleRate = 8000;
+					Microphone.End (null);
+					AudioClip clip = Microphone.Start (null,true,1,SampleRate);
+				//	Debug.LogError (" ================= Microphone recorder " );
+					float[] recordData = new float[clip.samples];
+
+				//	Debug.LogError (" ================= Microphone recordData.Length : "+recordData.Length );
+					clip.GetData (recordData,0);
+
+					//byte[] recordData = clip.GetData ();
+					//byte[] recordData = AudioClipCompressor.CompressAudioClip(clip);
+					byte[] recordByte = new byte[recordData.Length*4];
+					for(int i = 0;i<recordData.Length;i++){
+					//	Debug.LogError (" ================= i : "+i);
+						byte[] nowByte = BitConverter.GetBytes(recordData[i]);	
+						for(int j = 0;j<nowByte.Length;j++){
+							recordByte[i*4+i%4] = nowByte[j];	
+				//			Debug.LogError (" ================= j : "+j);
+						}
+					}
+
+					OfferSample (recordByte,0,recordData.Length);	
+
+				//	Debug.LogError (" ================= end ");
+
+					Microphone.End (null);
+				}
+			
+
+			}
+
+
+
+		}
 
 		/// <summary>
 		/// 启动录制模块 (Start the recorder module)
 		/// </summary>
 		public static void StartRecorder() {
-			if (ShareRECImpl.canStart()) {
+			if (ShareRECImpl.CanStart()) {
+
+			//	recorder = true;
+			//	pause = false;
+			//	Debug.LogError (" ================= StartRecorder ");
+			//	PrepareSoundCopying (1,8000,8000*2);
+
+			//	ThreadStart ts = new ThreadStart(recordMic);
+			//	Thread t = new Thread (ts);
+			//	Debug.LogError (" ================= StartRecorder 111 ");
+			//	t.Start ();
+			//	Debug.LogError (" ================= StartRecorder 222 ");
 				beginHanlder.enabled = true;
 				endHanlder.enabled = true;
-				ShareRECImpl.initRenderTexture();
+
+				ShareRECImpl.InitRenderTexture();
 				ShareRECImpl.Start();
+			//	Debug.LogError (" ================= StartRecorder 333");
 			}
 		}
 
@@ -339,6 +413,7 @@ namespace cn.sharerec {
 		/// 暂停录制模块(Pauses the recorder module)
 		/// </summary>
 		public static void PauseRecorder() {
+			pause = true;
 			ShareRECImpl.Pause();
 		}
 
@@ -347,6 +422,7 @@ namespace cn.sharerec {
 		/// </summary>
 		public static void ResumeRecorder() {
 			ShareRECImpl.Resume();
+			pause = false;
 		}
 
 		/// <summary>
@@ -354,6 +430,7 @@ namespace cn.sharerec {
 		/// </summary>
 		public static void StopRecorder() {
 			ShareRECImpl.Stop();
+			recorder = false; 
 		}
 
 		/// <summary>
@@ -409,12 +486,37 @@ namespace cn.sharerec {
 		/// 添加要录屏的cmaera(add record camera.)
 		/// </summary>
 		public static void addCameraRecord( RenderTexture src ) {
-			ShareRECImpl.addCameraRecord (src );
+			ShareRECImpl.AddCameraRecord (src );
 		}
 
 		public static RECBar GetRECBar(MonoBehaviour script) {
 			return ShareRECImpl.GetRECBar(script.gameObject.name, "onRecBarAction");
 		}
+
+
+		/// <summary>
+		/// 
+		/// 不使用默认的record进行录音，使用自定义的录音方式录音  Prepares the sound copying.
+		/// 注意，需要再 执行 StartRecorder（）方法之前调用，否则无效
+		/// </summary>
+		/// <param name="channelCount">Channel count.</param>
+		/// <param name="sampleRate">Sample rate.</param>
+		/// <param name="maxBufferSizeInBytes">Max buffer size in bytes.</param>
+		public static void PrepareSoundCopying(int channelCount, int sampleRate, int maxBufferSizeInBytes){
+			ShareRECImpl.PrepareSoundCopying (channelCount,sampleRate, maxBufferSizeInBytes);
+		}
+
+
+		/// <summary>
+		/// 将录音得到的 数据添加到录制的视频数据里 Offers the sample.
+		/// </summary>
+		/// <param name="sample">Sample.</param>
+		/// <param name="offset">Offset.</param>
+		/// <param name="len">Length.</param>
+		public static void OfferSample(byte[] sample, int offset, int len){
+			ShareRECImpl.OfferSample (sample,offset,len);
+		}
+
 	#endif
 	}
 }
