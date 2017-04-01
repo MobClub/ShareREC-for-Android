@@ -1,7 +1,5 @@
 package com.mob.glesdemo;
 
-import java.util.Random;
-
 import android.app.Activity;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
@@ -13,6 +11,9 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Toast;
+
+import java.util.Random;
+
 import cn.sharerec.recorder.OnRecorderStateListener;
 import cn.sharerec.recorder.Recorder;
 import cn.sharerec.recorder.Recorder.LevelMaxFrameSize;

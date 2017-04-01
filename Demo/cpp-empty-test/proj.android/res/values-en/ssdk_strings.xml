@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+     <string name="app_name">CppEmptyTest</string>
     <string name="ssdk_weibo_oauth_regiseter">Authorization</string>
     <string name="ssdk_website">http://www.mob.com</string>
     <string name="ssdk_weibo_upload_content">分享图片</string>

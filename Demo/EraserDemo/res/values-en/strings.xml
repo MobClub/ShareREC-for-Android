@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EraserDemo</string>
+    <string name="start">Start Recorder</string>
+    <string name="stop">Stop Recorder</string>
+    <string name="profile">Show Profile</string>
+	<string name="not_availiable">ShareRec is not availiable to the device</string>
+	<string name="srec_unityrecoder_version_wrong">UNITY_4_3_4 版本的请不用 SrecUnityPlayer,具体的请查看文档，谢谢！！</string>
+</resources>

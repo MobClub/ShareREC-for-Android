@@ -27,8 +27,14 @@ import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
 import android.content.Intent;
+import android.os.Bundle;
+import cn.sharerec.ShareREC;
+import cn.sharerec.recorder.Recorder.LevelMaxFrameSize;
 import cn.sharerec.recorder.impl.Cocos2DRecorder;
-
+import cn.sharerec.recorder.media.User;
+import cn.sharesdk.facebook.Facebook;
+import cn.sharesdk.sina.weibo.SinaWeibo;
+import cn.sharesdk.wechat.friends.Wechat;
 public class AppActivity extends Cocos2dxActivity {
 	
 	public Intent getIntent() {
@@ -38,7 +44,30 @@ public class AppActivity extends Cocos2dxActivity {
 	public Cocos2dxGLSurfaceView onCreateView() {
 		String appkey = getIntent().getStringExtra("srec_key_appKey");
 		String appsecret = getIntent().getStringExtra("srec_key_appSecret");
+		String srec_maxFrameSize =  getIntent().getStringExtra("srec_key_maxFrameSize");
+		Cocos2DRecorder coco2dRecorder = Cocos2DRecorder.getInstance(appkey, appsecret); 
+		
+		coco2dRecorder.setMaxFrameSize(LevelMaxFrameSize.valueOf(srec_maxFrameSize));
+		
 		return Cocos2DRecorder.getCocos2dxGLSurfaceView(appkey, appsecret);
+	}
+
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		//需要的时候调用，不用每次都调用。发生更改后再调用即可。
+		//================================================
+		//指定不显示的分享平台
+		ShareREC.setWontBeBindPlatforms(SinaWeibo.NAME, Facebook.NAME, Wechat.NAME);
+		ShareREC.setShowBindPhone(true);
+		User user = new User();
+		//app的UserId 测试数据
+		user.setUid("120");
+		user.setNickName("ShareRecTest");
+		user.setAvatarUrl("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=971424552,4028350881&fm=23&gp=0.jpg");
+		ShareREC.updateUserByApp(user);
 	}
 	
 }

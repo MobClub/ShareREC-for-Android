@@ -62,12 +62,23 @@ public abstract class BaseStartActivity extends PreferenceActivity implements On
 		lpMaxFrameSize.setKey("srec_key_maxFrameSize");
 		lpMaxFrameSize.setTitle("Max Frame Size");
 		lpMaxFrameSize.setEntries(new String[] {
-				"LEVEL_480_360",
-				"LEVEL_1280_720",
-				"LEVEL_1920_1080"
+				"LEVEL_480_360" ,//4:3   (Half-size VGA)
+				"LEVEL_1280_720",//16:9  720p 1280*720 标清
+				"LEVEL_1920_1080",//16:9  1080p 1920*1080 高清
+				"LEVEL_320_240",//
+				"LEVEL_400_240",
+				"LEVEL_432_240",
+				"LEVEL_480_320",
+				"LEVEL_800_480",//5:3 WVGA 800*480 (Wide VGA)
+				"LEVEL_800_600",//4:3 SVGA 800*600 (Super VGA)
+				"LEVEL_854_480",
+				"LEVEL_1280_768",//
+				"LEVEL_2048_1152",
+				"LEVEL_2560_1440",
 		});
 		lpMaxFrameSize.setEntryValues(lpMaxFrameSize.getEntries());
 		lpMaxFrameSize.setDialogTitle(lpMaxFrameSize.getTitle());
+		lpMaxFrameSize.setDefaultValue("LEVEL_1280_720");
 		pcRecorder.addPreference(lpMaxFrameSize);
 		
 		lpVideoQuality = new ListPreference(this);
