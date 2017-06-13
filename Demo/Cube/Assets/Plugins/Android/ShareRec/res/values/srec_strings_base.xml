@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="srec_recbar_menu2">录制</string>
+    <string name="srec_recbar_stop">停止</string>
+    <string name="srec_duration_of_video_must_longger_than_x_secends">视频时长不能短于%s秒，录制操作仍在继续</string>
+    <string name="srec_muxing">视频合并中…</string>
+    <string name="srec_there_is_no_local_video">未找到任何本地视频</string>
+    <string name="srec_back">返回</string>
+    <string name="srec_delete">删除</string>
+    <string name="srec_edit_share_title">编辑标题</string>
+    <string name="srec_pause_all">全部暂停</string>
+    <string name="srec_local_video">本地视频</string>
+    <string name="srec_file_size">文件大小：</string>
+    <string name="srec_cancel">取消</string>
+    <string name="srec_ok">确定</string>
+    <string name="srec_local_video_title">本地视频（%s）</string>
+    <string name="srec_upload">上传</string>
+    <string name="srec_share_a_video_clip">分享一段视频</string>
+    <string name="srec_more">更多</string>
+</resources>

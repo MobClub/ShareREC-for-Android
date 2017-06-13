@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="srec_install_game">安装游戏</string>
-    <string name="srec_request_page_url_failed">请求页面地址失败</string>
     <string name="srec_operation_failed">Operation failed</string>
     <string name="srec_save">Save</string>
     <string name="srec_fluent">Fluent</string>

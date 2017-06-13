@@ -26,9 +26,7 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 		
 		// 初始化ShareRec (init ShareRec)
 		View view = findViewById(R.id.evCan);
-		String appkey = getIntent().getStringExtra("srec_key_appKey");
-		String appsecret = getIntent().getStringExtra("srec_key_appSecret");
-		recorder = new ViewRecorder(view, appkey, appsecret);
+		recorder = new ViewRecorder(view);
 		recorder.setMaxFrameSize(LevelMaxFrameSize.valueOf(getIntent().getStringExtra("srec_key_maxFrameSize")));
 		recorder.setVideoQuality(LevelVideoQuality.valueOf(getIntent().getStringExtra("srec_key_videoQuality")));
 		recorder.setMinDuration(1000 * Long.parseLong(getIntent().getStringExtra("srec_key_minDuration")));

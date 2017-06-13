@@ -1,0 +1,135 @@
+#read proguard usages at http://proguard.sourceforge.net/manual/usage.html
+
+-dontoptimize
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontpreverify
+-verbose
+-keepattributes SourceFile,LineNumberTable,Exceptions,InnerClasses,Signature,Deprecated,EnclosingMethod,*Annotation*
+
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.view.View
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+-keep public class * extends cn.sharerec.recorder.Recorder
+
+-keep class android.net.http.SslError
+-keep class android.webkit.**{*;}
+-keep class cn.sharerec.core.ShareRECBase
+-keep class cn.sharerec.ShareREC
+-keep class cn.sharerec.recorder.Recorder
+-keep class com.mob.commons.SHAREREC
+-keep class cn.sharerec.recorder.MediaOutput
+-keep class cn.sharerec.recorder.media.MP4
+-keep class cn.sharerec.recorder.media.User
+-keep class cn.sharerec.core.biz.VideoInfoBase
+
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+
+-keepclassmembers class * extends android.app.Activity {
+   public void *(android.view.View);
+}
+
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keep class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}
+
+-keep class **.R$* {   
+    *;   
+}
+
+-keep interface * {
+    *;
+}
+
+-keep class * extends java.lang.Throwable {
+	*;
+}
+
+-keep class com.mob.tools.FakeActivity {
+    *;
+}
+
+-keep class cn.sharerec.recorder.media.User {
+    public *;
+}
+
+-keep class cn.sharerec.recorder.impl.UnityRecorder {
+    public *;
+}
+
+-keep class cn.sharerec.recorder.impl.Cocos2DRecorder {
+    public *;
+}
+
+-keep class cn.sharerec.recorder.impl.ViewRecorder {
+    public *;
+}
+
+-keep class cn.sharerec.recorder.impl.GLRecorder {
+    public *;
+}
+
+-keep class cn.sharerec.recorder.impl.SrecGLSurfaceView {
+    public *;
+	protected *;
+}
+
+-keep class cn.sharerec.recorder.impl.LibGDXRecorder {
+    public *;
+}
+
+-keep class cn.sharerec.recorder.impl.SrecApplicationAdapter {
+    public *;
+	protected *;
+}
+
+-keep class cn.sharerec.recorder.Recorder$LevelMaxFrameSize{
+	*;
+}
+
+-keep class cn.sharerec.recorder.Recorder$LevelVideoQuality{
+	*;
+}
+
+-keep class com.mob.commons.SHAREREC{
+	*;
+}
+
+-keep class cn.sharerec.recorder.MediaOutput {
+    public *;
+    protected *;
+}
+
+-keep class cn.sharerec.recorder.media.MP4 {
+    public *;
+	private *;
+}
+
+-keep class cn.sharerec.ShareREC {
+    public static *;
+}
+
+-keep class cn.sharerec.recorder.impl.SystemRecorder {
+    public *;
+}
+

@@ -1,12 +1,9 @@
 package com.mygdx.game;
 
-import android.content.Context;
 import android.opengl.GLES20;
 import android.os.Handler.Callback;
 import android.os.Message;
 import android.widget.Toast;
-import cn.sharerec.recorder.impl.LibGDXRecorder;
-import cn.sharerec.recorder.impl.SrecApplicationAdapter;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
@@ -18,7 +15,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter;
 import com.badlogic.gdx.math.Rectangle;
+import com.mob.MobSDK;
 import com.mob.tools.utils.UIHandler;
+
+import cn.sharerec.recorder.impl.LibGDXRecorder;
+import cn.sharerec.recorder.impl.SrecApplicationAdapter;
 
 /* 
  * 使MyGdxGame继承自SrecApplicationAdapter而非ApplicationAdapter，才能执行录屏
@@ -43,10 +44,6 @@ public class MyGdxGame extends SrecApplicationAdapter implements InputProcessor 
 	private int yStep;
 	private float fade;
 	private boolean started;
-	
-	public MyGdxGame(Context context, String appkey, String appSecret) {
-		super(context, appkey, appSecret);
-	}
 	
 	public void create() {
 		batch = new SpriteBatch();
@@ -208,7 +205,7 @@ public class MyGdxGame extends SrecApplicationAdapter implements InputProcessor 
 				} else {
 					UIHandler.sendEmptyMessage(0, new Callback() {
 						public boolean handleMessage(Message msg) {
-							Toast.makeText(getRecorder().getContext(), "Not supported device", Toast.LENGTH_SHORT).show();
+							Toast.makeText(MobSDK.getContext(), "Not supported device", Toast.LENGTH_SHORT).show();
 							return false;
 						}
 					});

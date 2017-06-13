@@ -6,7 +6,6 @@ import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.PreferenceScreen;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -29,10 +28,6 @@ public class StartActivity extends BaseStartActivity implements OnRecorderStateL
 			nm.cancel(0);
 			stopRecorder();
 		}
-	}
-
-	protected void onCreatePreferences(PreferenceScreen ps) {
-		ps.removePreference(ps.getPreference(2));
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,14 +62,15 @@ public class StartActivity extends BaseStartActivity implements OnRecorderStateL
 
 	private void startRecorder(Intent data) {
 		if (recorder == null) {
-			String appkey = data.getStringExtra("srec_key_appKey");
-			String appsecret = data.getStringExtra("srec_key_appSecret");
-			recorder = new SystemRecorder(this, appkey, appsecret);
+			recorder = new SystemRecorder();
 		}
 		recorder.setMaxFrameSize(LevelMaxFrameSize.valueOf(data.getStringExtra("srec_key_maxFrameSize")));
 		recorder.setVideoQuality(LevelVideoQuality.valueOf(data.getStringExtra("srec_key_videoQuality")));
 		recorder.setMinDuration(1000 * Long.parseLong(data.getStringExtra("srec_key_minDuration")));
 		recorder.setCacheFolder(data.getStringExtra("srec_key_cacheFolder"));
+		boolean sWAudioEnc = "true".equalsIgnoreCase(getIntent().getStringExtra("srec_key_softwareAudioEncoder"));
+		boolean sWVideoEnc = "true".equalsIgnoreCase(getIntent().getStringExtra("srec_key_softwareVideoEncoder"));
+		recorder.setForceSoftwareEncoding(sWVideoEnc, sWAudioEnc);
 		if (recorder.isAvailable()) {
 			recorder.start();
 		}
@@ -94,18 +90,14 @@ public class StartActivity extends BaseStartActivity implements OnRecorderStateL
 
 	private void showVideoCenter(Intent data) {
 		if (recorder == null) {
-			String appkey = data.getStringExtra("srec_key_appKey");
-			String appsecret = data.getStringExtra("srec_key_appSecret");
-			recorder = new SystemRecorder(this, appkey, appsecret);
+			recorder = new SystemRecorder();
 		}
 		recorder.showVideoCenter();
 	}
 
 	private void showProfile(Intent data) {
 		if (recorder == null) {
-			String appkey = data.getStringExtra("srec_key_appKey");
-			String appsecret = data.getStringExtra("srec_key_appSecret");
-			recorder = new SystemRecorder(this, appkey, appsecret);
+			recorder = new SystemRecorder();
 		}
 		recorder.showProfile();
 	}

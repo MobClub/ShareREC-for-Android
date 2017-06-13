@@ -15,9 +15,7 @@ public class AndroidLauncher extends AndroidApplication {
 		super.onCreate(savedInstanceState);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 		
-		String appkey = getIntent().getStringExtra("srec_key_appKey");
-		String appsecret = getIntent().getStringExtra("srec_key_appSecret");
-		MyGdxGame game = new MyGdxGame(this, appkey, appsecret);
+		MyGdxGame game = new MyGdxGame();
 		game.getRecorder().setUseES3("true".equalsIgnoreCase(getIntent().getStringExtra("srec_key_forceGles30")));
 		game.getRecorder().setMaxFrameSize(LevelMaxFrameSize.valueOf(getIntent().getStringExtra("srec_key_maxFrameSize")));
 		game.getRecorder().setVideoQuality(LevelVideoQuality.valueOf(getIntent().getStringExtra("srec_key_videoQuality")));
@@ -29,13 +27,13 @@ public class AndroidLauncher extends AndroidApplication {
 		
 		initialize(game, config);
 
-		//ĞèÒªµÄÊ±ºòµ÷ÓÃ£¬²»ÓÃÃ¿´Î¶¼µ÷ÓÃ¡£·¢Éú¸ü¸ÄºóÔÙµ÷ÓÃ¼´¿É¡£
+		//éœ€è¦çš„æ—¶å€™è°ƒç”¨ï¼Œä¸ç”¨æ¯æ¬¡éƒ½è°ƒç”¨ã€‚å‘ç”Ÿæ›´æ”¹åå†è°ƒç”¨å³å¯ã€‚
 //		ShareREC.setWontBeBindPlatforms(SinaWeibo.NAME, Facebook.NAME, Wechat.NAME, WechatMoments.NAME);
 //		ShareREC.setShowBindPhone(false);
 //		User user = new User();
 //		user.setUid("120");
-//		user.setNickName("5678");
-//		user.setAvatarUrl("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489039964042&di=f4cace1be57ddcd1279b7b8e0a2a1c44&imgtype=0&src=http%3A%2F%2Fi2.itc.cn%2F20160819%2F3739_71d6e13a_08ae_351c_84ed_24055b9d84d2_1.jpg");
+//		user.setNickName("å¤§å®å®5678");
+//		user.setAvatarUrl("https://timgsa.baidu.com/timg?image&.jpg");
 //
 //		ShareREC.updateUserByApp(user);
 

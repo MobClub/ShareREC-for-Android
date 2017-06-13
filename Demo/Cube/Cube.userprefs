@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShareRECTest.cs">
+    <Files>
+      <File FileName="Assets\Plugins\ShareRec\OnFrameEndHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets\Plugins\ShareRec\ShareRECImpl.cs" Line="18" Column="26" />
+      <File FileName="Assets\Plugins\ShareRec\ShareREC.cs" Line="114" Column="10" />
+      <File FileName="Assets\Plugins\ShareRec\JavaInterface.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ShareRECTest.cs" Line="49" Column="60" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

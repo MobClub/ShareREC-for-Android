@@ -11,8 +11,6 @@ public class TestGLSurfaceView extends SrecGLSurfaceView {
 	private static final int INTERVAL = 25;
 	
 	static boolean oesType;
-	static String appkey;
-	static String appsecret;
 	
 	private CubeRenderer renderer;
 	private CubeRendererES1 rendereres1;
@@ -63,14 +61,6 @@ public class TestGLSurfaceView extends SrecGLSurfaceView {
 		});
 	}
 
-	protected String getShareRecAppkey() {
-		return appkey;
-	}
-
-	protected String getShareRecAppSecret() {
-		return appsecret;
-	}
-	
 	public void onPause() {
 		running = false;
 	}

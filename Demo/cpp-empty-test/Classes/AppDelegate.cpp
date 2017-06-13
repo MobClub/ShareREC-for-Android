@@ -5,7 +5,7 @@
 
 #include "HelloWorldScene.h"
 #include "AppMacros.h"
-#include "ShareRec/Android/sharerec_for_cocos2d.h"
+#include "sharerec_for_cocos2d.h"
 
 USING_NS_CC;
 using namespace std;
@@ -70,6 +70,28 @@ ShareRec::LevelMaxFrameSize getMaxFrameSize(const char* key) {
 		value = ShareRec::LEVEL_1280_720;
 	} else if (strcmp("LEVEL_1920_1080", cValue) == 0) {
 		value = ShareRec::LEVEL_1920_1080;
+	}else if (strcmp("LEVAL_320_240", cValue) == 0) {
+		value = ShareRec::LEVAL_320_240;
+	}else if (strcmp("LEVAL_400_240", cValue) == 0) {
+		value = ShareRec::LEVAL_400_240;
+	}else if (strcmp("LEVAL_432_240", cValue) == 0) {
+		value = ShareRec::LEVAL_432_240;
+	}else if (strcmp("LEVEL_480_320", cValue) == 0) {
+		value = ShareRec::LEVEL_480_320;
+	}else if (strcmp("LEVEL_480_360", cValue) == 0) {
+		value = ShareRec::LEVEL_480_360;
+	}else if (strcmp("LEVEL_800_480", cValue) == 0) {
+		value = ShareRec::LEVEL_800_480;
+	}else if (strcmp("LEVEL_800_600", cValue) == 0) {
+		value = ShareRec::LEVEL_800_600;
+	}else if (strcmp("LEVEL_854_480", cValue) == 0) {
+		value = ShareRec::LEVEL_854_480;
+	}else if (strcmp("LEVEL_1280_768", cValue) == 0) {
+		value = ShareRec::LEVEL_1280_768;
+	}else if (strcmp("LEVEL_2048_1152", cValue) == 0) {
+		value = ShareRec::LEVEL_2048_1152;
+	}else if (strcmp("LEVEL_2560_1440", cValue) == 0) {
+		value = ShareRec::LEVEL_2560_1440;
 	}
 	
 	env->ReleaseStringChars(jvalue, (const jchar*) cValue);

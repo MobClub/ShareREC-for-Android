@@ -1,6 +1,6 @@
 #include "HelloWorldScene.h"
 #include "AppMacros.h"
-#include "ShareRec/Android/sharerec_for_cocos2d.h"
+#include "sharerec_for_cocos2d.h"
 
 USING_NS_CC;
 using namespace cn::sharerec;
@@ -212,7 +212,7 @@ void HelloWorld::menuStopRECCallback(Ref* sender) {
 }
 
 void onPlatformSelected(const char* name, MP4* mp4) {
-	// CCLogÕæ¿Óµù£¬Êä³öÀ´È«ÊÇÂÒÂë(never mind)
+	// CCLogï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(never mind)
 	__android_log_print(ANDROID_LOG_DEBUG, "cocos2d-x debug info", "menu \"%s\" has been clicked!", name);
 	char* path = NULL;
 	__android_log_print(ANDROID_LOG_DEBUG, "cocos2d-x debug info", "%d", mp4->getLocalPath(&path));

@@ -17,8 +17,6 @@ import android.view.MenuItem;
 import java.util.Map.Entry;
 
 public abstract class BaseStartActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
-	private EditTextPreference etpAppKey;
-	private EditTextPreference etpAppSecret;
 	private ListPreference lpMaxFrameSize;
 	private ListPreference lpVideoQuality;
 	private EditTextPreference etpMinDura;
@@ -36,22 +34,6 @@ public abstract class BaseStartActivity extends PreferenceActivity implements On
 		PreferenceScreen ps = getPreferenceManager().createPreferenceScreen(this);
 		setPreferenceScreen(ps);
 		
-		PreferenceCategory pcApp = new PreferenceCategory(this);
-		pcApp.setTitle("App");
-		ps.addPreference(pcApp);
-		
-		etpAppKey = new EditTextPreference(this);
-		etpAppKey.setKey("srec_key_appKey");
-		etpAppKey.setTitle("App Key");
-		etpAppKey.setDialogTitle(etpAppKey.getTitle());
-		pcApp.addPreference(etpAppKey);
-		
-		etpAppSecret = new EditTextPreference(this);
-		etpAppSecret.setKey("srec_key_appSecret");
-		etpAppSecret.setTitle("App Secret");
-		etpAppSecret.setDialogTitle(etpAppSecret.getTitle());
-		pcApp.addPreference(etpAppSecret);
-		
 		PreferenceCategory pcRecorder = new PreferenceCategory(this);
 		pcRecorder.setTitle("Recorder");
 		ps.addPreference(pcRecorder);
@@ -60,7 +42,7 @@ public abstract class BaseStartActivity extends PreferenceActivity implements On
 		lpMaxFrameSize.setKey("srec_key_maxFrameSize");
 		lpMaxFrameSize.setTitle("Max Frame Size");
 		lpMaxFrameSize.setEntries(new String[] {
-                "LEVEL_480_360" ,//4:3   (Half-size VGA)
+				"LEVEL_480_360" ,//4:3   (Half-size VGA)
 				"LEVEL_1280_720",//16:9  720p 1280*720 标清
 				"LEVEL_1920_1080",//16:9  1080p 1920*1080 高清
 				"LEVEL_320_240",//
@@ -137,14 +119,6 @@ public abstract class BaseStartActivity extends PreferenceActivity implements On
 	}
 	
 	private void refreshValues(SharedPreferences sp) {
-		String appkey = sp.getString(etpAppKey.getKey(), null);
-		etpAppKey.setText(TextUtils.isEmpty(appkey) ? "76684bc49b3" : appkey);
-		etpAppKey.setSummary(etpAppKey.getText());
-		
-		String appSecret = sp.getString(etpAppSecret.getKey(), null);
-		etpAppSecret.setText(TextUtils.isEmpty(appSecret) ? "cc162a0c24a4928e215a4b99ceffb425" : appSecret);
-		etpAppSecret.setSummary(etpAppSecret.getText());
-		
 		String maxFrameSize = sp.getString(lpMaxFrameSize.getKey(), null);
 		if (TextUtils.isEmpty(maxFrameSize)) {
 			lpMaxFrameSize.setValueIndex(1);
@@ -170,7 +144,8 @@ public abstract class BaseStartActivity extends PreferenceActivity implements On
 		etpMinDura.setSummary(minDura + (minDura > 1 ?  " Seconds" : " Second"));
 		
 		String cacheFolder = sp.getString(etpCacheFolder.getKey(), null);
-		etpCacheFolder.setText(TextUtils.isEmpty(cacheFolder) ? com.mob.tools.utils.R.getCachePath(this, "videoes") : cacheFolder);
+		etpCacheFolder.setText(TextUtils.isEmpty(cacheFolder)
+				? com.mob.tools.utils.ResHelper.getCachePath(this, "videoes") : cacheFolder);
 		etpCacheFolder.setSummary(etpCacheFolder.getText());
 		
 		cbpSWAudioEnc.setChecked(sp.getBoolean(cbpSWAudioEnc.getKey(), true));

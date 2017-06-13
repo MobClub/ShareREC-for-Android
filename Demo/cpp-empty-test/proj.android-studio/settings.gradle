@@ -1,0 +1,8 @@
+include ':libcocos2dx'
+project(':libcocos2dx').projectDir = new File('D:/cocos2d-x/cocos/platform/android/libcocos2dx')
+
+include ':ShareREC'
+project(':ShareREC').projectDir = new File('../ShareREC')
+
+include ':CppEmptyTest'
+project(':CppEmptyTest').projectDir = new File('app')

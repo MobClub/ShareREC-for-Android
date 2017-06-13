@@ -32,8 +32,6 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		TestGLSurfaceView.oesType = (getIntent().getFlags() == 11);
-		TestGLSurfaceView.appkey = getIntent().getStringExtra("srec_key_appKey");
-		TestGLSurfaceView.appsecret = getIntent().getStringExtra("srec_key_appSecret");
 		
 		// 初始化UI (init UI)
 		setContentView(R.layout.main_activity);

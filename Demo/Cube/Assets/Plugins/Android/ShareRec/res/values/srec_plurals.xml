@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="srec_x_videos">
+        <item quantity="one">%s个视频</item>
+        <item quantity="other">%s个视频</item>
+    </plurals>
+    
+    <plurals name="srec_before_x_minutes">
+        <item quantity="one">%s分钟之前</item>
+        <item quantity="other">%s分钟之前</item>
+    </plurals>
+    
+    <plurals name="srec_before_x_hour">
+        <item quantity="one">%s小时之前</item>
+        <item quantity="other">%s小时之前</item>
+    </plurals>
+    
+    <plurals name="srec_before_x_days">
+        <item quantity="one">%s天之前</item>
+        <item quantity="other">%s天之前</item>
+    </plurals>
+    
+    <plurals name="srec_before_x_monthes">
+        <item quantity="one">%s月之前</item>
+        <item quantity="other">%s月之前</item>
+    </plurals>
+    
+    <plurals name="srec_before_x_years">
+        <item quantity="one">%s年之前</item>
+        <item quantity="other">%s年之前</item>
+    </plurals>
+    
+    <plurals name="srec_there_are_x_local_videos">
+        <item quantity="one">%s个本地视频</item>
+        <item quantity="other">%s个本地视频</item>
+    </plurals>
+    
+	<plurals name="srec_view_x_times">
+        <item quantity="one">%s次观看</item>
+        <item quantity="other">%s次观看</item>
+    </plurals>
+</resources>

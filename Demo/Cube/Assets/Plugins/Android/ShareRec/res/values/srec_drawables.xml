@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="srec_sb_item_back_pre">#e62581e9</item>
+    <item type="drawable" name="srec_sb_item_back_nor">#00000000</item>
+    <item type="drawable" name="srec_crop_sb_item_back_nor">#aa000000</item>
+    <item type="drawable" name="srec_report_dim">#7f000000</item>
+</resources>

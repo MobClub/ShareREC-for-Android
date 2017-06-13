@@ -22,6 +22,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
+        android:name="com.mob.MobApplication"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Light">
@@ -42,6 +43,9 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <meta-data android:name="Mob-AppKey" android:value="76684bc49b3"/>
+        <meta-data android:name="Mob-AppSecret" android:value="cc162a0c24a4928e215a4b99ceffb425"/>
     </application>
 
 </manifest>

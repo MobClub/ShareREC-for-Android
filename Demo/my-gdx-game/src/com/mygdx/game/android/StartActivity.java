@@ -10,7 +10,7 @@ public class StartActivity extends BaseStartActivity {
 	private CheckBoxPreference cbpForceGLES30;
 	
 	protected void onCreatePreferences(PreferenceScreen ps) {
-		PreferenceCategory pcRecorder = (PreferenceCategory) ps.getPreference(1);
+		PreferenceCategory pcRecorder = (PreferenceCategory) ps.getPreference(0);
 		cbpForceGLES30 = new CheckBoxPreference(this);
 		cbpForceGLES30.setKey("srec_key_forceGles30");
 		cbpForceGLES30.setTitle("Use GLES30 API");
@@ -22,7 +22,6 @@ public class StartActivity extends BaseStartActivity {
 	}
 
 	protected void onStartDemo(Intent data) {
-
 		Intent i = new Intent(this, AndroidLauncher.class);
 		i.putExtras(data);
 		startActivity(i);
