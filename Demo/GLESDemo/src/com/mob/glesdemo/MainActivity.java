@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import java.util.Random;
 
+import cn.sharerec.ShareREC;
 import cn.sharerec.recorder.OnRecorderStateListener;
 import cn.sharerec.recorder.Recorder;
 import cn.sharerec.recorder.Recorder.LevelMaxFrameSize;
@@ -28,6 +29,7 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 	private MediaPlayer mp;
 	private boolean paused;
 	private boolean fboState;
+	private boolean uploadAfterStopped;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,7 +40,12 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 		findViewById(R.id.btnFBO).setOnClickListener(this);
 		findViewById(R.id.btnStart).setOnClickListener(this);
 		findViewById(R.id.btnStop).setOnClickListener(this);
+		findViewById(R.id.btnUpload).setOnClickListener(this);
 		findViewById(R.id.btnVideosCenter).setOnClickListener(this);
+		findViewById(R.id.btnLocalVideosCenter).setOnClickListener(this);
+		findViewById(R.id.btnShowVideos).setVisibility(View.GONE);
+		findViewById(R.id.btnShowVideos).setOnClickListener(this);
+
 		final SeekBar sbSpeed = (SeekBar) findViewById(R.id.sbSpeed);
 		maxProgress = sbSpeed.getMax() / 2;
 		sbSpeed.setProgress(maxProgress);
@@ -93,11 +100,18 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 		switch (v.getId()) {
 			case R.id.btnFBO: switchFBOState(); break;
 			case R.id.btnStart: startRecorder(); break;
-			case R.id.btnStop: stopRecorder(); break;
+			case R.id.btnStop: stopAndPreview(); break;
+			case R.id.btnUpload: stopAndUpload(); break;
 			case R.id.btnVideosCenter: showVideoCenter(); break;
+			case R.id.btnLocalVideosCenter: showLocalVideoCenter();break;
 		}
 	}
-	
+
+	private void showLocalVideoCenter() {
+		//Log.e("xxxx","mainacity");
+		ShareREC.showLocalVideos(null);
+	}
+
 	protected void onPause() {
 		// 暂停录像 (pause ShareRec)
 		recorder.pauseRecorder();
@@ -141,14 +155,22 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 	private void startRecorder() {
 		if (recorder.isAvailable()) {
 			recorder.setOnRecorderStateListener(this);
+			uploadAfterStopped = false;
 			recorder.startRecorder();
 		} else {
 			Toast.makeText(this, R.string.not_availiable, Toast.LENGTH_SHORT).show();
 		}
 	}
 	
-	// 停止录像 (stop ShareRec)
-	private void stopRecorder() {
+	// 停止录像并进入预览 (stop ShareRec and preview the video)
+	private void stopAndPreview() {
+		uploadAfterStopped = false;
+		recorder.stopRecorder();
+	}
+	
+	// 停止录像并执行上传 (stop ShareRec and upload the video)
+	private void stopAndUpload() {
+		uploadAfterStopped = true;
 		recorder.stopRecorder();
 	}
 
@@ -165,7 +187,17 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 			this.recorder.addCustomAttr("name", "ShareRec Developer");
 			this.recorder.addCustomAttr("brand", "hehe!");
 			this.recorder.addCustomAttr("level", "10");
-			this.recorder.showShare();
+			try {
+				recorder.lastVideo().getLocalPath();
+			} catch (Throwable throwable) {
+				throwable.printStackTrace();
+			}
+			
+			if(uploadAfterStopped) {
+				this.recorder.showShare();
+			} else {
+				this.recorder.showLastVideoOffLine();
+			}
 		}
 	}
 	

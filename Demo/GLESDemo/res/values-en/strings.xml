@@ -3,9 +3,11 @@
     <string name="en_fbo">Enable FBO</string>
     <string name="dis_fbo">Disable FBO</string>
     <string name="start">Start Recorder</string>
-    <string name="stop">Stop Recorder</string>
     <string name="video_center">Video Center</string>
+    <string name="video_local_center">Local Video Center</string>
 	<string name="not_availiable">ShareRec is not availiable to the device</string>
 	<string name="drag_the_seekbar">Drag the SeekBar</string>
-	<string name="srec_unityrecoder_version_wrong">UNITY_4_3_4 版本的请不用 SrecUnityPlayer,具体的请查看文档，谢谢！！</string>
+    <string name="video_show">Show Videos</string>
+    <string name="stop_preview">Stop And Preview</string>
+	<string name="stop_upload">Stop And Upload</string>
 </resources>

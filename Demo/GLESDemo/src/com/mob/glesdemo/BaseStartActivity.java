@@ -146,7 +146,7 @@ public abstract class BaseStartActivity extends PreferenceActivity implements On
 			String dura = sp.getString(etpMinDura.getKey(), null);
 			minDura = Integer.parseInt(dura);
 		} catch (Throwable t) {}
-		etpMinDura.setText(String.valueOf(minDura < 0 ? 4 : minDura));
+		etpMinDura.setText(String.valueOf(minDura < 0 ? 1 : minDura));
 		etpMinDura.setSummary(minDura + (minDura > 1 ?  " Seconds" : " Second"));
 		
 		String cacheFolder = sp.getString(etpCacheFolder.getKey(), null);

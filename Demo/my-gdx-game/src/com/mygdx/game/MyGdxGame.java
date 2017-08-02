@@ -34,8 +34,12 @@ public class MyGdxGame extends SrecApplicationAdapter implements InputProcessor 
 	private BitmapFont redFont;
 	private Rectangle startRecorder;
 	private Rectangle videoCenter;
+	private Rectangle localVidoes;
 	private Rectangle userProfile;
+	
 	private Rectangle stopRecorder;
+	private Rectangle stopRecorderUpload;
+	
 	private int width;
 	private int height;
 	private int x;
@@ -111,8 +115,18 @@ public class MyGdxGame extends SrecApplicationAdapter implements InputProcessor 
 			userProfile = new Rectangle(0, height - 10 - btnHeight * 2, btnLeft, btnHeight);
 			
 			layout = new GlyphLayout();
-			layout.setText(redFont, "Stop Recorder");
+			layout.setText(whiteFont, "Local Videos");
+			localVidoes = new Rectangle(0, height - 10 - btnHeight * 3, btnLeft, btnHeight);
+			
+			
+			//=================================================================
+			layout = new GlyphLayout();
+			layout.setText(redFont, "Stop Recorder Preview");
 			stopRecorder = new Rectangle(0, height - 10, btnLeft, btnHeight);
+			
+			layout = new GlyphLayout();
+			layout.setText(redFont, "Stop Recorder Upload");
+			stopRecorderUpload = new Rectangle(0, height - 10 - btnHeight, btnLeft, btnHeight);
 		}
 	}
 	
@@ -142,11 +156,13 @@ public class MyGdxGame extends SrecApplicationAdapter implements InputProcessor 
 		batch.begin();
 		batch.draw(img, x, y);
 		if (started) {
-			redFont.draw(batch, "Stop Recorder", stopRecorder.x + 20, stopRecorder.y - 10);
+			redFont.draw(batch, "Stop Recorder Preview", stopRecorder.x + 20, stopRecorder.y - 10);
+			redFont.draw(batch, "Stop Recorder Upload", stopRecorderUpload.x + 20, stopRecorderUpload.y - 10);
 		} else {
 			whiteFont.draw(batch, "Start Recorder", startRecorder.x + 20, startRecorder.y - 10);
 			whiteFont.draw(batch, "Video Center", videoCenter.x + 20, videoCenter.y - 10);
 			whiteFont.draw(batch, "User Profile", userProfile.x + 20, userProfile.y - 10);
+			whiteFont.draw(batch, "Local Videos", localVidoes.x + 20, localVidoes.y - 10);
 		}
 		batch.end();
 	}
@@ -187,13 +203,18 @@ public class MyGdxGame extends SrecApplicationAdapter implements InputProcessor 
 	public boolean touchDragged(int screenX, int screenY, int pointer) {
 		return false;
 	}
-	
+	private boolean upload = false;
 	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
 		int touchY = height - screenY;
 		if (started) {
 			if (stopRecorder.x <= screenX && (stopRecorder.x + stopRecorder.getWidth() >= screenX)
 					&& stopRecorder.y >= touchY && stopRecorder.y - stopRecorder.getHeight() <= touchY) {
+				upload = false;
 				// 停止录制 (stop recorder)
+				getRecorder().stop();
+			}else if(stopRecorderUpload.x <= screenX && (stopRecorderUpload.x + stopRecorderUpload.getWidth() >= screenX)
+					&& stopRecorderUpload.y >= touchY && stopRecorderUpload.y - stopRecorderUpload.getHeight() <= touchY){
+				upload = true;
 				getRecorder().stop();
 			}
 		} else {
@@ -218,6 +239,9 @@ public class MyGdxGame extends SrecApplicationAdapter implements InputProcessor 
 					&& userProfile.y >= touchY && userProfile.y - userProfile.getHeight() <= touchY) {
 				// 进入个人页面(Enter user profile page)
 				getRecorder().showProfile();
+			}else if(localVidoes.x <= screenX && (localVidoes.x + localVidoes.getWidth() >= screenX)
+					&& localVidoes.y >= touchY && localVidoes.y - localVidoes.getHeight() <= touchY){
+				getRecorder().showLocalVideos(null);
 			}
 		}
 		return false;
@@ -235,7 +259,20 @@ public class MyGdxGame extends SrecApplicationAdapter implements InputProcessor 
 			getRecorder().addCustomAttr("name", "ShareRec Developer");
 			getRecorder().addCustomAttr("brand", "hehe!");
 			getRecorder().addCustomAttr("level", "10");
-			getRecorder().showShare();
+			UIHandler.sendEmptyMessage(0, new Callback() {
+				
+				@Override
+				public boolean handleMessage(Message msg) {
+					if(upload){
+						getRecorder().showShare();	
+					}else {
+						getRecorder().showLastVideoOffLine();
+					}
+					return false;
+				}
+			});
+			
+			
 		}
 	}
 	

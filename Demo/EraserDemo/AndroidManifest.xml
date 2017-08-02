@@ -50,7 +50,7 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-
+		<!-- 此key为测试key，功能非常有限，会造成调用接口不成功，请及时替换成正式key。申请网址：www.mob.com -->
         <meta-data android:name="Mob-AppKey" android:value="moba6b6c6d6"/>
         <meta-data android:name="Mob-AppSecret" android:value="b89d2427a3bc7ad1aea1e1e8c1d36bf3"/>
     </application>

@@ -182,7 +182,23 @@ namespace cn.sharerec {
 			}
 		}
 
-		public void showVideoCenter(string callback) {
+        public void ShowLastVideo(string callback)
+        {
+            if (javaRecorder != null)
+            {
+                javaRecorder.Call("showLastVideoOffLine", callback);
+            }
+        }
+
+        public void ShowLocalVideos(string callback)
+        {
+            if (javaRecorder != null)
+            {
+                javaRecorder.Call("shareLocalVideos", callback);
+            }
+        }
+
+        public void showVideoCenter(string callback) {
 			if (javaRecorder != null) {
 				javaRecorder.Call("showVideoCenter", callback);
 			}

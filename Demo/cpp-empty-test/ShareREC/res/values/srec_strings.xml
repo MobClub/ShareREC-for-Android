@@ -144,4 +144,7 @@
 	<string name="srec_trim_range_error">长度错误</string>
 	<string name="srec_failed_to_start_mic">无法开启麦克风</string>
 	<string name="srec_failed_to_start_cam">无法开启摄像机</string>
+    <string name="srec_info_tip">信息</string>
+    <string name="srec_del_video_tip">删除线上视频后，将无法恢复，并无法在线播放。确认删除？</string>
+    <string name="srec_info_slectvideo">请选择视频</string>
 </resources>

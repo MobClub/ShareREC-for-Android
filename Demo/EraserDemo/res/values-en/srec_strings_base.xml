@@ -17,4 +17,8 @@
     <string name="srec_upload">Upload</string>
     <string name="srec_share_a_video_clip">Share a video clip</string>
     <string name="srec_more">More</string>
+    <string name="srec_edit">Edit</string>
+    <string name="srec_share">Share</string>
+    <string name="srec_manager">Manager</string>
+    <string name="srec_uploaded">Uploaded</string>
 </resources>

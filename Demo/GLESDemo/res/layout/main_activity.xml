@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.75"
-            android:minEms="8"
+            android:minEms="9"
             android:text="@string/en_fbo" />
         
         <Button
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.75"
-            android:minEms="8"
+            android:minEms="9"
             android:text="@string/start" />
 
         <Button
@@ -38,16 +38,43 @@
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
             android:alpha="0.75"
-            android:minEms="8"
-            android:text="@string/stop" />
+            android:minEms="9"
+            android:text="@string/stop_preview" />
+
+        <Button
+            android:id="@+id/btnUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:alpha="0.75"
+            android:minEms="9"
+            android:text="@string/stop_upload" />
 
         <Button
             android:id="@+id/btnVideosCenter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.75"
-            android:minEms="8"
+            android:minEms="9"
             android:text="@string/video_center" />
+
+        <Button
+            android:id="@+id/btnLocalVideosCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.75"
+            android:minEms="9"
+            android:text="@string/video_local_center" />
+
+        <Button
+            android:id="@+id/btnShowVideos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.75"
+            android:minEms="9"
+            android:text="@string/video_show" />
+
     </LinearLayout>
 
     <SeekBar

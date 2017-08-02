@@ -130,7 +130,17 @@ namespace cn.sharerec {
 			javaInter.showShare("onReturnGame");
 		}
 
-		public static void ShowProfile() {
+        public static void ShowLastVideo()
+        {
+            javaInter.ShowLastVideo("onReturnGame");
+        }
+
+        public static void ShowLocalVideos()
+        {
+            javaInter.ShowLocalVideos("onReturnGame");
+        }
+
+        public static void ShowProfile() {
 			javaInter.showProfile("onReturnGame");
 		}
 

@@ -2,5 +2,5 @@
 <resources>
 
     <string name="app_name">my-gdx-game</string>
-<string name="srec_unityrecoder_version_wrong">UNITY_4_3_4 版本的请不用 SrecUnityPlayer,具体的请查看文档，谢谢！！</string>
+
 </resources>

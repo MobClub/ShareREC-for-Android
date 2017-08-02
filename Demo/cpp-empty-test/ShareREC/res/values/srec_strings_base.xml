@@ -17,4 +17,9 @@
     <string name="srec_upload">上传</string>
     <string name="srec_share_a_video_clip">分享一段视频</string>
     <string name="srec_more">更多</string>
+    <string name="srec_edit">编辑</string>
+    <string name="srec_manager">管理</string>
+    <string name="srec_uploaded">已上传</string>
+
+
 </resources>

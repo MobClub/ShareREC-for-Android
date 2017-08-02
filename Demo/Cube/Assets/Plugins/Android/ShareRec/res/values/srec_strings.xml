@@ -9,7 +9,6 @@
     <string name="srec_install_game">安装游戏</string>
     <string name="srec_downloading">正在下载…</string>
     <string name="srec_app_installed">程序已安装</string>
-    <string name="srec_share">分享</string>
     <string name="srec_play">观看</string>
     <string name="srec_info">个人资料</string>
     <string name="srec_faile_to_play">无法播放视频</string>
@@ -144,4 +143,7 @@
 	<string name="srec_trim_range_error">长度错误</string>
 	<string name="srec_failed_to_start_mic">无法开启麦克风</string>
 	<string name="srec_failed_to_start_cam">无法开启摄像机</string>
+    <string name="srec_info_tip">信息</string>
+    <string name="srec_del_video_tip">删除线上视频后，将无法恢复，并无法在线播放。确认删除？</string>
+    <string name="srec_info_slectvideo">请选择视频</string>
 </resources>

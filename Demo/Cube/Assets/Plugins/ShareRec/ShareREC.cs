@@ -357,10 +357,18 @@ namespace cn.sharerec {
 			ShareRECImpl.ShowShare();
 		}
 
-		/// <summary>
-		/// 清除ShareRec的缓存目录(Clears the cache folder of ShareRec.)
-		/// </summary>
-		public static void ClearCache() {
+        public static void ShowLastVideo() {
+            ShareRECImpl.ShowLastVideo();
+        }
+
+        public static void ShowLocalVideos() {
+            ShareRECImpl.ShowLocalVideos();
+        }
+
+        /// <summary>
+        /// 清除ShareRec的缓存目录(Clears the cache folder of ShareRec.)
+        /// </summary>
+        public static void ClearCache() {
 			ShareRECImpl.ClearCache();
 		}
 

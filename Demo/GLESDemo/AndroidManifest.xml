@@ -10,7 +10,7 @@
         android:resizeable="true"
         android:smallScreens="true" />
 
-    <uses-sdk android:minSdkVersion="14"/>
+    <uses-sdk android:minSdkVersion="21"/>
     
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -32,7 +32,6 @@
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -41,7 +40,7 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:name=".MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="landscape" >
 		</activity>
 
 		<activity
@@ -50,8 +49,10 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
 
+		<!-- 此key为测试key，功能非常有限，会造成调用接口不成功，请及时替换成正式key。申请网址：www.mob.com -->
 		<meta-data android:name="Mob-AppKey" android:value="76684bc49b3"/>
         <meta-data android:name="Mob-AppSecret" android:value="cc162a0c24a4928e215a4b99ceffb425"/>
+
     </application>
 
 </manifest>
