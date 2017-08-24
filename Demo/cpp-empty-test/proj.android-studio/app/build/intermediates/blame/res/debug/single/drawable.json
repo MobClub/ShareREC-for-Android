@@ -1,0 +1,242 @@
+[
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_share_panel_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_share_panel_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_signin_btn_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_signin_btn_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_crop_sb_item_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_crop_sb_item_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_share_edit_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_share_edit_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_share_share_back_right_bottom.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_share_share_back_right_bottom.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_prt_header_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_prt_header_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_share_share_back_left_bottom.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_share_share_back_left_bottom.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_profile_local_video_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_profile_local_video_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_ve_progress.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_ve_progress.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_like_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_like_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_pause_video_icon_base.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_pause_video_icon_base.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\smssdk_corners_bg_pre.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\smssdk_corners_bg_pre.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_share_close_btn_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_share_close_btn_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\smssdk_btn_disenable.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\smssdk_btn_disenable.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_recomm_play_video_icon.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_recomm_play_video_icon.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_share_video_platforms_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_share_video_platforms_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_local_video_title_edit_back_base.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_local_video_title_edit_back_base.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\smssdk_edittext_bg_selector.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\smssdk_edittext_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_video_item_right_top_bg_land.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_video_item_right_top_bg_land.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\smssdk_country_bg_selector.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\smssdk_country_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_report_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_report_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_sb_item_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_sb_item_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_comment_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_comment_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_play_video_circle_base.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_play_video_circle_base.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\smssdk_dialog_btn_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\smssdk_dialog_btn_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_gray_circle.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_gray_circle.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ssdk_oks_classic_platform_cell_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\ssdk_oks_classic_platform_cell_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_game_news_thumb_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_game_news_thumb_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_profile_conf_bg_land.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_profile_conf_bg_land.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_edit_profile_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_edit_profile_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_ve_progress_bg.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_ve_progress_bg.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_main_share_progress.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_main_share_progress.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_report_cancel_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_report_cancel_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_share_share_back_right_top.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_share_share_back_right_top.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_local_video_title_edit_et_back_base.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_local_video_title_edit_et_back_base.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_bine_phone.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_bine_phone.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_recomm_play_video_circle.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_recomm_play_video_circle.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\smssdk_btn_enable.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\smssdk_btn_enable.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_add_comment_back_land.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_add_comment_back_land.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_share_thumb_back_port.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_share_thumb_back_port.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_local_video_narrator_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_local_video_narrator_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_signin_account_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_signin_account_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_like_liked_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_like_liked_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_video_item_left_bg_land.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_video_item_left_bg_land.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\smssdk_country_group_scroll_down.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\smssdk_country_group_scroll_down.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_play_video_icon_base.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_play_video_icon_base.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_share_thumb_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_share_thumb_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ssdk_oks_classic_progressbar.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\ssdk_oks_classic_progressbar.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_signout_btn_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_signout_btn_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_profile_nick_bg_land.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_profile_nick_bg_land.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\smssdk_country_group_scroll_up.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\smssdk_country_group_scroll_up.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_video_item_right_bottom_bg_land.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_video_item_right_bottom_bg_land.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_checkbox_selector_base.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_checkbox_selector_base.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\smssdk_corners_bg_nor.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\smssdk_corners_bg_nor.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_share_btn_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_share_btn_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_fluency_back.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_fluency_back.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\smssdk_corners_bg.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\smssdk_corners_bg.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_local_video_upload_back_base.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_local_video_upload_back_base.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_share_share_back_left_top.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_share_share_back_left_top.xml"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\srec_ve_trim_bg.xml",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable\\srec_ve_trim_bg.xml"
+    }
+]

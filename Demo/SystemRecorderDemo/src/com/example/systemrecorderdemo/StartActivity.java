@@ -66,10 +66,13 @@ public class StartActivity extends BaseStartActivity implements OnRecorderStateL
 		}
 		recorder.setMaxFrameSize(LevelMaxFrameSize.valueOf(data.getStringExtra("srec_key_maxFrameSize")));
 		recorder.setVideoQuality(LevelVideoQuality.valueOf(data.getStringExtra("srec_key_videoQuality")));
+		if ("true".equalsIgnoreCase(data.getStringExtra("srec_key_force_landscape"))) {
+			recorder.setForceLandscape();
+		}
 		recorder.setMinDuration(1000 * Long.parseLong(data.getStringExtra("srec_key_minDuration")));
 		recorder.setCacheFolder(data.getStringExtra("srec_key_cacheFolder"));
-		boolean sWAudioEnc = "true".equalsIgnoreCase(getIntent().getStringExtra("srec_key_softwareAudioEncoder"));
-		boolean sWVideoEnc = "true".equalsIgnoreCase(getIntent().getStringExtra("srec_key_softwareVideoEncoder"));
+		boolean sWAudioEnc = "true".equalsIgnoreCase(data.getStringExtra("srec_key_softwareAudioEncoder"));
+		boolean sWVideoEnc = "true".equalsIgnoreCase(data.getStringExtra("srec_key_softwareVideoEncoder"));
 		recorder.setForceSoftwareEncoding(sWVideoEnc, sWAudioEnc);
 		if (recorder.isAvailable()) {
 			recorder.start();

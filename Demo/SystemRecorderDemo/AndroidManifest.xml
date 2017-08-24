@@ -44,7 +44,7 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
 		
-		<!-- 此key为测试key，功能非常有限，会造成调用接口不成功，请及时替换成正式key。申请网址：www.mob.com -->
+		<!-- 姝ey涓烘祴璇昸ey锛屽姛鑳介潪甯告湁闄愶紝浼氶�犳垚璋冪敤鎺ュ彛涓嶆垚鍔燂紝璇峰強鏃舵浛鎹㈡垚姝ｅ紡key銆傜敵璇风綉鍧�锛歸ww.mob.com -->
 		<meta-data android:name="Mob-AppKey" android:value="76684bc49b3"/>
         <meta-data android:name="Mob-AppSecret" android:value="cc162a0c24a4928e215a4b99ceffb425"/>
         

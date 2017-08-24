@@ -51,7 +51,12 @@ namespace cn.sharerec {
 
 		public static OnPlatformSelected OnPlatformSelectedHandler;
 
-		void Awake() {
+        public static OnShareCancel OnShareCancelHandler;
+        public static OnShareComplete OnShareCompleteHandler;
+        public static OnShareError OnShareErrorHandler;
+
+
+        void Awake() {
 			try {
 				ShareRECImpl.Init(AppKey, AppSecret, gameObject.name, (int) MaxFrameSize);
 				ShareRECImpl.SetVideoQuality((int) VideoQuality);
@@ -170,6 +175,8 @@ namespace cn.sharerec {
 			
 			curAction = iAction;
 		}
+
+
 		
 		private void onReturnGame(string action) {
 			int iAction = 0;
@@ -201,11 +208,42 @@ namespace cn.sharerec {
 				OnPlatformSelectedHandler(action, new MP4(AppKey, AppSecret, action));
 			}
 		}
+        private void onShareComplete(string action) {
+            if (OnShareCompleteHandler != null) {
+                OnShareCompleteHandler(action);
+            }
+        }
 
-		/// <summary>
+        private void onShareError(string action) {
+            if (OnShareErrorHandler != null) {
+                OnShareErrorHandler(action);
+            }
+        }
+        private void onShareCancel(string action) {
+            if (OnShareCancelHandler != null) {
+                OnShareCancelHandler(action);
+            }
+        }
+        /// <summary>
+        /// 此方法在录制模块启动时被调用(This method will be called when the recorder module is starting.)
+        /// </summary>
+        public delegate void OnShareCancel(string action);
+
+        /// <summary>
 		/// 此方法在录制模块启动时被调用(This method will be called when the recorder module is starting.)
 		/// </summary>
-		public delegate void OnRecorderStarting();
+		public delegate void OnShareComplete(string action);
+
+        /// <summary>
+		/// 此方法在录制模块启动时被调用(This method will be called when the recorder module is starting.)
+		/// </summary>
+		public delegate void OnShareError(string action);
+
+
+        /// <summary>
+        /// 此方法在录制模块启动时被调用(This method will be called when the recorder module is starting.)
+        /// </summary>
+        public delegate void OnRecorderStarting();
 		
 		/// <summary>
 		/// 此方法在录制模块启动后被调用(This method will be called when the recorder module is started.)
@@ -270,12 +308,28 @@ namespace cn.sharerec {
 			ShareRECImpl.useGLES30API();
 		}
 
-		// =======================================
+        /// <summary>
+        /// 设置分享的时候先上传，上传成功后再分享
+        /// </summary>
+        public static void setShareAfterUpload()
+        {
+            ShareRECImpl.setShareAfterUpload();
+        }
 
-		/// <summary>
-		/// 设置视频描述文本(Sets the description of the video.)
-		/// </summary>
-		public static void SetText(string text) {
+        /// <summary>
+        /// 设置监听分享操作的回调，通过onShareComplete，onShareCancel，onShareError监听
+        /// </summary>
+        public static void setShareActionEnable()
+        {
+            ShareRECImpl.setShareActionEnable();
+        }
+
+        // =======================================
+
+        /// <summary>
+        /// 设置视频描述文本(Sets the description of the video.)
+        /// </summary>
+        public static void SetText(string text) {
 			ShareRECImpl.SetText(text);
 		}
 		

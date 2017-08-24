@@ -188,10 +188,10 @@ public abstract class BaseStartActivity extends PreferenceActivity implements On
 			data.putExtra(ent.getKey(), value == null ? null : String.valueOf(value));
 		}
 		onStartDemo(data);
-		finish();
+//		finish();
 		return super.onOptionsItemSelected(item);
 	}
-
 	protected abstract void onStartDemo(Intent sp);
+
 	
 }

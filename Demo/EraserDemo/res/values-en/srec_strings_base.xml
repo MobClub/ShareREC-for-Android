@@ -21,4 +21,6 @@
     <string name="srec_share">Share</string>
     <string name="srec_manager">Manager</string>
     <string name="srec_uploaded">Uploaded</string>
+    <string name="srec_video_detail">Video Detail</string>
+    <string name="srec_video_uploading_waited">Upload has not been completed, please wait a moment</string>
 </resources>

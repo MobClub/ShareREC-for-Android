@@ -12,6 +12,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Toast;
 
+import java.util.HashMap;
 import java.util.Random;
 
 import cn.sharerec.ShareREC;
@@ -64,6 +65,22 @@ public class MainActivity extends Activity implements OnClickListener, OnRecorde
 		boolean sWAudioEnc = "true".equalsIgnoreCase(getIntent().getStringExtra("srec_key_softwareAudioEncoder"));
 		boolean sWVideoEnc = "true".equalsIgnoreCase(getIntent().getStringExtra("srec_key_softwareVideoEncoder"));
 		recorder.setForceSoftwareEncoding(sWVideoEnc, sWAudioEnc);
+
+		ShareREC.setShareAfterUpload();
+		ShareREC.setShowActionWrapper(new ShareREC.ShareActionListenerWrapper() {
+			public void onComplete(String platform, int action, HashMap<String, Object> res) {
+				Toast.makeText(MainActivity.this,"Share Complete test",Toast.LENGTH_SHORT).show();
+			}
+
+			public void onError(String platform, int action,Throwable t) {
+				//RECLog.getInstance().w(t);
+				Toast.makeText(MainActivity.this,"Share Error "+t.getMessage(),Toast.LENGTH_SHORT).show();
+			}
+
+			public void onCancel(String platform, int action) {
+				Toast.makeText(MainActivity.this,"Share Cancel ",Toast.LENGTH_SHORT).show();
+			}
+		});
 
 		Toast.makeText(this, R.string.drag_the_seekbar, Toast.LENGTH_SHORT).show();
 		sbSpeed.setProgress(sbSpeed.getProgress() + maxProgress / 20);

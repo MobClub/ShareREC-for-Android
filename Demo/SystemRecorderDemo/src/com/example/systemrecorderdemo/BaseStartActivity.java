@@ -19,6 +19,7 @@ import java.util.Map.Entry;
 public abstract class BaseStartActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
 	private ListPreference lpMaxFrameSize;
 	private ListPreference lpVideoQuality;
+	private CheckBoxPreference cbpLandscape;
 	private EditTextPreference etpMinDura;
 	private EditTextPreference etpCacheFolder;
 	private CheckBoxPreference cbpSWAudioEnc;
@@ -77,6 +78,11 @@ public abstract class BaseStartActivity extends PreferenceActivity implements On
 		lpVideoQuality.setDialogTitle(lpVideoQuality.getTitle());
 		pcRecorder.addPreference(lpVideoQuality);
 		
+		cbpLandscape = new CheckBoxPreference(this);
+		cbpLandscape.setKey("srec_key_force_landscape");
+		cbpLandscape.setTitle("Force Landscape");
+		pcRecorder.addPreference(cbpLandscape);
+		
 		etpMinDura = new EditTextPreference(this);
 		etpMinDura.setKey("srec_key_minDuration");
 		etpMinDura.setTitle("Min Duration");
@@ -134,6 +140,8 @@ public abstract class BaseStartActivity extends PreferenceActivity implements On
 			lpVideoQuality.setValue(videoQuality);
 		}
 		lpVideoQuality.setSummary(lpVideoQuality.getValue());
+		
+		cbpLandscape.setChecked(sp.getBoolean(cbpLandscape.getKey(), false));
 		
 		int minDura = 4;
 		try {

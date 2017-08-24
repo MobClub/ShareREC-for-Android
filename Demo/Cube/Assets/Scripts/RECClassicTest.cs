@@ -70,6 +70,15 @@ public class RECClassicTest : MonoBehaviour {
                     //ShareREC.PrepareSoundCopying (1, 44100, 2048,camera.name);
                     //======================================
 
+                    //启用监听分享的操作，对完成，取消，出错的事件回调
+                    ShareREC.setShareActionEnable();
+                    //启用要分享需要先上传，强制上传才可以
+                    ShareREC.setShareAfterUpload();
+                    //用于绑定的事件
+                    ShareREC.OnShareCancelHandler = onShareCancel;
+                    ShareREC.OnShareCompleteHandler = onShareComplete;
+                    ShareREC.OnShareErrorHandler = onShareError;
+
                     ShareREC.StartRecorder();
 
                 } else if (GUI.Button(btnProfile, "Profile")) {
@@ -86,11 +95,24 @@ public class RECClassicTest : MonoBehaviour {
             }
 		}
 	}
-	/// <summary>
-	/// get the audio data real time 
-	/// </summary>
-	/// <param name="buffer">Buffer.</param>
-	public void GetAudioBuffer(String buffer)
+
+    public void onShareComplete(String infor) {
+        Debug.LogError (" ===================== onShareComplete  infor >>>" + infor);
+    }
+
+    public void onShareError(String infor) {
+        Debug.LogError(" ===================== onShareError  infor >>>" + infor);
+    }
+
+    public void onShareCancel(String infor) {
+        Debug.LogError(" ===================== onShareCancel  infor >>>" + infor);
+    }
+
+    /// <summary>
+    /// get the audio data real time 
+    /// </summary>
+    /// <param name="buffer">Buffer.</param>
+    public void GetAudioBuffer(String buffer)
 	{
 		
 		//Debug.LogError (" ===================== GetAudioBuffer buffer unity >>>" + buffer);
@@ -132,8 +154,7 @@ public class RECClassicTest : MonoBehaviour {
 
 
 		ShareREC.AddCustomPlatform("CustomPlatform");
-        if (share)
-        {
+        if (share) {
             ShareREC.ShowShare();
         }
         else {

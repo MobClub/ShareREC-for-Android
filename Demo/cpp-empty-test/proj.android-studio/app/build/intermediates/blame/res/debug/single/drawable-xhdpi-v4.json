@@ -1,0 +1,426 @@
+[
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_like.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_like.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_fluency_hd_sel_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_fluency_hd_sel_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_fluency_hd_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_fluency_hd_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_item_likes_liked_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_item_likes_liked_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_vp_stop_base.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_vp_stop_base.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_play_video_base.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_play_video_base.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_item_comms_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_item_comms_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smssdk_dialog_bg.9.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\smssdk_dialog_bg.9.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_sb_close_base.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_sb_close_base.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smssdk_cp_default_avatar.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\smssdk_cp_default_avatar.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_detail_dislike.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_detail_dislike.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_localvideo_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_localvideo_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_center_setting.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_center_setting.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smssdk_back_arrow.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\smssdk_back_arrow.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_pause_video_base.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_pause_video_base.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_show_more.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_show_more.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_vp_play_base.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_vp_play_base.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_logo.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\ssdk_logo.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_plat_twitter_icon.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_plat_twitter_icon.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_sinaweibo.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_sinaweibo.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_share_video.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_share_video.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_sb_share.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_sb_share.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_recomm_play.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_recomm_play.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_ic_menu_rotate.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_ic_menu_rotate.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_wechat.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_wechat.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_fluency_or_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_fluency_or_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_plat_wechat_session_icon.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_plat_wechat_session_icon.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_profile_conf.jpg",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_profile_conf.jpg"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_auth_title_back.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\ssdk_auth_title_back.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smssdk_input_bg_special_normal.9.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\smssdk_input_bg_special_normal.9.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_comments.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_comments.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_ve_add_vn.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_ve_add_vn.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_plat_facebook_icon.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_plat_facebook_icon.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smssdk_back_arrow2.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\smssdk_back_arrow2.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_ve_add_an.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_ve_add_an.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_vp_bar_fullscr.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_vp_bar_fullscr.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_ve_from.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_ve_from.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_follow.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_follow.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_photo_picker_cam_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_photo_picker_cam_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_facebook.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_facebook.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_fluency_or_sel_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_fluency_or_sel_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_plat_tencent_icon.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_plat_tencent_icon.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_item_views_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_item_views_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_raw_video_more.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_raw_video_more.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_back_arr_blue_base.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_back_arr_blue_base.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_wechatmoments.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_wechatmoments.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_ve_share.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_ve_share.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_default_user_icon.jpg",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_default_user_icon.jpg"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_sb_info.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_sb_info.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_commentate.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_commentate.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_photo_crop_bound.9.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_photo_crop_bound.9.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smssdk_search_icon.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\smssdk_search_icon.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_vp_sb_thumb.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_vp_sb_thumb.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_sb_play.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_sb_play.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_settings_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_settings_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_click_for_more.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_click_for_more.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_audio_commentate.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_audio_commentate.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_comments_back_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_comments_back_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_plat_wechat_timeline_icon.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_plat_wechat_timeline_icon.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smssdk_dialog_back.9.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\smssdk_dialog_back.9.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_logout.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_logout.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_fluency_fl_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_fluency_fl_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_chooseno_base.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_chooseno_base.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smssdk_clear_search.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\smssdk_clear_search.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smssdk_input_bg_special_focus.9.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\smssdk_input_bg_special_focus.9.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_ve_to.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_ve_to.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_start_gray.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_start_gray.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_login_input_password.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_login_input_password.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smssdk_input_bg_focus.9.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\smssdk_input_bg_focus.9.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_tick.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_tick.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smssdk_cl_divider.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\smssdk_cl_divider.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_vp_sb_bg_progress.9.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_vp_sb_bg_progress.9.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_commentate_bound.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_commentate_bound.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_dislike.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_dislike.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_show_less.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_show_less.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_item_likes_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_item_likes_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smssdk_default_avatar.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\smssdk_default_avatar.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_download_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_download_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smssdk_sharesdk_icon.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\smssdk_sharesdk_icon.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_offline_preview_more_base.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_offline_preview_more_base.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_photo_picker_bg_land.9.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_photo_picker_bg_land.9.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_title_back_base.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_title_back_base.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_title_div.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\ssdk_title_div.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_profile_conf_port.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_profile_conf_port.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_edit_share_content_base.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_edit_share_content_base.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_check_default.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_check_default.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_check_checked.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_check_checked.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_show_oks.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_show_oks.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_fluency_sd_sel_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_fluency_sd_sel_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_back_arr.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\ssdk_back_arr.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_vp_bar_toview.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_vp_bar_toview.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_start.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_start.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_chooseok_base.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_chooseok_base.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_plat_sina_icon.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_plat_sina_icon.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_fluency_fl_sel_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_fluency_fl_sel_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_share_online_video.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_share_online_video.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_fluency_sd_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_fluency_sd_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_vp_sb_bg.9.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_vp_sb_bg.9.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_back_arr.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_back_arr.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_pull_to_refresh.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_pull_to_refresh.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_photo_picker_alb_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_photo_picker_alb_land.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_login_input_nick.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_login_input_nick.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smssdk_input_bg_normal.9.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\smssdk_input_bg_normal.9.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_ve_add_narration.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_ve_add_narration.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_video_detail_like.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_video_detail_like.png"
+    },
+    {
+        "merged": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\srec_myvideo_land.png",
+        "source": "D:\\Android\\publish\\2.0.2\\cpp-empty-test\\ShareREC\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\srec_myvideo_land.png"
+    }
+]

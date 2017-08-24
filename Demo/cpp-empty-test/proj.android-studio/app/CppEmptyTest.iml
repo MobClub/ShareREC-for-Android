@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":CppEmptyTest" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="android-gradle" name="Android-Gradle">
+      <configuration>
+        <option name="GRADLE_PROJECT_PATH" value=":CppEmptyTest" />
+      </configuration>
+    </facet>
+    <facet type="native-android-gradle" name="Native-Android-Gradle">
+      <configuration>
+        <option name="SELECTED_BUILD_VARIANT" value="debug" />
+      </configuration>
+    </facet>
+    <facet type="android" name="Android">
+      <configuration>
+        <option name="SELECTED_BUILD_VARIANT" value="debug" />
+        <option name="ASSEMBLE_TASK_NAME" value="assembleDebug" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugSources" />
+        <afterSyncTasks>
+          <task>generateDebugSources</task>
+        </afterSyncTasks>
+        <option name="ALLOW_USER_CONFIGURATION" value="false" />
+        <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/res" />
+        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/build/intermediates/classes/debug" />
+    <output-test url="file://$MODULE_DIR$/build/intermediates/classes/test/debug" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../AndroidSDK/ndk-bundle/sources/android/cpufeatures">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../../AndroidSDK/ndk-bundle/sources/android/cpufeatures" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../Classes">
+      <sourceFolder url="file://$MODULE_DIR$/../../Classes" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../Resources">
+      <sourceFolder url="file://$MODULE_DIR$/../../Resources" type="java-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../ShareREC/Classes">
+      <sourceFolder url="file://$MODULE_DIR$/../../ShareREC/Classes" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/jni" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/debug" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/jni" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/debug/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/assets" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/jni" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/androidTest/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-classes" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-runtime-classes" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-safeguard" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-verifier" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-resources" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-support" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/ndkBuild" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/pre-dexed" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/reload-dex" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/restart-dex" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/shaders" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/split-apk" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/transforms" />
+      <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
+      <excludeFolder url="file://$MODULE_DIR$/build/reports" />
+      <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/2d">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/2d" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/3d">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/3d" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/audio">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/audio" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/audio/android">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/audio/android" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/audio/android/audio_utils">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/audio/android/audio_utils" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/audio/android/jni">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/audio/android/jni" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/audio/android/utils">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/audio/android/utils" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/base">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/base" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/base/allocator">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/base/allocator" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/deprecated">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/deprecated" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocosbuilder">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocosbuilder" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/ActionTimeline">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/ActionTimeline" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ArmatureNodeReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ArmatureNodeReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ButtonReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ButtonReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/CheckBoxReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/CheckBoxReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ComAudioReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ComAudioReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/GameMapReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/GameMapReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/GameNode3DReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/GameNode3DReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ImageViewReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ImageViewReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/LayoutReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/LayoutReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/Light3DReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/Light3DReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ListViewReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ListViewReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/LoadingBarReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/LoadingBarReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/Node3DReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/Node3DReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/NodeReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/NodeReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/PageViewReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/PageViewReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/Particle3DReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/Particle3DReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ParticleReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ParticleReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ProjectNodeReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ProjectNodeReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ScrollViewReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/ScrollViewReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/SingleNodeReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/SingleNodeReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/SkeletonReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/SkeletonReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/SliderReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/SliderReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/Sprite3DReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/Sprite3DReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/SpriteReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/SpriteReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/TabControlReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/TabControlReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/TextAtlasReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/TextAtlasReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/TextBMFontReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/TextBMFontReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/TextFieldReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/TextFieldReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/TextReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/TextReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/UserCameraReader">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/cocostudio/WidgetReader/UserCameraReader" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/spine">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/editor-support/spine" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/math">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/math" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/navmesh">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/navmesh" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/network">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/network" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/physics">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/physics" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/physics3d">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/physics3d" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/platform">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/platform" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/platform/android">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/platform/android" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/platform/android/jni">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/platform/android/jni" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/renderer">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/renderer" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/ui">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/ui" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/ui/UIEditBox">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/ui/UIEditBox" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/vr">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/cocos/vr" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/extensions/GUI/CCControlExtension">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/extensions/GUI/CCControlExtension" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/extensions/GUI/CCScrollView">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/extensions/GUI/CCScrollView" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/extensions/Particle3D">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/extensions/Particle3D" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/extensions/Particle3D/PU">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/extensions/Particle3D/PU" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/extensions/assets-manager">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/extensions/assets-manager" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/extensions/physics-nodes">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/extensions/physics-nodes" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/Box2D/Collision">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/Box2D/Collision" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/Box2D/Collision/Shapes">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/Box2D/Collision/Shapes" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/Box2D/Common">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/Box2D/Common" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/Box2D/Dynamics">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/Box2D/Dynamics" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/Box2D/Dynamics/Contacts">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/Box2D/Dynamics/Contacts" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/Box2D/Dynamics/Joints">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/Box2D/Dynamics/Joints" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/Box2D/Rope">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/Box2D/Rope" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/ConvertUTF">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/ConvertUTF" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/android-specific/pvmp3dec/src">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/android-specific/pvmp3dec/src" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/android-specific/pvmp3dec/src/asm">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/android-specific/pvmp3dec/src/asm" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/android-specific/tremolo/Tremolo">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/android-specific/tremolo/Tremolo" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletCollision/BroadphaseCollision">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletCollision/BroadphaseCollision" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletCollision/CollisionDispatch">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletCollision/CollisionDispatch" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletCollision/CollisionShapes">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletCollision/CollisionShapes" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletCollision/Gimpact">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletCollision/Gimpact" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletCollision/NarrowPhaseCollision">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletCollision/NarrowPhaseCollision" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletDynamics/Character">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletDynamics/Character" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletDynamics/ConstraintSolver">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletDynamics/ConstraintSolver" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletDynamics/Dynamics">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletDynamics/Dynamics" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletDynamics/Featherstone">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletDynamics/Featherstone" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletDynamics/MLCPSolvers">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletDynamics/MLCPSolvers" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletDynamics/Vehicle">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletDynamics/Vehicle" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletMultiThreaded">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletMultiThreaded" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletMultiThreaded/SpuSampleTask">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/BulletMultiThreaded/SpuSampleTask" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/LinearMath">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/LinearMath" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/MiniCL">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/MiniCL" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/MiniCL/MiniCLTask">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/bullet/MiniCL/MiniCLTask" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/clipper">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/clipper" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/edtaa3func">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/edtaa3func" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/flatbuffers">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/flatbuffers" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/md5">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/md5" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/poly2tri/common">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/poly2tri/common" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/poly2tri/sweep">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/poly2tri/sweep" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/recast/DebugUtils">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/recast/DebugUtils" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/recast/Detour">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/recast/Detour" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/recast/DetourCrowd">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/recast/DetourCrowd" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/recast/DetourTileCache">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/recast/DetourTileCache" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/recast/fastlz">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/recast/fastlz" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/tinyxml2">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/tinyxml2" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/unzip">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/unzip" isTestSource="false" />
+    </content>
+    <content url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/xxhash">
+      <sourceFolder url="file://D:/cocos2d-x-3.15.1/cocos2d-x-3.15.1/external/xxhash" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="libcocos2dx" exported="" />
+    <orderEntry type="module" module-name="ShareREC" exported="" />
+    <orderEntry type="library" exported="" name="EngineDataManager" level="project" />
+    <orderEntry type="library" exported="" name="com.android.vending.expansion.zipfile" level="project" />
+    <orderEntry type="library" exported="" name="httpclient-4.4.1.1" level="project" />
+    <orderEntry type="library" exported="" name="android-async-http-1.4.9" level="project" />
+    <orderEntry type="library" exported="" name="ShareRec-Core-2.0.2" level="project" />
+    <orderEntry type="library" exported="" name="SMSSDK-GUI" level="project" />
+    <orderEntry type="library" exported="" name="ShareRec-VideoEditor-2.0.2" level="project" />
+    <orderEntry type="library" exported="" name="MobCommons-2017.0811.1113" level="project" />
+    <orderEntry type="library" exported="" name="ShareSDK-Wechat-Moments-3.0.0" level="project" />
+    <orderEntry type="library" exported="" name="OneKeyShare" level="project" />
+    <orderEntry type="library" exported="" name="ShareSDK-Facebook-3.0.0" level="project" />
+    <orderEntry type="library" exported="" name="ShareRec-2.0.2" level="project" />
+    <orderEntry type="library" exported="" name="ShareSDK-Wechat-Core-3.0.0" level="project" />
+    <orderEntry type="library" exported="" name="ShareSDK-Wechat-3.0.0" level="project" />
+    <orderEntry type="library" exported="" name="ShareSDK-SinaWeibo-3.0.0" level="project" />
+    <orderEntry type="library" exported="" name="SMSSDK-3.0.0" level="project" />
+    <orderEntry type="library" exported="" name="ShareSDK-Core-3.0.0" level="project" />
+    <orderEntry type="library" exported="" name="MobTools-2017.0811.1113" level="project" />
+    <orderEntry type="library" exported="" name="ShareRec-VideoUploader-2.0.2" level="project" />
+  </component>
+</module>

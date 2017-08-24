@@ -33,7 +33,15 @@ namespace cn.sharerec {
 			}
 		}
 
-		public static void SetForceSoftwareEncoding(bool video, bool audio) {
+        public static void setShareAfterUpload() {
+            javaInter.setShareAfterUpload();
+        }
+
+        public static void setShareActionEnable() {
+            javaInter.setShareActionEnable();
+        }
+
+        public static void SetForceSoftwareEncoding(bool video, bool audio) {
 			javaInter.setForceSoftwareEncoding(video, audio);
 		}
 

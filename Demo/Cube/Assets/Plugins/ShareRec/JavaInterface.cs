@@ -43,7 +43,21 @@ namespace cn.sharerec {
 			}
 		}
 
-		public void useGLES30API() {
+        public void setShareAfterUpload() {
+            if (javaRecorder != null) {
+                javaRecorder.Call("setShareAfterUpload");
+            }
+        }
+
+        public void setShareActionEnable() {
+            if (javaRecorder != null) {
+                Debug.LogError(" ===================== setShareActionEnable  111 ");
+                javaRecorder.Call("setShareActionEnable");
+                Debug.LogError(" ===================== setShareActionEnable  222 ");
+            }
+        }
+
+        public void useGLES30API() {
 			if (javaRecorder != null) {
 				javaRecorder.Call("setUseES3", true);
 			}

@@ -21,6 +21,8 @@
     <string name="srec_share">分享</string>
     <string name="srec_manager">管理</string>
     <string name="srec_uploaded">已上传</string>
+    <string name="srec_video_detail">视频详情</string>
+    <string name="srec_video_uploading_waited">尚未完成上传，请稍等</string>
 
 
 </resources>

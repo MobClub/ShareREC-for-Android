@@ -1,0 +1,4 @@
+#Tue Aug 15 17:11:58 CST 2017
+base.0=D\:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=D\:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main\\classes.dex

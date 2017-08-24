@@ -1,0 +1,7 @@
+#Tue Aug 15 16:57:38 CST 2017
+base.0=D\:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_d222fc5b81d6cfdac51994fee2a87e4666b9ea0e
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=D\:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_6ad623928aeed28ede8fd55329679d5e81e874d7\\classes.dex
+base.1=D\:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_6ad623928aeed28ede8fd55329679d5e81e874d7
+file.0=D\:\\Android\\publish\\2.0.2\\cpp-empty-test\\proj.android-studio\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_d222fc5b81d6cfdac51994fee2a87e4666b9ea0e\\classes.dex

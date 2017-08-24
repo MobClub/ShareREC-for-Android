@@ -39,7 +39,7 @@ public class MyGdxGame extends SrecApplicationAdapter implements InputProcessor 
 	
 	private Rectangle stopRecorder;
 	private Rectangle stopRecorderUpload;
-	
+	private boolean upload = false;
 	private int width;
 	private int height;
 	private int x;
@@ -203,7 +203,7 @@ public class MyGdxGame extends SrecApplicationAdapter implements InputProcessor 
 	public boolean touchDragged(int screenX, int screenY, int pointer) {
 		return false;
 	}
-	private boolean upload = false;
+	
 	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
 		int touchY = height - screenY;
 		if (started) {
@@ -212,7 +212,7 @@ public class MyGdxGame extends SrecApplicationAdapter implements InputProcessor 
 				upload = false;
 				// 停止录制 (stop recorder)
 				getRecorder().stop();
-			}else if(stopRecorderUpload.x <= screenX && (stopRecorderUpload.x + stopRecorderUpload.getWidth() >= screenX)
+			} else if(stopRecorderUpload.x <= screenX && (stopRecorderUpload.x + stopRecorderUpload.getWidth() >= screenX)
 					&& stopRecorderUpload.y >= touchY && stopRecorderUpload.y - stopRecorderUpload.getHeight() <= touchY){
 				upload = true;
 				getRecorder().stop();
@@ -239,7 +239,7 @@ public class MyGdxGame extends SrecApplicationAdapter implements InputProcessor 
 					&& userProfile.y >= touchY && userProfile.y - userProfile.getHeight() <= touchY) {
 				// 进入个人页面(Enter user profile page)
 				getRecorder().showProfile();
-			}else if(localVidoes.x <= screenX && (localVidoes.x + localVidoes.getWidth() >= screenX)
+			} else if(localVidoes.x <= screenX && (localVidoes.x + localVidoes.getWidth() >= screenX)
 					&& localVidoes.y >= touchY && localVidoes.y - localVidoes.getHeight() <= touchY){
 				getRecorder().showLocalVideos(null);
 			}
@@ -263,9 +263,9 @@ public class MyGdxGame extends SrecApplicationAdapter implements InputProcessor 
 				
 				@Override
 				public boolean handleMessage(Message msg) {
-					if(upload){
+					if(upload) {
 						getRecorder().showShare();	
-					}else {
+					} else {
 						getRecorder().showLastVideoOffLine();
 					}
 					return false;

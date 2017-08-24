@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="OneKeyShare">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ShareREC/libs/OneKeyShare.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
